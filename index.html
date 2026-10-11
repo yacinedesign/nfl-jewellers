@@ -13,10 +13,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=UnifrakturMaguntia&family=Yellowtail&family=Bowlby+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=UnifrakturMaguntia&family=Yellowtail&family=Bowlby+One&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040506'/%3E%3Cpath d='M18 20h28l8 10-22 22-22-22z' fill='none' stroke='%23e9f0f6' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M10 30h44M26 20l-4 10 10 22 10-22-4-10' fill='none' stroke='%23e9f0f6' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
 <script type="importmap">
-{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}
 </script>
 <script type="application/ld+json">
 {
@@ -37,58 +37,60 @@
 </script>
 <style>
 :root{
-  --bg:#040506; --bg2:#080a0c; --panel:#0c0f12; --line:rgba(214,226,240,.10); --line2:rgba(214,226,240,.22);
-  --ice:#eef3f8; --text:#cdd5de; --muted:#86919e; --teal:#2bc4ae; --teal2:#86e8d9; --rose:#e0ae98;
+  --bg:#040506; --bg2:#07090b; --panel:#0b0e11; --line:rgba(214,226,240,.10); --line2:rgba(214,226,240,.2);
+  --ice:#eef3f8; --text:#cdd5de; --muted:#86919e; --teal:#2bc4ae; --teal2:#86e8d9; --rose:#e2b09b;
   --serif:'Cormorant Garamond',Georgia,serif; --caps:'Cinzel',Georgia,serif; --sans:'Manrope',system-ui,-apple-system,sans-serif;
-  --wrap:1240px; --r:6px; --ease:cubic-bezier(.2,.7,.2,1);
+  --wrap:1320px; --r:4px; --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--text);font:400 16px/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
 ::selection{background:var(--teal);color:#021512}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 html:not([lang="en"]) [data-en],html[lang="en"] [data-fr]{display:none!important}
 
 /* ---------- typographie ---------- */
-.kicker{display:inline-flex;align-items:center;gap:.9rem;font:600 .7rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
-.kicker b{font:500 .78rem/1 var(--caps);letter-spacing:.12em;color:var(--teal)}
+.kicker{display:inline-flex;align-items:center;gap:.9rem;font:600 .68rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.kicker b{font:600 .8rem/1 var(--caps);letter-spacing:.1em;color:var(--teal)}
 .kicker::after{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--teal),transparent)}
 h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--ice);line-height:.98;letter-spacing:-.005em}
-h2{font-size:clamp(2.7rem,5.8vw,5rem);margin-top:20px}
+h2{font-size:clamp(2.6rem,5vw,4.4rem);margin-top:16px}
 h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .ice{background:linear-gradient(100deg,#93a6ba 0%,#ffffff 22%,#b8c7d6 42%,#ffffff 60%,#8ea2b7 82%,#e6eef6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:1.05rem;color:var(--text);max-width:34rem}
-.sec{padding:clamp(100px,13vw,170px) 0;position:relative}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
-.sec-head p{max-width:25rem;color:var(--muted)}
+.lead{font-size:1.04rem;color:var(--text);max-width:34rem}
+.sec{padding:clamp(70px,8vw,116px) 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px 48px;flex-wrap:wrap;margin-bottom:clamp(30px,3.5vw,46px)}
+.sec-head p{max-width:27rem;color:var(--muted)}
 
 /* ---------- boutons ---------- */
-.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:1.05rem 1.7rem;border-radius:999px;font:600 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;transition:background .35s,color .35s,border-color .35s,transform .35s var(--ease);cursor:pointer;border:1px solid transparent;white-space:nowrap;background:transparent}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:1.05rem 1.7rem;border-radius:999px;font:600 .76rem/1 var(--sans);letter-spacing:.15em;text-transform:uppercase;transition:background .35s,color .35s,border-color .35s,transform .35s var(--ease);cursor:pointer;border:1px solid transparent;white-space:nowrap;background:transparent}
 .btn svg{width:18px;height:18px;flex:none}
 .btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s var(--ease)}
 .btn:hover::after{left:130%}
-.btn-ice{background:linear-gradient(180deg,#ffffff,#dde6ee);color:#06080a}
+.btn-ice{background:linear-gradient(180deg,#ffffff,#dbe4ec);color:#06080a;box-shadow:0 10px 30px rgba(220,235,245,.12)}
 .btn-ice:hover{transform:translateY(-2px)}
 .btn-line{border-color:var(--line2);color:var(--ice)}
 .btn-line:hover{border-color:var(--ice)}
 .btn-line::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.12),transparent)}
 .btn-teal{background:var(--teal);color:#03211d}
 .btn-teal:hover{background:var(--teal2);transform:translateY(-2px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
 
 /* ---------- en-tête ---------- */
 .hd{position:fixed;inset:0 0 auto 0;z-index:50;transition:border-color .4s}
-.hd::before{content:"";position:absolute;inset:0;background:rgba(4,5,6,.7);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);opacity:0;transition:opacity .4s;z-index:-1}
+.hd::before{content:"";position:absolute;inset:0;background:rgba(4,5,6,.72);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);opacity:0;transition:opacity .4s;z-index:-1}
 .hd.solid::before{opacity:1}
 .hd.solid{border-bottom:1px solid var(--line)}
-.hd-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:80px}
+.hd-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:78px}
 .logo{display:flex;align-items:center;gap:12px;color:var(--ice)}
-.logo svg{width:36px;height:27px}
-.logo b{font:600 1.4rem/1 var(--caps);letter-spacing:.07em;display:block}
-.logo small{display:block;font:500 .52rem/1 var(--caps);letter-spacing:.44em;margin-top:5px;color:var(--muted)}
+.logo svg{width:34px;height:26px}
+.logo b{font:600 1.35rem/1 var(--caps);letter-spacing:.07em;display:block}
+.logo small{display:block;font:500 .5rem/1 var(--caps);letter-spacing:.44em;margin-top:5px;color:var(--muted)}
 .nav{display:flex;align-items:center;gap:30px}
 .nav ul{display:flex;gap:28px;list-style:none}
 .nav ul a{font-size:.84rem;color:var(--text);position:relative;padding:6px 0;transition:color .3s}
@@ -106,97 +108,94 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .hd.open .burger span::before{top:0;transform:rotate(45deg)}
 .hd.open .burger span::after{top:0;transform:rotate(-45deg)}
 
-/* ---------- héros 3D ---------- */
-.hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;background:var(--bg)}
-.hero-fallback{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 43%,rgba(43,196,174,.2),rgba(43,196,174,.05) 35%,transparent 60%)}
-.hero-fallback span{font:600 clamp(7rem,27vw,21rem)/1 var(--caps);letter-spacing:.06em;transform:translateY(-9%);opacity:.9}
-#gem{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;outline:none}
+/* ---------- héros ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;padding-top:78px;overflow:hidden;--mx:0;--my:0}
+.hero-bg{position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 42% at 50% 30%,rgba(43,196,174,.20),rgba(43,196,174,.05) 55%,transparent 75%),
+    radial-gradient(ellipse 80% 50% at 50% 100%,rgba(43,196,174,.07),transparent 70%),
+    var(--bg)}
+.hero-bg::before{content:"";position:absolute;left:50%;top:-10%;width:140%;height:90%;transform:translateX(-50%);background:conic-gradient(from 180deg at 50% 0%,transparent 0deg,rgba(220,245,240,.06) 8deg,transparent 16deg,transparent 24deg,rgba(220,245,240,.05) 30deg,transparent 38deg,transparent 322deg,rgba(220,245,240,.05) 330deg,transparent 336deg,transparent 344deg,rgba(220,245,240,.06) 352deg,transparent 360deg);-webkit-mask:linear-gradient(to bottom,#000 10%,transparent 85%);mask:linear-gradient(to bottom,#000 10%,transparent 85%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(220,236,246,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(220,236,246,.035) 1px,transparent 1px);background-size:88px 88px;-webkit-mask:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent 75%);mask:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent 75%)}
+.hero-c{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2vh 20px 3vh}
+.gem-wrap{position:relative;width:min(32vw,38vh,430px);aspect-ratio:4/3;margin-bottom:-2vh}
+.gem-wrap::after{content:"";position:absolute;left:18%;right:18%;bottom:4%;height:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(43,196,174,.35),transparent);filter:blur(10px);z-index:-1}
+#gem{width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;outline:none}
 #gem.drag{cursor:grabbing}
-.hero-shade{position:absolute;inset:auto 0 0 0;height:48%;background:linear-gradient(to top,rgba(4,5,6,.96) 8%,rgba(4,5,6,.55) 50%,rgba(4,5,6,0));pointer-events:none}
-.hero-ui{position:absolute;inset:0;pointer-events:none}
-.hero-ui .wrap{height:100%;display:flex;flex-direction:column;justify-content:space-between;padding-top:118px;padding-bottom:46px}
-.hero-ui a,.hero-ui button{pointer-events:auto}
-.hero-top{display:flex;justify-content:space-between;gap:20px;align-items:center}
-.coords{font:500 .66rem/1.6 var(--sans);letter-spacing:.22em;color:var(--muted);text-align:right}
-.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
-.hero h1{font-size:clamp(2.7rem,5.4vw,5.1rem);margin-bottom:18px}
-.hero h1 em{display:block}
-.hero .lead{margin-bottom:28px;max-width:30rem}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px}
-.hint{display:flex;align-items:center;gap:14px;font:600 .64rem/1.5 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-align:right;flex:none}
-.hint i{width:46px;height:46px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;flex:none}
-.hint svg{width:22px;height:22px;color:var(--ice)}
-
-/* ---------- manifeste ---------- */
-.manifesto{padding:clamp(110px,15vw,190px) 0 clamp(70px,9vw,110px)}
-.mf{font:400 clamp(2.1rem,4.9vw,4.4rem)/1.1 var(--serif);color:var(--ice);max-width:17em}
-.mf em{font-style:italic}
-.mf .w{opacity:.13;transition:opacity .25s linear}
-.worn{display:flex;align-items:center;gap:18px 46px;flex-wrap:wrap;margin-top:clamp(60px,8vw,96px);padding-top:30px;border-top:1px solid var(--line)}
-.worn p{font:600 .68rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
-.worn ul{display:flex;flex-wrap:wrap;gap:12px 40px;list-style:none}
-.worn li a{font:italic 400 1.7rem/1 var(--serif);color:var(--ice);transition:color .3s}
-.worn li a:hover{color:var(--teal2)}
+.gem-fallback{position:absolute;inset:18% 26%;color:var(--ice);opacity:.9}
+.gem-ready .gem-fallback{display:none}
+.note{position:absolute;top:44%;display:flex;align-items:center;gap:12px;font:600 .58rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.note::before{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--line2))}
+.note-l{right:100%;flex-direction:row-reverse;margin-right:6px}
+.note-l::before{background:linear-gradient(90deg,var(--line2),transparent)}
+.note-r{left:100%;margin-left:6px}
+.note svg{width:14px;height:14px;color:var(--teal2)}
+.wordmark{display:flex;flex-direction:column;align-items:center;user-select:none}
+.wm{font:600 min(14.5vw,18.5vh)/.86 var(--caps);letter-spacing:.09em;padding-left:.09em;
+  background:linear-gradient(176deg,#ffffff 6%,#e4ebf2 30%,#8e9cad 50%,#f6f9fb 64%,#aab7c5 82%,#e8eef4 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 18px 40px rgba(0,0,0,.6))}
+.wm-sub{font:500 min(1.25vw,1.9vh)/1 var(--caps);letter-spacing:1.05em;padding-left:1.05em;color:#b9c5d1;margin-top:min(1.6vw,2.2vh)}
+.hero h1{font:italic 400 min(3.1vw,4.6vh)/1.1 var(--serif);color:var(--ice);margin-top:min(3vw,3.6vh)}
+.hero h1 b{font-style:normal;font-weight:500}
+.hero-sub{text-wrap:balance;max-width:44rem;margin-top:1.4vh;font:600 .7rem/1.8 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.hero-sub i{font-style:normal;color:var(--teal);margin:0 .6em}
+.hero .cta-row{justify-content:center;margin-top:3.4vh}
+.float{position:absolute;top:47%;z-index:1;width:min(16vw,250px);perspective:1100px;transition:transform .9s var(--ease)}
+.float-l{left:max(3vw,calc(50% - 680px));transform:translate3d(calc(var(--mx) * -22px),calc(-50% + var(--my) * -14px),0)}
+.float-r{right:max(3vw,calc(50% - 680px));transform:translate3d(calc(var(--mx) * -22px),calc(-50% + var(--my) * -14px),0)}
+.fcard{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);box-shadow:0 40px 80px rgba(0,0,0,.65);background:var(--panel);cursor:zoom-in;transition:transform .9s var(--ease)}
+.fcard img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.fcard figcaption{position:absolute;inset:auto 0 0 0;padding:34px 14px 12px;background:linear-gradient(to top,rgba(4,5,6,.92),transparent);text-align:left}
+.fcard figcaption small{display:block;font:600 .55rem/1 var(--sans);letter-spacing:.24em;color:var(--teal);margin-bottom:6px}
+.fcard figcaption b{display:block;font:500 1.05rem/1.1 var(--serif);color:var(--ice)}
+.float-l .fc1{transform:rotateY(calc(16deg + var(--mx) * 10deg)) rotateX(calc(var(--my) * -6deg)) rotateZ(-2deg)}
+.float-r .fc1{transform:rotateY(calc(-16deg + var(--mx) * 10deg)) rotateX(calc(var(--my) * -6deg)) rotateZ(2deg)}
+.fc2{position:absolute;width:62%;z-index:-1;filter:brightness(.8)}
+.float-l .fc2{left:56%;top:-16%;transform:rotateY(calc(16deg + var(--mx) * 12deg)) rotateZ(5deg) translateZ(-70px)}
+.float-r .fc2{right:56%;top:-16%;transform:rotateY(calc(-16deg + var(--mx) * 12deg)) rotateZ(-5deg) translateZ(-70px)}
+.fc2 img{aspect-ratio:3/4}
+.hero-bar{position:relative;z-index:2;border-top:1px solid var(--line);background:linear-gradient(to top,rgba(4,5,6,.9),rgba(4,5,6,.4))}
+.bar-in{display:flex;justify-content:space-between;align-items:center;gap:14px 40px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px}
+.bar-worn{display:flex;align-items:center;gap:12px 26px;flex-wrap:wrap}
+.bar-worn>span{font:600 .62rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.bar-worn a{font:italic 400 1.35rem/1 var(--serif);color:var(--ice);transition:color .3s}
+.bar-worn a:hover{color:var(--teal2)}
+.bar-facts{display:flex;gap:10px 26px;flex-wrap:wrap;font:600 .62rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.bar-facts span{display:inline-flex;align-items:center;gap:10px}
+.bar-facts span::before{content:"◆";font-size:.5rem;color:var(--teal)}
 
 /* ---------- inclinaison 3D ---------- */
-.tilt{perspective:1300px}
-.tilt-in{position:relative;transform-style:preserve-3d;transition:transform .7s var(--ease);will-change:transform}
-.tilt.active .tilt-in{transition:transform .12s linear}
-.glare{position:absolute;inset:0;border-radius:var(--r);pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,25%),rgba(255,255,255,.2),transparent 42%);opacity:0;transition:opacity .5s;mix-blend-mode:screen}
+.tilt{transition:transform .8s var(--ease);will-change:transform}
+.tilt.active{transition:transform .12s linear}
+.glare{position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(circle at var(--gx,50%) var(--gy,25%),rgba(255,255,255,.18),transparent 45%);opacity:0;transition:opacity .5s;mix-blend-mode:screen}
 .tilt.active .glare{opacity:1}
 
-/* ---------- signature ---------- */
-.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:center}
-.sig-pic{position:relative;max-width:470px;justify-self:center;width:100%}
-.sig-pic .ph{border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(43,196,174,.06)}
-.sig-pic img{width:100%;aspect-ratio:2/3;object-fit:cover}
-.chip{position:absolute;background:rgba(8,10,12,.82);border:1px solid var(--line2);border-radius:var(--r);padding:14px 18px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.chip small{display:block;font:600 .6rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
-.chip b{display:block;font:500 1.3rem/1.1 var(--serif);color:var(--ice)}
-.chip-a{left:-38px;bottom:64px;transform:translateZ(80px)}
-.chip-b{right:-26px;top:54px;transform:translateZ(50px);text-align:center;padding:12px 16px}
-.chip-b b{font:600 1.1rem/1 var(--caps);letter-spacing:.1em}
-.sig-txt p.lead{margin-top:24px}
-.cert{margin-top:36px;border:1px solid var(--line2);border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,rgba(43,196,174,.05),transparent 50%)}
-.cert-h{display:flex;justify-content:space-between;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);font:600 .62rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-.cert-h span:last-child{color:var(--teal)}
-.cert dl{display:grid;grid-template-columns:auto 1fr}
-.cert dt,.cert dd{padding:13px 20px;border-bottom:1px solid var(--line)}
-.cert dt{font:600 .64rem/1.9 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.cert dd{font:500 1.2rem/1.4 var(--serif);color:var(--ice);text-align:right}
-.cert dl>*:nth-last-child(-n+2){border-bottom:0}
-.sig-txt .cta-row{margin-top:32px}
-
-/* ---------- collection (carrousel 3D) ---------- */
-.collection{padding-bottom:clamp(70px,9vw,120px);overflow:hidden}
-.cf-ctrl{display:flex;align-items:center;gap:14px}
-.cf-ctrl button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line2);background:none;cursor:pointer;display:grid;place-items:center;color:var(--ice);transition:border-color .3s,background .3s}
-.cf-ctrl button:hover{border-color:var(--ice);background:rgba(255,255,255,.04)}
-.cf-ctrl svg{width:18px;height:18px}
-.cf-count{font:500 1rem/1 var(--caps);letter-spacing:.14em;color:var(--muted);min-width:70px;text-align:center}
-.cf-count b{color:var(--ice);font-weight:500}
-.cf-track{--cw:min(390px,76vw);display:flex;gap:34px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px calc(50% - var(--cw) / 2) 60px;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-.cf-track::-webkit-scrollbar{display:none}
-.cf-track.dragging{scroll-snap-type:none;cursor:grabbing}
-.cf-track.dragging .cf-card{transition:none}
-.cf-card{flex:0 0 var(--cw);scroll-snap-align:center;position:relative;border-radius:var(--r);overflow:hidden;background:var(--panel);border:1px solid var(--line2);will-change:transform;box-shadow:0 30px 70px rgba(0,0,0,.5);cursor:zoom-in;user-select:none}
-.cf-card img{width:100%;aspect-ratio:2/3;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
-.cf-info{position:absolute;inset:auto 0 0 0;padding:70px 24px 24px;background:linear-gradient(to top,rgba(4,5,6,.96) 30%,rgba(4,5,6,0))}
-.cf-info .no{font:500 .74rem/1 var(--caps);letter-spacing:.2em;color:var(--teal)}
-.cf-info h3{font-size:2rem;margin:10px 0 6px}
-.cf-info p{font-size:.82rem;color:var(--muted)}
-.cf-info .who{display:inline-block;margin-top:12px;font-size:.78rem;color:var(--ice);border:1px solid var(--line2);border-radius:999px;padding:.35rem .8rem}
-.cf-cta{cursor:default;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px;background:radial-gradient(circle at 50% 35%,rgba(43,196,174,.16),transparent 60%),var(--panel)}
-.cf-cta .gemico{width:84px;height:66px;color:var(--ice);margin-bottom:30px}
-.cf-cta .no{font:500 .74rem/1 var(--caps);letter-spacing:.2em;color:var(--teal)}
-.cf-cta h3{font-size:2.6rem;margin:14px 0 14px}
-.cf-cta p{font-size:.9rem;color:var(--muted);max-width:18rem;margin-bottom:28px}
-.cf-cta .cf-ratio{aspect-ratio:2/3;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+/* ---------- collection (mosaïque) ---------- */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(240px,23vw,330px);gap:12px}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);background:var(--panel);cursor:zoom-in;outline:none}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.tile:hover img,.tile:focus-visible img{transform:scale(1.05)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,5,6,.93) 0%,rgba(4,5,6,.35) 30%,transparent 52%);pointer-events:none}
+.tile figcaption{position:absolute;left:22px;right:22px;bottom:20px;z-index:3;display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+.tile .no{display:block;font:600 .6rem/1 var(--sans);letter-spacing:.24em;color:var(--teal);margin-bottom:8px}
+.tile h3{font-size:clamp(1.5rem,2vw,2rem);line-height:1.05}
+.tile p{font-size:.8rem;color:var(--muted);margin-top:5px}
+.tile .who{flex:none;font-size:.72rem;color:var(--ice);border:1px solid var(--line2);border-radius:999px;padding:.35rem .75rem;background:rgba(4,5,6,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.t1{grid-column:1;grid-row:span 2}
+.t2{grid-column:2;grid-row:span 2}
+.t3{grid-column:3/5}
+.t3 img{object-position:50% 62%}
+.t4{grid-column:3}
+.t5{grid-column:4}
+.mosaic-cta{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:12px;padding:22px 26px;border:1px solid var(--line2);border-radius:var(--r);background:linear-gradient(100deg,rgba(43,196,174,.12),rgba(43,196,174,.02) 60%),var(--panel)}
+.mosaic-cta p{font:500 1.5rem/1.2 var(--serif);color:var(--ice)}
+.mosaic-cta p em{font-style:italic;color:var(--teal2)}
 
 /* ---------- atelier ---------- */
-.atelier-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,60px);align-items:stretch}
+.atelier{background:linear-gradient(180deg,var(--bg),#060a0b 50%,var(--bg))}
+.atelier-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,3.5vw,52px);align-items:stretch}
 .stage{position:relative;border-radius:var(--r);border:1px solid var(--line2);overflow:hidden;min-height:540px;display:flex;flex-direction:column;align-items:center;perspective:900px;background:radial-gradient(ellipse at 50% 42%,#14212a 0%,#0a0e11 52%,#040506 100%)}
-.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,rgba(43,196,174,.12),transparent 46%);pointer-events:none}
+.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,rgba(43,196,174,.13),transparent 46%);pointer-events:none}
 .stage .lbl{position:absolute;left:50%;top:18px;transform:translateX(-50%);font:600 .6rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
 .stage .chain{width:100%;height:170px;flex:none}
 .pend3d{display:flex;flex-direction:column;align-items:center;transform-style:preserve-3d;transition:transform .8s var(--ease);margin-top:-6px}
@@ -216,12 +215,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .pend-name.f-script>span{padding-right:.25em}
 .pend-name.f-bloc{font-family:'Bowlby One',sans-serif;font-size:clamp(2.6rem,6.6vw,5rem);letter-spacing:.02em}
 .stage .cap{margin-top:auto;padding:18px;font-size:.76rem;color:var(--muted);text-align:center}
-.stage .hint3d{position:absolute;right:16px;top:14px;font:600 .58rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:.8}
+.stage .hint3d{position:absolute;right:16px;top:14px;font:600 .58rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--teal2);opacity:.8}
 .m-blanc{--m1:#eef4fa;--m2:#a8b7c7;--edge:#dbe4ed;--deep:#5d6b79}
 .m-jaune{--m1:#fff3cf;--m2:#d4b061;--edge:#e7c46a;--deep:#7d5f1c}
 .m-rose{--m1:#ffe7dd;--m2:#d49a89;--edge:#e3ab98;--deep:#7f4b3d}
 .m-bicolore{--m1:#ffe7dd;--m2:#a8b7c7;--edge:#e3ab98;--deep:#6c5a58}
-.form{display:flex;flex-direction:column;gap:22px}
+.form{display:flex;flex-direction:column;gap:20px;justify-content:center}
 .field>span{display:block;font:600 .66rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 .field input[type=text]{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line2);color:var(--ice);font:500 2.1rem/1.2 var(--serif);padding:6px 0 10px;outline:none;transition:border-color .3s;border-radius:0}
 .field input[type=text]:focus{border-color:var(--teal)}
@@ -234,38 +233,32 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .chips input:focus-visible+span{outline:2px solid var(--teal);outline-offset:2px}
 .chips b{font-weight:400}
 .dot{width:12px;height:12px;border-radius:50%;flex:none;border:1px solid rgba(0,0,0,.25)}
-.form .send{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
-.note{font-size:.8rem;color:var(--muted);min-height:1.3em}
-.note.ok{color:var(--teal2)}
+.form .send{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.msg{font-size:.8rem;color:var(--muted);min-height:1.3em}
+.msg.ok{color:var(--teal2)}
 
-/* ---------- montres ---------- */
-.watch{background:linear-gradient(180deg,var(--bg) 0%,#06100f 50%,var(--bg) 100%)}
-.watch-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(48px,8vw,120px);align-items:center}
-.w-col{position:relative;padding-bottom:12%}
-.w-main{width:78%;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);cursor:zoom-in;box-shadow:0 40px 90px rgba(0,0,0,.55)}
-.w-main img,.w-sub img{width:100%;aspect-ratio:2/3;object-fit:cover}
-.w-sub{position:absolute;right:0;bottom:0;width:44%;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);box-shadow:0 30px 70px rgba(0,0,0,.7);cursor:zoom-in}
-.watch-txt p.lead{margin-top:24px}
-.seal-row{display:flex;align-items:center;gap:26px;margin-top:38px}
-.seal{width:132px;height:132px;flex:none;position:relative}
+/* ---------- montres (plein écran) ---------- */
+.watch{display:grid;grid-template-columns:1fr 1fr;min-height:min(100vh,920px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ws-img{position:relative;overflow:hidden;cursor:zoom-in}
+.ws-img img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:50% 45%}
+.ws-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 70%,rgba(4,5,6,.9));pointer-events:none}
+.ws-txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,6vw,96px) clamp(28px,6vw,96px);background:radial-gradient(circle at 0% 50%,rgba(43,196,174,.12),transparent 55%),var(--bg)}
+.ws-txt .lead{margin-top:20px}
+.ws-minis{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px;max-width:440px}
+.ws-minis figure{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);cursor:zoom-in}
+.ws-minis img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1.2s var(--ease)}
+.ws-minis figure:hover img{transform:scale(1.05)}
+.ws-minis figcaption{position:absolute;left:12px;bottom:10px;font:600 .58rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ice);text-shadow:0 2px 10px #000}
+.seal-row{display:flex;align-items:center;gap:22px;margin-top:30px}
+.seal{width:112px;height:112px;flex:none;position:relative}
 .seal svg{width:100%;height:100%}
-.seal text{font:600 10.5px var(--sans);letter-spacing:3.1px;fill:var(--muted)}
-.seal b{position:absolute;inset:0;display:grid;place-items:center;font:italic 500 1.4rem/1 var(--serif);color:var(--teal2)}
-.seal-row p{font-size:.9rem;color:var(--muted);max-width:20rem}
-
-/* ---------- naturel / labo ---------- */
-.versus{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.vs{position:relative;border:1px solid var(--line2);border-radius:var(--r);padding:clamp(30px,4vw,50px);overflow:hidden;background:var(--panel)}
-.vs.lab{background:radial-gradient(circle at 85% 0%,rgba(43,196,174,.14),transparent 55%),var(--panel)}
-.vs svg{width:58px;height:58px;color:var(--ice);margin-bottom:26px}
-.vs h3{font-size:2.2rem;margin:12px 0 6px}
-.vs ul{list-style:none;margin-top:22px}
-.vs li{padding:13px 0;border-top:1px solid var(--line);font-size:.92rem;display:flex;gap:12px}
-.vs li::before{content:"◆";color:var(--teal);font-size:.55rem;margin-top:.5em}
-.both{margin-top:26px;text-align:center;font:italic 400 1.5rem/1.4 var(--serif);color:var(--ice)}
+.seal text{font:600 10.5px var(--sans);letter-spacing:3px;fill:var(--muted)}
+.seal b{position:absolute;inset:0;display:grid;place-items:center;font:italic 500 1.25rem/1 var(--serif);color:var(--teal2)}
+.seal-row p{font-size:.88rem;color:var(--muted);max-width:19rem}
+.ws-txt .cta-row{margin-top:30px}
 
 /* ---------- artistes ---------- */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,clamp(230px,24vw,330px));gap:14px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,clamp(230px,23vw,320px));gap:12px}
 .art{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:var(--panel)}
 .art img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.05);transition:filter .7s,transform 1.4s var(--ease)}
 .art:hover img{filter:none;transform:scale(1.04)}
@@ -278,50 +271,60 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .b3{grid-column:4/5;grid-row:1/2}
 .b4{grid-column:4/5;grid-row:2/3}
 
-/* ---------- maison ---------- */
-.house{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.house-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
-.house-pic{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line2)}
-.house-pic img{width:100%;height:118%;margin-top:-9%;object-fit:cover;object-position:50% 55%}
-.house-txt p.lead{margin-top:22px}
-.cities{display:grid;grid-template-columns:1fr 1fr;margin-top:42px;border:1px solid var(--line2);border-radius:var(--r)}
-.cities div{padding:24px 26px}
-.cities div+div{border-left:1px solid var(--line2)}
-.cities small{display:block;font:600 .62rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-.cities b{display:block;font:500 3rem/1 var(--serif);color:var(--ice);margin:14px 0 8px;font-variant-numeric:tabular-nums}
-.cities span{font-size:.78rem;color:var(--teal2)}
+/* ---------- naturel / labo + maison ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:12px}
+.vs{position:relative;border:1px solid var(--line2);border-radius:var(--r);padding:clamp(26px,3vw,40px);background:var(--panel)}
+.vs.lab{background:radial-gradient(circle at 85% 0%,rgba(43,196,174,.14),transparent 55%),var(--panel)}
+.vs svg{width:50px;height:50px;color:var(--ice);margin-bottom:20px}
+.vs h3{font-size:2rem;margin:12px 0 4px}
+.vs ul{list-style:none;margin-top:16px}
+.vs li{padding:11px 0;border-top:1px solid var(--line);font-size:.9rem;display:flex;gap:12px}
+.vs li::before{content:"◆";color:var(--teal);font-size:.55rem;margin-top:.5em}
+.house{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);min-height:500px;display:flex;flex-direction:column;justify-content:flex-end}
+.house>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.house::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,5,6,.97) 0%,rgba(4,5,6,.93) 52%,rgba(4,5,6,.45) 72%,rgba(4,5,6,.08) 100%);z-index:1}
+.house-in{position:relative;z-index:2;padding:clamp(24px,3vw,36px)}
+.house h3{font-size:2.2rem}
+.house p{font-size:.9rem;color:var(--text);margin-top:10px}
+.cities{display:grid;grid-template-columns:1fr 1fr;margin-top:20px;border-top:1px solid var(--line2)}
+.cities div{padding:14px 0 0}
+.cities div+div{padding-left:18px;border-left:1px solid var(--line2)}
+.cities small{display:block;font:600 .58rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.cities b{display:block;font:500 2.3rem/1 var(--serif);color:var(--ice);margin:10px 0 4px;font-variant-numeric:tabular-nums}
+.cities span{font-size:.72rem;color:var(--teal2)}
+.both{margin-top:18px;text-align:center;font:italic 400 1.4rem/1.4 var(--serif);color:var(--ice)}
 
-/* ---------- FAQ ---------- */
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,7vw,110px)}
+/* ---------- FAQ + contact ---------- */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,6vw,96px)}
 .faq details{border-top:1px solid var(--line)}
 .faq details:last-child{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:26px 46px 26px 0;position:relative;font:500 1.6rem/1.25 var(--serif);color:var(--ice)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 46px 22px 0;position:relative;font:500 1.5rem/1.25 var(--serif);color:var(--ice)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;border-right:1px solid var(--muted);border-bottom:1px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
 .faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
-.faq details p{padding:0 0 26px;color:var(--muted);max-width:40rem}
-
-/* ---------- contact ---------- */
-.contact{text-align:center;overflow:hidden;padding:clamp(120px,16vw,200px) 0}
-.contact::before{content:"";position:absolute;left:50%;top:50%;width:1100px;height:700px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(43,196,174,.14),transparent);pointer-events:none}
+.faq details p{padding:0 0 22px;color:var(--muted);max-width:40rem}
+.faq-side p{margin-top:18px;color:var(--muted);max-width:22rem}
+.faq-side .cta-row{margin-top:26px}
+.contact{position:relative;overflow:hidden;text-align:center;padding:clamp(90px,10vw,140px) 0;border-top:1px solid var(--line)}
+.contact::before{content:"";position:absolute;left:50%;top:50%;width:1100px;height:700px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(43,196,174,.15),transparent);pointer-events:none}
 .contact .wrap{position:relative}
 .contact .kicker::after{display:none}
-.contact h2{font-size:clamp(3rem,8vw,6.6rem);margin:24px auto 24px;max-width:13ch}
-.contact p{max-width:34rem;margin:0 auto 38px;color:var(--muted)}
+.contact h2{font-size:clamp(3rem,7.5vw,6.4rem);margin:20px auto;max-width:13ch}
+.contact p{max-width:34rem;margin:0 auto 34px;color:var(--muted)}
 .contact .cta-row{justify-content:center}
-.handles{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 30px;margin-top:38px;font-size:.88rem;color:var(--muted)}
+.handles{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 30px;margin-top:32px;font-size:.88rem;color:var(--muted)}
 .handles a:hover{color:var(--ice)}
 
 /* ---------- pied ---------- */
-.ft{border-top:1px solid var(--line);padding:50px 0 36px;font-size:.82rem;color:var(--muted)}
+.ft{border-top:1px solid var(--line);padding:46px 0 34px;font-size:.82rem;color:var(--muted)}
 .ft-in{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
 .ft .disc{max-width:30rem;margin-top:16px}
 .ft-links{display:flex;flex-direction:column;gap:8px;text-align:right}
 .ft-links a:hover{color:var(--ice)}
-.ft-bot{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ft-bot{margin-top:32px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* ---------- bouton flottant ---------- */
-.fab{position:fixed;right:22px;bottom:22px;z-index:60;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .4s,visibility .4s,transform .4s;width:60px;height:60px;border-radius:50%;background:#0a0e11;border:1px solid var(--teal);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 0 6px rgba(43,196,174,.08);transition:transform .3s,background .3s}
+.fab{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:#0a0e11;border:1px solid var(--teal);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 0 6px rgba(43,196,174,.08);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .4s,visibility .4s,transform .4s,background .3s}
 .fab.on{opacity:1;visibility:visible;transform:none}
 .fab.on:hover{transform:translateY(-3px);background:#10171a}
 .fab svg{width:26px;height:26px;color:var(--ice)}
@@ -334,64 +337,84 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .lb button{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid var(--line2);background:none;cursor:pointer;color:var(--ice);font-size:1.4rem;line-height:1}
 
 /* ---------- apparitions ---------- */
-.rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.clip{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s var(--ease)}
+.clip{clip-path:inset(100% 0 0 0);transition:clip-path 1.3s var(--ease)}
 .clip.in{clip-path:inset(0 0 0 0)}
-.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
-@media (prefers-reduced-motion:reduce){.rv,.clip{opacity:1;transform:none;clip-path:none;transition:none}html{scroll-behavior:auto}.mf .w{opacity:1!important}}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.intro{opacity:0;animation:intro 1.4s var(--ease) forwards}
+.intro.i1{animation-delay:.15s}.intro.i2{animation-delay:.35s}.intro.i3{animation-delay:.55s}.intro.i4{animation-delay:.75s}.intro.i5{animation-delay:.95s}
+@keyframes intro{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+.float.intro{animation-name:introF;animation-duration:1.8s;animation-delay:.6s}
+@keyframes introF{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.rv,.clip,.intro{opacity:1;transform:none;clip-path:none;transition:none;animation:none}html{scroll-behavior:auto}}
 
 /* ---------- responsive ---------- */
-@media (max-width:1080px){
+@media (max-width:1180px){
+  .float{display:none}
   .nav ul{gap:18px}
-  .chip-a{left:-14px}
-  .chip-b{right:-10px}
+}
+@media (max-width:1080px){
+  .duo{grid-template-columns:1fr 1fr}
+  .house{grid-column:1/3;min-height:380px}
 }
 @media (max-width:900px){
   .burger{display:grid}
-  .nav{position:fixed;inset:80px 0 auto 0;background:#06080a;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:24px;padding:28px 24px 32px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility .3s}
+  .nav{position:fixed;inset:78px 0 auto 0;background:#06080a;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:24px;padding:28px 24px 32px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility .3s}
   .hd.open .nav{opacity:1;transform:none;visibility:visible}
   .nav ul{flex-direction:column;gap:16px}
   .nav ul a{font:500 1.9rem/1 var(--serif);color:var(--ice)}
-  .sig-grid,.atelier-grid,.watch-grid,.house-grid,.faq-grid{grid-template-columns:1fr}
-  .sig-pic{max-width:420px}
+  .note{display:none}
+  .gem-wrap{width:min(62vw,34vh,340px)}
+  .wm{font-size:min(24vw,15vh)}
+  .wm-sub{font-size:min(2.6vw,1.8vh)}
+  .hero h1{font-size:min(6.4vw,4.2vh)}
+  .bar-in{justify-content:center;text-align:center}
+  .bar-worn{justify-content:center}
+  .bar-facts{justify-content:center}
+  .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:clamp(200px,44vw,300px)}
+  .t1{grid-column:1;grid-row:span 2}
+  .t2{grid-column:2;grid-row:span 2}
+  .t3{grid-column:1/3}
+  .t4{grid-column:1}
+  .t5{grid-column:2}
+  .atelier-grid,.faq-grid{grid-template-columns:1fr}
   .stage{min-height:460px}
-  .watch-grid .w-col{max-width:520px;margin:0 auto;width:100%}
+  .watch{grid-template-columns:1fr;min-height:0}
+  .ws-img{aspect-ratio:4/5}
+  .ws-img::after{background:linear-gradient(to bottom,transparent 70%,rgba(4,5,6,.95))}
   .bento{grid-template-columns:1fr 1fr;grid-template-rows:none}
   .b1{grid-column:1/3;grid-row:auto;aspect-ratio:4/5}
-  .b2,.b3,.b4{grid-column:auto;grid-row:auto;aspect-ratio:3/4}
-  .b4{grid-column:1/3;aspect-ratio:16/11}
-  .coords{display:none}
+  .b2,.b3{grid-column:auto;grid-row:auto;aspect-ratio:3/4}
+  .b4{grid-column:1/3;grid-row:auto;aspect-ratio:16/11}
 }
 @media (max-width:620px){
   .wrap{padding:0 18px}
   .hd-in{height:70px}
+  .hero{padding-top:70px}
   .nav{inset:70px 0 auto 0}
   .logo b{font-size:1.2rem}
-  .kicker{letter-spacing:.22em;font-size:.64rem}
-  .hero-ui .wrap{padding-top:96px;padding-bottom:30px}
-  .hero-bottom{flex-direction:column;align-items:stretch;gap:22px}
-  .hero h1{font-size:2.55rem}
-  .hero .lead{font-size:.96rem;margin-bottom:22px}
-  .hint{justify-content:center;text-align:left;order:-1;font-size:.58rem}
-  .hint i{width:38px;height:38px}
+  .kicker{letter-spacing:.22em;font-size:.62rem}
+  .hero-sub{font-size:.58rem;letter-spacing:.18em}
+  .hero-sub i{margin:0 .35em}
+  .hero .cta-row{width:100%;max-width:360px}
   .cta-row .btn{flex:1 1 100%}
-  .chip-a{left:-6px;bottom:30px}
-  .chip-b{right:-6px;top:24px}
-  .cert dd{font-size:1.05rem}
-  .cert dt,.cert dd{padding:11px 14px}
-  .versus{grid-template-columns:1fr}
-  .art b,.b1 b{font-size:1.5rem}
-  .art figcaption{left:14px;right:14px;bottom:12px}
-  .cities b{font-size:2.2rem}
-  .cities div{padding:18px 16px}
-  .ft-links{text-align:left}
+  .bar-worn a{font-size:1.15rem}
+  .bar-facts{font-size:.56rem;gap:8px 16px}
+  .mosaic{grid-template-columns:1fr;grid-auto-rows:auto}
+  .t1,.t2,.t3,.t4,.t5{grid-column:auto;grid-row:auto;aspect-ratio:4/5}
+  .t3{aspect-ratio:4/3}
+  .tile .who{display:none}
+  .mosaic-cta p{font-size:1.25rem}
   .stage{min-height:390px}
   .stage .chain{height:130px}
-  .seal{width:110px;height:110px}
+  .duo{grid-template-columns:1fr}
+  .house{grid-column:auto}
+  .art b,.b1 b{font-size:1.5rem}
+  .art figcaption{left:14px;right:14px;bottom:12px}
+  .ft-links{text-align:left}
+  .seal{width:96px;height:96px}
   .fab{right:16px;bottom:16px;width:54px;height:54px}
-  .cf-track{gap:18px}
-  .cf-info h3{font-size:1.7rem}
 }
 </style>
 </head>
@@ -423,142 +446,113 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 
 <main>
 
-<!-- HÉROS : diamant 3D -->
+<!-- HÉROS : le logo NFL en 3D -->
 <section class="hero" id="top">
-  <div class="hero-fallback" aria-hidden="true"><span class="ice">NFL</span></div>
-  <canvas id="gem" aria-label="Diamant en 3D : faites-le tourner" role="img"></canvas>
-  <div class="hero-shade"></div>
-  <div class="hero-ui">
-    <div class="wrap">
-      <div class="hero-top">
-        <span class="kicker rv" data-fr>Joaillerie sur mesure · Dubaï — Paris</span>
-        <span class="kicker rv" data-en>Custom jewellery · Dubai — Paris</span>
-        <span class="coords rv d1">25.20° N · 55.27° E<br>48.86° N · 2.35° E</span>
+  <div class="hero-bg"></div>
+
+  <div class="float float-l intro" aria-hidden="true">
+    <figure class="fcard fc1" data-full="img/hd-pendentif-nfl.webp"><img src="img/hd-pendentif-nfl.webp" alt="Pendentif NFL serti de diamants" width="1024" height="1536"><figcaption><small>N° 001</small><b data-fr>Pendentif NFL</b><b data-en>NFL pendant</b></figcaption></figure>
+    <figure class="fcard fc2" data-full="img/hd-pendentif-grappe.webp"><img style="transform:scale(1.9);transform-origin:47% 64%" src="img/hd-pendentif-grappe.webp" alt="Pendentif grappe en pierres violettes" width="1024" height="1536"></figure>
+  </div>
+  <div class="float float-r intro" aria-hidden="true">
+    <figure class="fcard fc1" data-full="img/hd-montre-studio.webp"><img src="img/hd-montre-studio.webp" alt="Montre entièrement sertie de diamants" width="1024" height="1536"><figcaption><small>N° 005</small><b data-fr>Montre full iced</b><b data-en>Full iced watch</b></figcaption></figure>
+    <figure class="fcard fc2" data-full="img/hd-bracelet-gazo.webp"><img style="transform:scale(1.8);transform-origin:30% 52%" src="img/hd-bracelet-gazo.webp" alt="Bracelet sur mesure serti" width="1024" height="1536"></figure>
+  </div>
+
+  <div class="hero-c">
+    <div class="gem-wrap intro">
+      <svg class="gem-fallback" viewBox="0 0 40 30" fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h22l7 8-18 17L2 11z"/><path d="M2 11h36M15 3l-4 8 9 17 9-17-4-8M11 11l9-8 9 8"/></svg>
+      <canvas id="gem" role="img" aria-label="Diamant en 3D"></canvas>
+      <span class="note note-l" data-fr>Taille brillant</span><span class="note note-l" data-en>Brilliant cut</span>
+      <span class="note note-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.8 3.6v4h-4M5.2 20.4v-4h4"/></svg><b data-fr style="font-weight:600">Faites-le tourner</b><b data-en style="font-weight:600">Spin it</b></span>
+    </div>
+    <div class="wordmark intro i1" aria-hidden="true"><span class="wm">NFL</span><span class="wm-sub">JEWELLERS</span></div>
+    <h1 class="intro i2" data-fr><span class="sr">NFL Jewellers — </span>Votre nom, <b>serti de diamants.</b></h1>
+    <h1 class="intro i2" data-en><span class="sr">NFL Jewellers — </span>Your name, <b>set in diamonds.</b></h1>
+    <p class="hero-sub intro i3" data-fr>Pendentifs sur mesure<i>◆</i>Chaînes<i>◆</i>Bracelets<i>◆</i>Montres de luxe</p>
+    <p class="hero-sub intro i3" data-en>Custom pendants<i>◆</i>Chains<i>◆</i>Bracelets<i>◆</i>Luxury watches</p>
+    <div class="cta-row intro i4">
+      <a class="btn btn-ice" href="#atelier"><span data-fr>Créer ma pièce</span><span data-en>Design my piece</span></a>
+      <a class="btn btn-line" href="#collection"><span data-fr>Voir la collection</span><span data-en>See the collection</span></a>
+    </div>
+  </div>
+
+  <div class="hero-bar intro i5">
+    <div class="wrap bar-in">
+      <div class="bar-worn">
+        <span data-fr>Ils portent NFL</span><span data-en>Worn by</span>
+        <a href="https://www.instagram.com/gazo_officiel/" target="_blank" rel="noopener">Gazo</a>
+        <a href="https://www.instagram.com/anasofficiel_/" target="_blank" rel="noopener">Many</a>
+        <a href="https://www.instagram.com/sadek93zoo/" target="_blank" rel="noopener">Sadek</a>
+        <a href="https://www.instagram.com/kell_rbl/" target="_blank" rel="noopener">Kell RBL</a>
       </div>
-      <div class="hero-bottom">
-        <div>
-          <h1 class="rv d1" data-fr>Votre nom, <em class="ice">serti de diamants.</em></h1>
-          <h1 class="rv d1" data-en>Your name, <em class="ice">set in diamonds.</em></h1>
-          <p class="lead rv d2" data-fr>Pendentifs personnalisés, chaînes, bracelets et montres de luxe. Diamants naturels ou de laboratoire, au meilleur prix.</p>
-          <p class="lead rv d2" data-en>Custom pendants, chains, bracelets and luxury watches. Natural or lab-grown diamonds, at the best price.</p>
-          <div class="cta-row rv d3">
-            <a class="btn btn-ice" href="#atelier"><span data-fr>Créer ma pièce</span><span data-en>Design my piece</span></a>
-            <a class="btn btn-line" href="#collection"><span data-fr>La collection</span><span data-en>The collection</span></a>
-          </div>
-        </div>
-        <div class="hint rv d3">
-          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.8 3.6v4h-4M5.2 20.4v-4h4"/></svg></i>
-          <span data-fr>Faites tourner<br>le diamant</span><span data-en>Spin<br>the diamond</span>
-        </div>
+      <div class="bar-facts">
+        <span data-fr>Diamants VVS</span><span data-en>VVS diamonds</span>
+        <span data-fr>Naturel &amp; laboratoire</span><span data-en>Natural &amp; lab-grown</span>
+        <span data-fr>Dubaï — Paris</span><span data-en>Dubai — Paris</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MANIFESTE -->
-<section class="manifesto">
+<!-- COLLECTION -->
+<section class="sec" id="collection">
   <div class="wrap">
-    <p class="mf" data-fr>Un nom. Un logo. Une histoire. <em>On les transforme</em> en pièces qu'on remarque depuis l'autre bout de la salle.</p>
-    <p class="mf" data-en>A name. A logo. A story. <em>We turn them</em> into pieces you notice from across the room.</p>
-    <div class="worn rv">
-      <p data-fr>Ils portent NFL</p><p data-en>Worn by</p>
-      <ul>
-        <li><a href="https://www.instagram.com/gazo_officiel/" target="_blank" rel="noopener">Gazo</a></li>
-        <li><a href="https://www.instagram.com/anasofficiel_/" target="_blank" rel="noopener">Many</a></li>
-        <li><a href="https://www.instagram.com/sadek93zoo/" target="_blank" rel="noopener">Sadek</a></li>
-        <li><a href="https://www.instagram.com/kell_rbl/" target="_blank" rel="noopener">Kell RBL</a></li>
-      </ul>
+    <div class="sec-head">
+      <div>
+        <span class="kicker rv"><b>01</b>Collection</span>
+        <h2 class="rv d1" data-fr>Des pièces <em class="ice">uniques.</em></h2>
+        <h2 class="rv d1" data-en>One-of-a-kind <em class="ice">pieces.</em></h2>
+      </div>
+      <p class="rv d2" data-fr>Un nom, un logo, une histoire : on les transforme en pièces qu'on remarque depuis l'autre bout de la salle. Voici les dernières sorties de l'atelier.</p>
+      <p class="rv d2" data-en>A name, a logo, a story: we turn them into pieces you notice from across the room. Here are the latest from the workshop.</p>
     </div>
-  </div>
-</section>
-
-<!-- SIGNATURE -->
-<section class="sec" id="signature" style="padding-top:0">
-  <div class="wrap sig-grid">
-    <div class="sig-pic tilt rv" data-tilt="10">
-      <div class="tilt-in">
-        <div class="ph" data-full="img/hd-pendentif-nfl.webp"><img src="img/hd-pendentif-nfl.webp" alt="Pendentif NFL en or rose et or blanc serti de diamants VVS" width="1024" height="1536" loading="lazy"></div>
+    <div class="mosaic">
+      <figure class="tile t1 clip" data-tilt="4" data-full="img/hd-pendentif-nfl.webp" tabindex="0">
+        <img src="img/hd-pendentif-nfl.webp" alt="Pendentif NFL en or rose et or blanc serti de diamants VVS" width="1024" height="1536" loading="lazy" style="object-position:50% 40%">
         <div class="glare"></div>
-        <div class="chip chip-a"><small>N° 001</small><b data-fr>Pendentif NFL</b><b data-en>NFL pendant</b></div>
-        <div class="chip chip-b"><b>VVS</b></div>
-      </div>
+        <figcaption><div><span class="no">N° 001</span><h3 data-fr>Pendentif NFL</h3><h3 data-en>NFL pendant</h3><p data-fr>Or rose &amp; or blanc · diamants VVS</p><p data-en>Rose &amp; white gold · VVS diamonds</p></div></figcaption>
+      </figure>
+      <figure class="tile t2 clip d1" data-tilt="4" data-full="img/hd-bracelet-gazo.webp" tabindex="0">
+        <img src="img/hd-bracelet-gazo.webp" alt="Bracelet sur mesure aux maillons infini sertis et pierres roses" width="1024" height="1536" loading="lazy">
+        <div class="glare"></div>
+        <figcaption><div><span class="no">N° 002</span><h3 data-fr>Bracelet sur mesure</h3><h3 data-en>Custom bracelet</h3><p data-fr>Maillons infini · pierres roses</p><p data-en>Infinity links · pink stones</p></div><span class="who">@gazo_officiel</span></figcaption>
+      </figure>
+      <figure class="tile t3 clip d2" data-tilt="3" data-full="img/hd-pendentif-many.webp" tabindex="0">
+        <img src="img/hd-pendentif-many.webp" alt="Pendentif MANY serti de baguettes sur chaîne tennis avec croissant et étoile" width="1024" height="1536" loading="lazy">
+        <div class="glare"></div>
+        <figcaption><div><span class="no">N° 003</span><h3 data-fr>Pendentif MANY</h3><h3 data-en>MANY pendant</h3><p data-fr>Baguettes · chaîne tennis, croissant &amp; étoile</p><p data-en>Baguettes · tennis chain, crescent &amp; star</p></div><span class="who">@anasofficiel_</span></figcaption>
+      </figure>
+      <figure class="tile t4 clip d2" data-tilt="4" data-full="img/hd-pendentif-grappe.webp" tabindex="0">
+        <img src="img/hd-pendentif-grappe.webp" alt="Pendentif grappe de raisin en pierres violettes avec feuille verte" width="1024" height="1536" loading="lazy" style="object-position:50% 55%">
+        <div class="glare"></div>
+        <figcaption><div><span class="no">N° 004</span><h3 data-fr>« Grappe »</h3><h3 data-en>“Grape”</h3><p data-fr>Pierres violettes · feuille verte</p><p data-en>Purple stones · green leaf</p></div><span class="who">@sadek93zoo</span></figcaption>
+      </figure>
+      <figure class="tile t5 clip d3" data-tilt="4" data-full="img/hd-montre-ecrin.webp" tabindex="0">
+        <img src="img/hd-montre-ecrin.webp" alt="Montre entièrement sertie de diamants dans son écrin" width="1024" height="1536" loading="lazy" style="object-position:50% 45%">
+        <div class="glare"></div>
+        <figcaption><div><span class="no">N° 005</span><h3>Full iced</h3><p data-fr>Montre sertie de diamants</p><p data-en>Diamond-set watch</p></div></figcaption>
+      </figure>
     </div>
-    <div class="sig-txt">
-      <span class="kicker rv"><b>01</b><span data-fr>La pièce signature</span><span data-en>The signature piece</span></span>
-      <h2 class="rv d1" data-fr>Le pendentif <em class="ice">NFL.</em></h2>
-      <h2 class="rv d1" data-en>The <em class="ice">NFL</em> pendant.</h2>
-      <p class="lead rv d2" data-fr>Les trois lettres de la maison, superposées et serties de diamants baguette et brillants, sur or rose et or blanc. Une pièce qui résume ce qu'on fait : du volume, de la lumière, et aucune pierre laissée au hasard.</p>
-      <p class="lead rv d2" data-en>The three letters of the house, stacked and set with baguette and brilliant diamonds on rose and white gold. One piece that sums up what we do: volume, light, and not a single stone left to chance.</p>
-      <div class="cert rv d2">
-        <div class="cert-h"><span data-fr>Fiche de la pièce</span><span data-en>Piece record</span><span>N° 001</span></div>
-        <dl>
-          <dt data-fr>Métal</dt><dt data-en>Metal</dt><dd data-fr>Or rose &amp; or blanc</dd><dd data-en>Rose &amp; white gold</dd>
-          <dt data-fr>Pierres</dt><dt data-en>Stones</dt><dd data-fr>Diamants VVS</dd><dd data-en>VVS diamonds</dd>
-          <dt data-fr>Tailles</dt><dt data-en>Cuts</dt><dd data-fr>Baguette &amp; brillant</dd><dd data-en>Baguette &amp; brilliant</dd>
-          <dt data-fr>Bélière</dt><dt data-en>Bail</dt><dd data-fr>Pavé de diamants</dd><dd data-en>Diamond pavé</dd>
-          <dt data-fr>Chaîne</dt><dt data-en>Chain</dt><dd data-fr>Corde (rope)</dd><dd data-en>Rope chain</dd>
-        </dl>
-      </div>
-      <div class="cta-row rv d3"><a class="btn btn-ice" href="#atelier"><span data-fr>Je veux la mienne</span><span data-en>I want mine</span></a></div>
-    </div>
-  </div>
-</section>
-
-<!-- COLLECTION : carrousel 3D -->
-<section class="sec collection" id="collection" style="padding-top:clamp(40px,6vw,80px)">
-  <div class="wrap sec-head">
-    <div>
-      <span class="kicker rv"><b>02</b>Collection</span>
-      <h2 class="rv d1" data-fr>Des pièces <em>uniques.</em></h2>
-      <h2 class="rv d1" data-en>One-of-a-kind <em>pieces.</em></h2>
-    </div>
-    <div class="cf-ctrl rv d2">
-      <button type="button" id="cfPrev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <span class="cf-count" id="cfCount"><b>01</b> / 05</span>
-      <button type="button" id="cfNext" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg></button>
-    </div>
-  </div>
-  <div class="cf-track" id="cfTrack">
-    <figure class="cf-card" data-full="img/hd-pendentif-many.webp" tabindex="0">
-      <img src="img/hd-pendentif-many.webp" alt="Pendentif MANY serti de baguettes sur chaîne tennis avec croissant et étoile" width="1024" height="1536" loading="lazy">
-      <figcaption class="cf-info"><span class="no">N° 002</span><h3 data-fr>Pendentif MANY</h3><h3 data-en>MANY pendant</h3><p data-fr>Baguettes &amp; pavé · chaîne tennis, croissant &amp; étoile</p><p data-en>Baguettes &amp; pavé · tennis chain, crescent &amp; star</p><span class="who">@anasofficiel_</span></figcaption>
-    </figure>
-    <figure class="cf-card" data-full="img/hd-bracelet-gazo.webp" tabindex="0">
-      <img src="img/hd-bracelet-gazo.webp" alt="Bracelet sur mesure aux maillons infini sertis et pierres roses" width="1024" height="1536" loading="lazy">
-      <figcaption class="cf-info"><span class="no">N° 003</span><h3 data-fr>Bracelet sur mesure</h3><h3 data-en>Custom bracelet</h3><p data-fr>Maillons infini sertis · pierres roses · plaque gravée</p><p data-en>Iced infinity links · pink stones · engraved plate</p><span class="who">@gazo_officiel</span></figcaption>
-    </figure>
-    <figure class="cf-card" data-full="img/hd-pendentif-grappe.webp" tabindex="0">
-      <img src="img/hd-pendentif-grappe.webp" alt="Pendentif grappe de raisin en pierres violettes avec feuille verte, dans son écrin" width="1024" height="1536" loading="lazy">
-      <figcaption class="cf-info"><span class="no">N° 004</span><h3 data-fr>Pendentif « grappe »</h3><h3 data-en>“Grape” pendant</h3><p data-fr>Pierres violettes · feuille pavée de vert · chaîne tennis</p><p data-en>Purple stones · green pavé leaf · tennis chain</p><span class="who">@sadek93zoo</span></figcaption>
-    </figure>
-    <figure class="cf-card" data-full="img/hd-montre-ecrin.webp" tabindex="0">
-      <img src="img/hd-montre-ecrin.webp" alt="Montre entièrement sertie de diamants dans son écrin" width="1024" height="1536" loading="lazy">
-      <figcaption class="cf-info"><span class="no">N° 005</span><h3 data-fr>Montre full iced</h3><h3 data-en>Full iced watch</h3><p data-fr>Boîtier, lunette &amp; bracelet sertis de diamants</p><p data-en>Case, bezel &amp; bracelet set with diamonds</p><span class="who" data-fr>Montres de luxe</span><span class="who" data-en>Luxury watches</span></figcaption>
-    </figure>
-    <div class="cf-card cf-cta">
-      <div class="cf-ratio">
-        <svg class="gemico" viewBox="0 0 40 30" fill="none" stroke="currentColor" stroke-width=".9" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h22l7 8-18 17L2 11z"/><path d="M2 11h36M15 3l-4 8 9 17 9-17-4-8M11 11l9-8 9 8"/></svg>
-        <span class="no">N° 006</span>
-        <h3 data-fr>La vôtre.</h3><h3 data-en>Yours.</h3>
-        <p data-fr>Un prénom, un logo, une idée : on la dessine avec vous.</p>
-        <p data-en>A name, a logo, an idea: we design it with you.</p>
-        <a class="btn btn-teal" href="#atelier"><span data-fr>Créer ma pièce</span><span data-en>Design my piece</span></a>
-      </div>
+    <div class="mosaic-cta rv">
+      <p data-fr>N° 006 : <em>la vôtre.</em> Un prénom, un logo, une idée ? On la dessine avec vous.</p>
+      <p data-en>N° 006: <em>yours.</em> A name, a logo, an idea? We design it with you.</p>
+      <a class="btn btn-teal" href="#atelier"><span data-fr>Créer ma pièce</span><span data-en>Design my piece</span></a>
     </div>
   </div>
 </section>
 
 <!-- ATELIER -->
-<section class="sec" id="atelier" style="padding-top:clamp(40px,6vw,80px)">
+<section class="sec atelier" id="atelier">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="kicker rv"><b>03</b><span data-fr>L'atelier</span><span data-en>The workshop</span></span>
-        <h2 class="rv d1" data-fr>Imaginez <em>la vôtre.</em></h2>
-        <h2 class="rv d1" data-en>Picture <em>yours.</em></h2>
+        <span class="kicker rv"><b>02</b><span data-fr>L'atelier</span><span data-en>The workshop</span></span>
+        <h2 class="rv d1" data-fr>Imaginez <em class="ice">la vôtre.</em></h2>
+        <h2 class="rv d1" data-en>Picture <em class="ice">yours.</em></h2>
       </div>
-      <p class="rv d2" data-fr>Écrivez un nom, choisissez le style et le métal. On reçoit votre idée et on vous répond avec un dessin et un devis.</p>
-      <p class="rv d2" data-en>Type a name, pick the style and the metal. We receive your idea and reply with a design and a quote.</p>
+      <p class="rv d2" data-fr>Écrivez un nom, choisissez le style et le métal, et tournez le pendentif avec la souris. On reçoit votre idée et on vous répond avec un dessin et un devis.</p>
+      <p class="rv d2" data-en>Type a name, pick the style and the metal, and turn the pendant with your mouse. We receive your idea and reply with a design and a quote.</p>
     </div>
     <div class="atelier-grid">
       <div class="stage m-blanc rv" id="stage">
@@ -625,51 +619,71 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
             Snapchat
           </button>
         </div>
-        <p class="note" id="note" aria-live="polite"></p>
+        <p class="msg" id="note" aria-live="polite"></p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- MONTRES -->
-<section class="sec watch" id="montres">
-  <div class="wrap watch-grid">
-    <div class="w-col">
-      <div class="w-main clip" data-full="img/hd-montre-studio.webp"><img src="img/hd-montre-studio.webp" alt="Montre de luxe entièrement sertie de diamants baguette" width="1024" height="1536" loading="lazy"></div>
-      <div class="w-sub" data-speed="-0.12" data-full="img/hd-kell-rbl-boutique.webp"><img src="img/hd-kell-rbl-boutique.webp" alt="Remise d'une montre et de chaînes en boutique" width="1024" height="1536" loading="lazy"></div>
+<!-- MONTRES : plein écran -->
+<section class="watch" id="montres">
+  <div class="ws-img" data-full="img/hd-montre-studio.webp"><img src="img/hd-montre-studio.webp" alt="Montre de luxe entièrement sertie de diamants baguette" width="1024" height="1536" loading="lazy" data-speed="0.07"></div>
+  <div class="ws-txt">
+    <span class="kicker rv"><b>03</b><span data-fr>Montres de luxe</span><span data-en>Luxury watches</span></span>
+    <h2 class="rv d1" data-fr>L'heure, <em class="ice">en mieux.</em></h2>
+    <h2 class="rv d1" data-en>Time, <em class="ice">but better.</em></h2>
+    <p class="lead rv d2" data-fr>Des modèles d'exception, d'origine ou entièrement sertis de diamants. Dites-nous la référence que vous cherchez : on la trouve au meilleur prix depuis Dubaï, avec la chaîne assortie si vous le voulez.</p>
+    <p class="lead rv d2" data-en>Exceptional models, stock or fully iced with diamonds. Tell us the reference you're after: we source it at the best price from Dubai, with a matching chain if you like.</p>
+    <div class="ws-minis rv d2">
+      <figure data-full="img/hd-montre-ecrin.webp"><img src="img/hd-montre-ecrin.webp" alt="Montre sertie dans son écrin" width="1024" height="1536" loading="lazy" style="object-position:50% 45%"><figcaption data-fr>Dans son écrin</figcaption><figcaption data-en>In its box</figcaption></figure>
+      <figure data-full="img/hd-kell-rbl-boutique.webp"><img src="img/hd-kell-rbl-boutique.webp" alt="Remise d'une montre et de chaînes en boutique" width="1024" height="1536" loading="lazy" style="object-position:50% 30%"><figcaption data-fr>Remise en boutique</figcaption><figcaption data-en>Boutique hand-over</figcaption></figure>
     </div>
-    <div class="watch-txt">
-      <span class="kicker rv"><b>04</b><span data-fr>Montres de luxe</span><span data-en>Luxury watches</span></span>
-      <h2 class="rv d1" data-fr>L'heure, <em class="ice">en mieux.</em></h2>
-      <h2 class="rv d1" data-en>Time, <em class="ice">but better.</em></h2>
-      <p class="lead rv d2" data-fr>Des modèles d'exception, d'origine ou entièrement sertis de diamants. Dites-nous la référence que vous cherchez : on la trouve au meilleur prix depuis Dubaï, avec la chaîne assortie si vous le voulez.</p>
-      <p class="lead rv d2" data-en>Exceptional models, stock or fully iced with diamonds. Tell us the reference you're after: we source it at the best price from Dubai, with a matching chain if you like.</p>
-      <div class="seal-row rv d2">
-        <div class="seal" id="seal" aria-hidden="true">
-          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle cx="100" cy="100" r="96" fill="none" stroke="rgba(214,226,240,.22)"/><circle cx="100" cy="100" r="62" fill="none" stroke="rgba(43,196,174,.4)"/><text><textPath href="#circ" textLength="496" lengthAdjust="spacing">NO FAKE · NFL JEWELLERS · DUBAÏ — PARIS ·</textPath></text></svg>
-          <b>#nofake</b>
-        </div>
-        <p data-fr>On ne vend pas de contrefaçons. NFL Jewellers n'est affilié à aucune des marques vendues.</p>
-        <p data-en>We don't sell fakes. NFL Jewellers is not affiliated with the brands we sell.</p>
+    <div class="seal-row rv d3">
+      <div class="seal" id="seal" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle cx="100" cy="100" r="96" fill="none" stroke="rgba(214,226,240,.22)"/><circle cx="100" cy="100" r="62" fill="none" stroke="rgba(43,196,174,.4)"/><text><textPath href="#circ" textLength="496" lengthAdjust="spacing">NO FAKE · NFL JEWELLERS · DUBAÏ — PARIS ·</textPath></text></svg>
+        <b>#nofake</b>
       </div>
-      <div class="cta-row rv d3" style="margin-top:34px">
-        <a class="btn btn-ice dm" data-msg="watch" href="https://ig.me/m/nfl_jewellers" target="_blank" rel="noopener"><span data-fr>Demander une montre</span><span data-en>Ask about a watch</span></a>
-      </div>
+      <p data-fr>On ne vend pas de contrefaçons. NFL Jewellers n'est affilié à aucune des marques vendues.</p>
+      <p data-en>We don't sell fakes. NFL Jewellers is not affiliated with the brands we sell.</p>
+    </div>
+    <div class="cta-row rv d3">
+      <a class="btn btn-ice dm" data-msg="watch" href="https://ig.me/m/nfl_jewellers" target="_blank" rel="noopener"><span data-fr>Demander une montre</span><span data-en>Ask about a watch</span></a>
     </div>
   </div>
 </section>
 
-<!-- NATUREL OU LABO -->
-<section class="sec" id="diamants" style="padding-top:clamp(40px,6vw,80px)">
+<!-- ARTISTES -->
+<section class="sec" id="artistes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker rv"><b>04</b><span data-fr>Ils portent NFL</span><span data-en>Worn by</span></span>
+        <h2 class="rv d1" data-fr>Portés <em class="ice">sur scène.</em></h2>
+        <h2 class="rv d1" data-en>Worn <em class="ice">on stage.</em></h2>
+      </div>
+      <p class="rv d2" data-fr>Des artistes du rap français nous confient leurs pièces. Le même atelier travaille pour vous.</p>
+      <p class="rv d2" data-en>French rap artists trust us with their pieces. The same workshop works for you.</p>
+    </div>
+    <div class="bento">
+      <figure class="art b1 clip" data-full="img/hd-kell-rbl.webp" tabindex="0"><img src="img/hd-kell-rbl.webp" alt="Kell RBL avec un pendentif sur mesure, une chaîne cubaine et une montre sertie" width="1024" height="1536" loading="lazy" style="object-position:50% 35%"><figcaption><b>Kell RBL</b><span data-fr>Pendentif logo, chaîne cubaine &amp; montre</span><span data-en>Logo pendant, Cuban chain &amp; watch</span></figcaption></figure>
+      <figure class="art b2 clip d1" data-full="img/gazo.jpg" tabindex="0"><img src="img/gazo.jpg" alt="Gazo portant son bracelet NFL" width="640" height="1136" loading="lazy" style="object-position:50% 30%"><figcaption><b>Gazo</b><span data-fr>Bracelet sur mesure</span><span data-en>Custom bracelet</span></figcaption></figure>
+      <figure class="art b3 clip d2" data-full="img/many.jpg" tabindex="0"><img src="img/many.jpg" alt="Many portant son pendentif MANY" width="640" height="1136" loading="lazy" style="object-position:50% 22%"><figcaption><b>Many</b><span data-fr>Pendentif MANY</span><span data-en>MANY pendant</span></figcaption></figure>
+      <figure class="art b4 clip d3" data-full="img/sadek.jpg" tabindex="0"><img src="img/sadek.jpg" alt="Remise du pendentif grappe à Sadek" width="1080" height="1440" loading="lazy" style="object-position:60% 38%"><figcaption><b>Sadek</b><span data-fr>Pendentif « grappe »</span><span data-en>“Grape” pendant</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- DIAMANTS + MAISON -->
+<section class="sec" id="diamants" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
       <div>
         <span class="kicker rv"><b>05</b><span data-fr>Naturel ou laboratoire</span><span data-en>Natural or lab-grown</span></span>
-        <h2 class="rv d1" data-fr>Deux vrais diamants. <em>À vous de choisir.</em></h2>
-        <h2 class="rv d1" data-en>Two real diamonds. <em>Your call.</em></h2>
+        <h2 class="rv d1" data-fr>Deux vrais diamants. <em class="ice">À vous de choisir.</em></h2>
+        <h2 class="rv d1" data-en>Two real diamonds. <em class="ice">Your call.</em></h2>
       </div>
     </div>
-    <div class="versus">
+    <div class="duo">
       <div class="vs rv">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M10 18l8-10 14 2 7 11-6 17-15 4L6 30z"/><path d="M18 8l3 13 11-11M6 30l15-9 12 21M21 21l18 0M21 21l-3 21"/></svg>
         <span class="kicker" data-fr>Diamant naturel</span><span class="kicker" data-en>Natural diamond</span>
@@ -684,58 +698,36 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
         <ul data-fr><li>Même composition, même dureté et même éclat que le naturel.</li><li>Créé en laboratoire, sans extraction minière.</li><li>Bien plus de carats pour le même budget.</li></ul>
         <ul data-en><li>Same composition, hardness and sparkle as natural.</li><li>Grown in a lab, no mining involved.</li><li>Far more carats for the same budget.</li></ul>
       </div>
+      <div class="house rv d2" id="maison">
+        <img src="img/dubai-coffret.jpg" alt="Le coffret turquoise NFL Jewellers à Dubaï" width="1080" height="1440" loading="lazy">
+        <div class="house-in">
+          <span class="kicker" data-fr>La maison</span><span class="kicker" data-en>The house</span>
+          <h3 data-fr style="margin-top:12px">Entre Dubaï <em>et Paris.</em></h3>
+          <h3 data-en style="margin-top:12px">Between Dubai <em>and Paris.</em></h3>
+          <p data-fr>Dubaï, capitale de l'or et du diamant ; Paris, où vivent beaucoup de nos clients. Chaque pièce part dans le coffret turquoise NFL.</p>
+          <p data-en>Dubai, the capital of gold and diamonds; Paris, home to many of our clients. Every piece leaves in the turquoise NFL box.</p>
+          <div class="cities">
+            <div><small data-fr>Dubaï</small><small data-en>Dubai</small><b id="tDxb">--:--</b><span>GMT+4</span></div>
+            <div><small>Paris</small><b id="tPar">--:--</b><span id="zPar">CET</span></div>
+          </div>
+        </div>
+      </div>
     </div>
     <p class="both rv" data-fr>Pas sûr ? Dites-nous votre budget : on vous conseille la meilleure option pour votre pièce.</p>
     <p class="both rv" data-en>Not sure? Tell us your budget and we'll advise the best option for your piece.</p>
   </div>
 </section>
 
-<!-- ARTISTES -->
-<section class="sec" id="artistes" style="padding-top:clamp(40px,6vw,80px)">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="kicker rv"><b>06</b><span data-fr>Ils portent NFL</span><span data-en>Worn by</span></span>
-        <h2 class="rv d1" data-fr>Portés <em>sur scène.</em></h2>
-        <h2 class="rv d1" data-en>Worn <em>on stage.</em></h2>
-      </div>
-      <p class="rv d2" data-fr>Des artistes du rap français nous confient leurs pièces. Le même atelier travaille pour vous.</p>
-      <p class="rv d2" data-en>French rap artists trust us with their pieces. The same workshop works for you.</p>
-    </div>
-    <div class="bento">
-      <figure class="art b1 clip" data-full="img/hd-kell-rbl.webp" tabindex="0"><img src="img/hd-kell-rbl.webp" alt="Kell RBL avec un pendentif sur mesure, une chaîne cubaine et une montre sertie" width="1024" height="1536" loading="lazy" style="object-position:50% 35%"><figcaption><b>Kell RBL</b><span data-fr>Pendentif logo, chaîne cubaine &amp; montre</span><span data-en>Logo pendant, Cuban chain &amp; watch</span></figcaption></figure>
-      <figure class="art b2 clip d1" data-full="img/gazo.jpg" tabindex="0"><img src="img/gazo.jpg" alt="Gazo portant son bracelet NFL" width="640" height="1136" loading="lazy" style="object-position:50% 30%"><figcaption><b>Gazo</b><span data-fr>Bracelet sur mesure</span><span data-en>Custom bracelet</span></figcaption></figure>
-      <figure class="art b3 clip d2" data-full="img/many.jpg" tabindex="0"><img src="img/many.jpg" alt="Many portant son pendentif MANY" width="640" height="1136" loading="lazy" style="object-position:50% 22%"><figcaption><b>Many</b><span data-fr>Pendentif MANY</span><span data-en>MANY pendant</span></figcaption></figure>
-      <figure class="art b4 clip d3" data-full="img/sadek.jpg" tabindex="0"><img src="img/sadek.jpg" alt="Remise du pendentif grappe à Sadek" width="1080" height="1440" loading="lazy" style="object-position:60% 38%"><figcaption><b>Sadek</b><span data-fr>Pendentif « grappe »</span><span data-en>“Grape” pendant</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- LA MAISON -->
-<section class="sec house" id="maison">
-  <div class="wrap house-grid">
-    <div class="house-pic clip"><img src="img/dubai-coffret.jpg" alt="Le coffret turquoise NFL Jewellers à Dubaï" width="1080" height="1440" loading="lazy" data-speed="0.06"></div>
-    <div class="house-txt">
-      <span class="kicker rv"><b>07</b><span data-fr>La maison</span><span data-en>The house</span></span>
-      <h2 class="rv d1" data-fr>Entre Dubaï <em>et Paris.</em></h2>
-      <h2 class="rv d1" data-en>Between Dubai <em>and Paris.</em></h2>
-      <p class="lead rv d2" data-fr>NFL Jewellers vit entre deux villes : Dubaï, capitale de l'or et du diamant, et Paris, où se trouvent beaucoup de nos clients. On y dessine des pièces qui se voient de loin et qui tiennent de près, livrées dans le coffret turquoise NFL.</p>
-      <p class="lead rv d2" data-en>NFL Jewellers lives between two cities: Dubai, the capital of gold and diamonds, and Paris, home to many of our clients. We design pieces that stand out from afar and hold up up close, delivered in the turquoise NFL box.</p>
-      <div class="cities rv d3">
-        <div><small data-fr>Heure à Dubaï</small><small data-en>Dubai time</small><b id="tDxb">--:--</b><span>GMT+4</span></div>
-        <div><small data-fr>Heure à Paris</small><small data-en>Paris time</small><b id="tPar">--:--</b><span id="zPar">CET</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
-<section class="sec faq" id="faq">
+<section class="sec faq" id="faq" style="padding-top:0">
   <div class="wrap faq-grid">
-    <div>
-      <span class="kicker rv"><b>08</b><span data-fr>Questions fréquentes</span><span data-en>FAQ</span></span>
-      <h2 class="rv d1" data-fr>Avant de <em>commander.</em></h2>
-      <h2 class="rv d1" data-en>Before you <em>order.</em></h2>
+    <div class="faq-side">
+      <span class="kicker rv"><b>06</b><span data-fr>Questions fréquentes</span><span data-en>FAQ</span></span>
+      <h2 class="rv d1" data-fr>Avant de <em class="ice">commander.</em></h2>
+      <h2 class="rv d1" data-en>Before you <em class="ice">order.</em></h2>
+      <p class="rv d2" data-fr>Une autre question ? On répond sur Instagram et Snapchat.</p>
+      <p class="rv d2" data-en>Another question? We reply on Instagram and Snapchat.</p>
+      <div class="cta-row rv d3"><a class="btn btn-line dm" href="https://ig.me/m/nfl_jewellers" target="_blank" rel="noopener"><span data-fr>Poser une question</span><span data-en>Ask a question</span></a></div>
     </div>
     <div class="rv d1">
       <details>
@@ -773,9 +765,9 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 </section>
 
 <!-- CONTACT -->
-<section class="contact sec" id="contact">
+<section class="contact" id="contact">
   <div class="wrap">
-    <span class="kicker rv"><b>09</b>Contact</span>
+    <span class="kicker rv"><b>07</b>Contact</span>
     <h2 class="rv d1" data-fr>Parlons de <em class="ice">votre pièce.</em></h2>
     <h2 class="rv d1" data-en>Let's talk about <em class="ice">your piece.</em></h2>
     <p class="rv d2" data-fr>Un prénom, un logo, une montre en tête ? Écrivez-nous : on vous répond avec des idées et un prix.</p>
@@ -841,16 +833,16 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fine = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ----- langue ----- */
   function getLang(){ return root.lang === 'en' ? 'en' : 'fr'; }
   function setLang(l){
     root.lang = l;
     document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('on', b.dataset.lang === l); });
     try{ localStorage.setItem('nfl-lang', l); }catch(e){}
-    updateWaLinks(); onScroll();
+    updateWaLinks(); render();
   }
+
   /* ----- en-tête et menu ----- */
-  var hd = document.getElementById('hd'), burger = document.getElementById('burger');
+  var hd = document.getElementById('hd'), burger = document.getElementById('burger'), fab = document.querySelector('.fab');
   burger.addEventListener('click', function(){
     var open = hd.classList.toggle('open');
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -860,114 +852,53 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
   /* ----- apparitions ----- */
   var rv = document.querySelectorAll('.rv,.clip');
   if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.1, rootMargin:'0px 0px -30px 0px'});
     rv.forEach(function(el){ io.observe(el); });
   } else { rv.forEach(function(el){ el.classList.add('in'); }); }
 
-  /* ----- manifeste : les mots s'allument en défilant ----- */
-  var mfWords = [];
-  document.querySelectorAll('.mf').forEach(function(p){
-    var list = [];
-    (function walk(node){
-      Array.prototype.slice.call(node.childNodes).forEach(function(n){
-        if(n.nodeType === 3){
-          var frag = document.createDocumentFragment();
-          n.textContent.split(/(\s+)/).forEach(function(part){
-            if(!part) return;
-            if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
-            var s = document.createElement('span'); s.className = 'w'; s.textContent = part; frag.appendChild(s); list.push(s);
-          });
-          n.parentNode.replaceChild(frag, n);
-        } else if(n.nodeType === 1){ walk(n); }
-      });
-    })(p);
-    mfWords.push({el:p, words:list});
-  });
-  function updateManifesto(){
-    mfWords.forEach(function(m){
-      if(!m.el.offsetParent) return;
-      var r = m.el.getBoundingClientRect(), vh = innerHeight;
-      var p = (vh * 0.9 - r.top) / (r.height + vh * 0.35);
-      p = Math.max(0, Math.min(1, p));
-      var lit = p * m.words.length * 1.1;
-      m.words.forEach(function(w, i){ w.style.opacity = reduce ? 1 : Math.max(.13, Math.min(1, lit - i)); });
+  /* ----- héros : parallaxe des pièces flottantes ----- */
+  var hero = document.getElementById('top');
+  if(fine && !reduce){
+    hero.addEventListener('pointermove', function(e){
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty('--mx', ((e.clientX - r.left) / r.width - .5).toFixed(3));
+      hero.style.setProperty('--my', ((e.clientY - r.top) / r.height - .5).toFixed(3));
     });
+    hero.addEventListener('pointerleave', function(){ hero.style.setProperty('--mx', 0); hero.style.setProperty('--my', 0); });
   }
 
-  /* ----- inclinaison 3D au survol ----- */
-  if(fine){
+  /* ----- inclinaison 3D des tuiles ----- */
+  if(fine && !reduce){
     document.querySelectorAll('[data-tilt]').forEach(function(t){
-      var inner = t.querySelector('.tilt-in'), max = parseFloat(t.dataset.tilt) || 8;
+      var max = parseFloat(t.dataset.tilt) || 5;
+      t.classList.add('tilt');
       t.addEventListener('pointermove', function(e){
         var r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
         t.classList.add('active');
-        inner.style.transform = 'rotateY(' + ((x - .5) * max * 2).toFixed(2) + 'deg) rotateX(' + ((.5 - y) * max * 2).toFixed(2) + 'deg)';
-        inner.style.setProperty('--gx', (x * 100) + '%'); inner.style.setProperty('--gy', (y * 100) + '%');
+        t.style.transform = 'perspective(1100px) rotateY(' + ((x - .5) * max * 2).toFixed(2) + 'deg) rotateX(' + ((.5 - y) * max * 2).toFixed(2) + 'deg)';
+        t.style.setProperty('--gx', (x * 100) + '%'); t.style.setProperty('--gy', (y * 100) + '%');
       });
-      t.addEventListener('pointerleave', function(){ t.classList.remove('active'); inner.style.transform = ''; });
+      t.addEventListener('pointerleave', function(){ t.classList.remove('active'); t.style.transform = ''; });
     });
   }
 
-  /* ----- collection : carrousel 3D ----- */
-  var track = document.getElementById('cfTrack'), cards = Array.prototype.slice.call(track.children), count = document.getElementById('cfCount');
-  function pad(n){ return (n < 10 ? '0' : '') + n; }
-  function updateCards(){
-    var tr = track.getBoundingClientRect(), mid = tr.left + tr.width / 2, best = 0, bestD = 1e9;
-    cards.forEach(function(c, i){
-      var r = c.getBoundingClientRect(), d = (r.left + r.width / 2 - mid) / (r.width + 34);
-      if(Math.abs(d) < bestD){ bestD = Math.abs(d); best = i; }
-      var cd = Math.max(-2.2, Math.min(2.2, d)), a = Math.abs(cd);
-      c.style.transform = 'perspective(1500px) rotateY(' + (-cd * 24).toFixed(2) + 'deg) translateZ(' + (-a * 90).toFixed(1) + 'px) scale(' + (1 - a * .05).toFixed(3) + ')';
-      c.style.opacity = (1 - Math.min(a, 2) * .22).toFixed(3);
-      c.style.zIndex = String(10 - Math.round(a * 3));
-    });
-    count.innerHTML = '<b>' + pad(best + 1) + '</b> / ' + pad(cards.length);
-  }
-  function go(dir){ var w = cards[0].getBoundingClientRect().width + 34; track.scrollBy({left: dir * w, behavior: reduce ? 'auto' : 'smooth'}); }
-  document.getElementById('cfPrev').addEventListener('click', function(){ go(-1); });
-  document.getElementById('cfNext').addEventListener('click', function(){ go(1); });
-  track.addEventListener('scroll', function(){ requestAnimationFrame(updateCards); }, {passive:true});
-  // glisser à la souris
-  var drag = null, moved = false;
-  track.addEventListener('pointerdown', function(e){
-    if(e.pointerType !== 'mouse' || e.button !== 0) return;
-    drag = {x: e.clientX, s: track.scrollLeft}; moved = false;
-  });
-  window.addEventListener('pointermove', function(e){
-    if(!drag) return;
-    var dx = e.clientX - drag.x;
-    if(Math.abs(dx) > 4){ moved = true; track.classList.add('dragging'); }
-    if(moved) track.scrollLeft = drag.s - dx;
-  });
-  window.addEventListener('pointerup', function(){
-    if(!drag) return; drag = null;
-    if(moved){
-      var tr = track.getBoundingClientRect(), mid = tr.left + tr.width / 2, best = null, bd = 1e9;
-      cards.forEach(function(c){ var r = c.getBoundingClientRect(), d = Math.abs(r.left + r.width / 2 - mid); if(d < bd){ bd = d; best = c; } });
-      track.classList.remove('dragging');
-      if(best){ var r = best.getBoundingClientRect(); track.scrollBy({left: r.left + r.width / 2 - mid, behavior:'smooth'}); }
-    }
-  });
-  track.addEventListener('click', function(e){ if(moved){ e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
-
-  /* ----- défilement : parallaxe, sceau, en-tête ----- */
-  var speeds = document.querySelectorAll('[data-speed]'), seal = document.getElementById('seal'), fab = document.querySelector('.fab'), ticking = false;
+  /* ----- défilement : en-tête, parallaxe, sceau ----- */
+  var speeds = document.querySelectorAll('[data-speed]'), seal = document.getElementById('seal'), ticking = false;
   function onScroll(){
-    hd.classList.toggle('solid', window.scrollY > 40);
-    fab.classList.toggle('on', window.scrollY > innerHeight * .6);
-    updateManifesto();
-    if(!reduce){
-      speeds.forEach(function(el){
-        var r = el.getBoundingClientRect();
-        if(r.bottom < -200 || r.top > innerHeight + 200) return;
-        var off = (r.top + r.height / 2 - innerHeight / 2) * parseFloat(el.dataset.speed);
-        el.style.transform = 'translate3d(0,' + off.toFixed(1) + 'px,0)';
-      });
-      if(seal) seal.style.transform = 'rotate(' + (window.scrollY * .06).toFixed(1) + 'deg)';
-    }
+    var y = window.scrollY;
+    hd.classList.toggle('solid', y > 40);
+    fab.classList.toggle('on', y > innerHeight * .6);
+    if(reduce) return;
+    speeds.forEach(function(el){
+      var r = el.parentNode.getBoundingClientRect();
+      if(r.bottom < -200 || r.top > innerHeight + 200) return;
+      var off = (r.top + r.height / 2 - innerHeight / 2) * parseFloat(el.dataset.speed);
+      el.style.transform = 'translate3d(0,' + off.toFixed(1) + 'px,0)';
+    });
+    if(seal) seal.style.transform = 'rotate(' + (y * .06).toFixed(1) + 'deg)';
   }
   window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; onScroll(); }); } }, {passive:true});
-  window.addEventListener('resize', function(){ updateCards(); onScroll(); });
+  window.addEventListener('resize', onScroll);
 
   /* ----- messages ----- */
   var MSG = {
@@ -1002,7 +933,6 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
   if(document.fonts && document.fonts.load){
     Promise.all(['UnifrakturMaguntia','Yellowtail','Bowlby One'].map(function(f){ return document.fonts.load('60px "' + f + '"'); })).then(render, render);
   }
-  render();
   function tiltStage(x, y){ p3.style.transform = 'rotateY(' + (x * 34).toFixed(2) + 'deg) rotateX(' + (-y * 22).toFixed(2) + 'deg)'; }
   stage.addEventListener('pointermove', function(e){
     var r = stage.getBoundingClientRect();
@@ -1034,7 +964,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
     if(WA){ window.open(waUrl(m), '_blank', 'noopener'); return; }
     window.open(url, '_blank', 'noopener');
     copy(m).then(function(ok){
-      note.className = 'note ok';
+      note.className = 'msg ok';
       note.textContent = ok
         ? (getLang()==='en' ? 'Your request has been copied: paste it into the conversation.' : 'Votre demande est copiée : collez-la dans la conversation.')
         : (getLang()==='en' ? 'Send us this: ' : 'Envoyez-nous ceci : ') + m.replace(/\n/g,' ');
@@ -1080,18 +1010,17 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
   var nl = (navigator.language || 'fr').toLowerCase();
   setLang(saved || (nl.indexOf('en') === 0 || nl.indexOf('ar') === 0 ? 'en' : 'fr'));
   document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
-  (function(){ var c = cards[1]; if(c){ track.scrollLeft = c.offsetLeft + c.offsetWidth / 2 - track.clientWidth / 2; } })();
-  updateCards(); onScroll();
+  onScroll();
 })();
 </script>
 
-<!-- Diamant 3D (Three.js) -->
+<!-- Diamant 3D (Three.js) : le losange du logo NFL, en vrai -->
 <script type="module">
 import * as THREE from 'three';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-const hero = document.getElementById('top');
+const wrap = document.querySelector('.gem-wrap');
 const canvas = document.getElementById('gem');
+const hero = document.getElementById('top');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function gemGeometry(){
@@ -1132,13 +1061,34 @@ function gemGeometry(){
   return g;
 }
 
+// Studio de photo joaillerie : boîtes à lumière sur fond noir (reflets nets noir/blanc)
+function studioEnv(renderer){
+  const s = new THREE.Scene();
+  s.add(new THREE.Mesh(new THREE.SphereGeometry(30, 32, 16), new THREE.MeshBasicMaterial({color:0x020303, side:THREE.BackSide})));
+  const panel = (w, h, k, col, x, y, z) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({color:new THREE.Color(col).multiplyScalar(k), side:THREE.DoubleSide}));
+    m.position.set(x, y, z); m.lookAt(0, 0, 0); s.add(m);
+  };
+  panel(14, 9, 5, 0xffffff, 0, 16, 2);
+  panel(3.5, 14, 6, 0xffffff, -11, 3, 8);
+  panel(3.5, 14, 6, 0xffffff, 11, 3, 8);
+  panel(12, 3, 3, 0xffffff, 0, -5, 13);
+  panel(8, 10, 3.2, 0x2bc4ae, -14, 1, -8);
+  panel(8, 10, 2.2, 0xffffff, 14, 5, -10);
+  for(let i = 0; i < 14; i++){ const a = i / 14 * Math.PI * 2; panel(.8, .8, 16, 0xffffff, Math.cos(a) * 13, 4 + Math.sin(i * 2.3) * 5, Math.sin(a) * 13); }
+  const pm = new THREE.PMREMGenerator(renderer);
+  const t = pm.fromScene(s, .015).texture;
+  pm.dispose();
+  return t;
+}
+
 function starTexture(){
   const s = 128, cv = document.createElement('canvas'); cv.width = cv.height = s;
   const x = cv.getContext('2d'), m = s / 2;
-  const g = x.createRadialGradient(m, m, 0, m, m, m); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.15, 'rgba(220,255,250,.55)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  const g = x.createRadialGradient(m, m, 0, m, m, m); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.14, 'rgba(225,255,250,.5)'); g.addColorStop(1, 'rgba(255,255,255,0)');
   x.fillStyle = g; x.fillRect(0, 0, s, s);
   x.globalCompositeOperation = 'lighter';
-  [[1, .035], [.6, .025]].forEach(([len, w], idx) => {
+  [[1, .03], [.55, .022]].forEach(([len, w], idx) => {
     x.save(); x.translate(m, m); x.rotate(idx ? Math.PI / 4 : 0);
     for(let r = 0; r < 2; r++){
       x.rotate(Math.PI / 2 * r);
@@ -1151,107 +1101,65 @@ function starTexture(){
   const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
 
-async function start(){
+function start(){
   let renderer;
-  try{ renderer = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'}); }
+  try{ renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true, powerPreference:'high-performance'}); }
   catch(e){ return; }
+  renderer.setClearColor(0x000000, 0);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.15;
+  renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x040506);
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environment = studioEnv(renderer);
+  const camera = new THREE.PerspectiveCamera(30, 4 / 3, .1, 50);
+  camera.position.set(0, 0, 4.15);
 
-  const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-  camera.position.set(0, 0, 9);
-  const TAN = Math.tan(THREE.MathUtils.degToRad(16));
-
-  // Fond : halo turquoise + grand « NFL » que le diamant réfracte
-  const bgCanvas = document.createElement('canvas'), bgCtx = bgCanvas.getContext('2d');
-  const bgTex = new THREE.CanvasTexture(bgCanvas); bgTex.colorSpace = THREE.SRGBColorSpace;
-  const bgMat = new THREE.MeshBasicMaterial({map:bgTex, toneMapped:false, color:0x000000});
-  const bg = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), bgMat);
-  const BG_Z = -4; bg.position.z = BG_Z; scene.add(bg);
-
-  // Diamant
   const geo = gemGeometry();
-  const mat = new THREE.MeshPhysicalMaterial({
-    color:0xffffff, metalness:0, roughness:0, transmission:1, thickness:1.5, ior:2.417,
-    dispersion:5, envMapIntensity:3, specularIntensity:1, specularColor:new THREE.Color(0xffffff)
-  });
-  const gem = new THREE.Mesh(geo, mat);
-  // Miroir intérieur : simule les réflexions internes qui font briller un vrai diamant
-  const inner = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({color:0xffffff, metalness:1, roughness:.04, side:THREE.BackSide, envMapIntensity:2.4}));
+  // Miroir intérieur : simule les réflexions internes d'un vrai diamant
+  const inner = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({color:0xffffff, metalness:1, roughness:.02, side:THREE.BackSide, envMapIntensity:1.9}));
   inner.scale.setScalar(.985);
-  const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 1), new THREE.LineBasicMaterial({color:0xdff7f3, transparent:true, opacity:.12}));
+  const gem = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({
+    color:0xffffff, metalness:0, roughness:0, transmission:1, thickness:1.5, ior:2.417,
+    dispersion:6, envMapIntensity:1.7, specularIntensity:1, specularColor:new THREE.Color(0xffffff)
+  }));
+  const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 1), new THREE.LineBasicMaterial({color:0xe6fbf7, transparent:true, opacity:.09}));
   const spin = new THREE.Group(); spin.add(inner, gem, edges);
   const tilt = new THREE.Group(); tilt.add(spin);
-  const holder = new THREE.Group(); holder.add(tilt); scene.add(holder);
+  scene.add(tilt);
 
-  // Éclats qui s'allument quand le diamant tourne
   const sTex = starTexture(), sparks = [];
-  const pts = [[.8,.2,.5],[.8,.2,4.5],[.8,.2,8.5],[.8,.2,12.5],[.56,.34,2],[.56,.34,10],[1,.04,6],[1,.04,14]];
-  pts.forEach(([r, y, i], k) => {
+  [[.8,.2,.5],[.8,.2,4.5],[.8,.2,8.5],[.8,.2,12.5],[.56,.34,2],[.56,.34,10],[1,.04,6],[1,.04,14],[.56,.34,6]].forEach(([r, y, i], k) => {
     const a = i * Math.PI * 2 / 16;
     const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:sTex, color:0xffffff, transparent:true, opacity:0, depthWrite:false, blending:THREE.AdditiveBlending}));
     sp.position.set(Math.cos(a) * r * 1.03, y + .01, Math.sin(a) * r * 1.03);
-    sp.userData.ph = k * 1.7 + .4; sp.userData.sz = .42 + (k % 3) * .12;
-    sp.scale.setScalar(sp.userData.sz);
+    sp.userData.ph = k * 1.7 + .4; sp.userData.sz = .5 + (k % 3) * .14;
     spin.add(sp); sparks.push(sp);
   });
+  const l1 = new THREE.PointLight(0xffffff, 40, 0, 2); l1.position.set(2.5, 3.5, 4); scene.add(l1);
+  const l2 = new THREE.PointLight(0x86e8d9, 18, 0, 2); l2.position.set(-3.5, -1, 2.5); scene.add(l2);
 
-  const l1 = new THREE.PointLight(0xffffff, 60, 0, 2); l1.position.set(3, 4, 5); scene.add(l1);
-  const l2 = new THREE.PointLight(0x7fe3d3, 30, 0, 2); l2.position.set(-4, -1.5, 3); scene.add(l2);
-
-  let W = 1, H = 1, yFrac = .43, mobile = false, needs = true;
-
-  function drawBg(){
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const cw = Math.min(Math.round(W * dpr), 2560), ch = Math.round(cw * H / W);
-    bgCanvas.width = cw; bgCanvas.height = ch;
-    const c = bgCtx, cx = cw / 2, cy = ch * yFrac, m = Math.min(cw, ch);
-    c.fillStyle = '#040506'; c.fillRect(0, 0, cw, ch);
-    let g = c.createRadialGradient(cx, cy, 0, cx, cy, m * .8);
-    g.addColorStop(0, 'rgba(43,196,174,0.24)'); g.addColorStop(.4, 'rgba(18,92,84,0.10)'); g.addColorStop(1, 'rgba(4,5,6,0)');
-    c.fillStyle = g; c.fillRect(0, 0, cw, ch);
-    c.lineWidth = Math.max(1, dpr);
-    [[.33, .08], [.46, .055], [.6, .035]].forEach(([r, o]) => { c.strokeStyle = `rgba(220,236,246,${o})`; c.beginPath(); c.arc(cx, cy, m * r, 0, Math.PI * 2); c.stroke(); });
-    c.strokeStyle = 'rgba(220,236,246,0.05)'; c.beginPath(); c.moveTo(0, cy); c.lineTo(cw, cy); c.stroke();
-    const fs = Math.min(cw * (mobile ? .37 : .29), ch * (mobile ? .36 : (H < 820 ? .3 : .34)));
-    c.textAlign = 'center'; c.textBaseline = 'middle';
-    c.font = `600 ${fs}px Cinzel, Georgia, serif`;
-    let ls = 0; try{ c.letterSpacing = (fs * .06) + 'px'; ls = fs * .06; }catch(e){}
-    const tg = c.createLinearGradient(0, cy - fs * .45, 0, cy + fs * .45);
-    tg.addColorStop(0, 'rgba(246,250,253,0.96)'); tg.addColorStop(.52, 'rgba(140,157,174,0.86)'); tg.addColorStop(1, 'rgba(230,237,244,0.92)');
-    c.fillStyle = tg; c.fillText('NFL', cx + ls / 2, cy + fs * .04);
-    const fs2 = fs * .085; c.font = `500 ${fs2}px Cinzel, Georgia, serif`;
-    let ls2 = 0; try{ c.letterSpacing = (fs2 * .9) + 'px'; ls2 = fs2 * .9; }catch(e){}
-    c.fillStyle = 'rgba(200,212,225,0.55)'; c.fillText('JEWELLERS', cx + ls2 / 2, cy + fs * .55);
-    bgTex.needsUpdate = true; needs = true;
-  }
-
+  let needs = true;
   function resize(){
-    W = hero.clientWidth; H = hero.clientHeight; mobile = W < 700;
-    yFrac = mobile ? .34 : (H < 820 ? .39 : .43);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.6 : 2));
-    renderer.setSize(W, H, false);
-    camera.aspect = W / H; camera.updateProjectionMatrix();
-    const h13 = 2 * (9 - BG_Z) * TAN; bg.scale.set(h13 * W / H, h13, 1);
-    const h0 = 2 * 9 * TAN;
-    holder.position.y = (.5 - yFrac) * h0;
-    holder.userData.base = Math.min(1.3, mobile ? (W / H) * 1.55 : (W / H) * .95);
-    drawBg();
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if(!w || !h) return;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    needs = true;
   }
+  resize();
+  window.addEventListener('resize', resize);
+  if('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
+  wrap.classList.add('gem-ready');
 
-  // Interaction : souris, glisser, défilement
+  // Interaction : souris sur tout le héros, glisser sur le diamant, défilement
   let tX = 0, tY = 0, tx = 0, ty = 0, base = 0, vel = 0, dragging = false, lastX = 0;
   hero.addEventListener('pointermove', e => {
     const r = hero.getBoundingClientRect();
-    tY = ((e.clientX - r.left) / r.width - .5) * .7;
-    tX = ((e.clientY - r.top) / r.height - .5) * .45;
-    if(dragging){ const dx = e.clientX - lastX; lastX = e.clientX; base += dx * .008; vel = dx * .008; }
+    tY = ((e.clientX - r.left) / r.width - .5) * .8;
+    tX = ((e.clientY - r.top) / r.height - .5) * .5;
+    if(dragging){ const dx = e.clientX - lastX; lastX = e.clientX; base += dx * .01; vel = dx * .01; }
   });
   canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; vel = 0; canvas.classList.add('drag'); try{ canvas.setPointerCapture(e.pointerId); }catch(_){} });
   const up = () => { dragging = false; canvas.classList.remove('drag'); };
@@ -1259,14 +1167,9 @@ async function start(){
   hero.addEventListener('pointerleave', () => { tX = 0; tY = 0; });
 
   let visible = true;
-  new IntersectionObserver(es => { visible = es[0].isIntersecting; if(visible) needs = true; }).observe(hero);
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; if(visible) needs = true; }).observe(canvas);
 
-  try{ await document.fonts.load('600 100px Cinzel'); }catch(e){}
-  resize();
-  window.addEventListener('resize', resize);
-  if(document.fonts && document.fonts.ready) document.fonts.ready.then(drawBg);
-
-  const t0 = performance.now(), INTRO = reduce ? 1 : 2800;
+  const t0 = performance.now(), INTRO = reduce ? 1 : 2600;
   let last = '';
   function frame(now){
     requestAnimationFrame(frame);
@@ -1274,21 +1177,19 @@ async function start(){
     const k = Math.min(1, (now - t0) / INTRO), e = 1 - Math.pow(1 - k, 4);
     if(!dragging){ base += vel; vel *= .94; if(Math.abs(vel) < 1e-5) vel = 0; }
     tx += (tX - tx) * .07; ty += (tY - ty) * .07;
-    const scrollY = window.scrollY || 0;
-    const ry = (1 - e) * -Math.PI * 3.2 + base + scrollY * .0035;
+    const ry = (1 - e) * -Math.PI * 3 + base + (window.scrollY || 0) * .004;
     spin.rotation.y = ry;
-    tilt.rotation.x = .42 + tx;
-    tilt.rotation.z = -ty * .35;
-    holder.rotation.y = ty * .6;
-    const sc = holder.userData.base * (.72 + .28 * e);
-    holder.scale.setScalar(sc);
-    bgMat.color.setScalar(Math.min(1, k * 1.5));
+    tilt.rotation.x = .5 + tx;
+    tilt.rotation.z = -ty * .3;
+    tilt.position.y = .06;
+    const sc = .55 + .45 * e;
+    tilt.scale.setScalar(sc);
     sparks.forEach(sp => {
       const v = Math.cos(ry * 2.6 + sp.userData.ph + ty * 4 + tx * 3);
-      sp.material.opacity = Math.pow(Math.max(0, v), 36) * .95;
-      sp.scale.setScalar(sp.userData.sz * (.6 + .4 * Math.max(0, v)));
+      sp.material.opacity = Math.pow(Math.max(0, v), 30) * .95 * e;
+      sp.scale.setScalar(sp.userData.sz * (.55 + .45 * Math.max(0, v)));
     });
-    const key = [ry.toFixed(4), tx.toFixed(4), ty.toFixed(4), sc.toFixed(4), k.toFixed(3)].join('|');
+    const key = ry.toFixed(4) + '|' + tx.toFixed(4) + '|' + ty.toFixed(4) + '|' + sc.toFixed(4);
     if(key === last && !needs) return;
     last = key; needs = false;
     renderer.render(scene, camera);
