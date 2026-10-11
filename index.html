@@ -2,25 +2,29 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>NFL Jewellers · Joaillerie sur mesure & montres de luxe · Dubaï — Paris</title>
 <meta name="description" content="Pendentifs personnalisés, chaînes, bracelets et montres de luxe. Diamants naturels ou de laboratoire, au meilleur prix. Entre Dubaï et Paris.">
-<meta name="theme-color" content="#060708">
+<meta name="theme-color" content="#040506">
 <meta property="og:title" content="NFL Jewellers · Votre nom, serti de diamants">
 <meta property="og:description" content="Joaillerie sur mesure et montres de luxe entre Dubaï et Paris. Diamants naturels ou de laboratoire.">
-<meta property="og:image" content="img/pendentif-nfl.jpg">
+<meta property="og:image" content="img/hd-pendentif-nfl.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=UnifrakturMaguntia&family=Yellowtail&family=Bowlby+One&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060708'/%3E%3Cpath d='M18 20h28l8 10-22 22-22-22z' fill='none' stroke='%23e9f0f6' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M10 30h44M26 20l-4 10 10 22 10-22-4-10' fill='none' stroke='%23e9f0f6' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=UnifrakturMaguntia&family=Yellowtail&family=Bowlby+One&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040506'/%3E%3Cpath d='M18 20h28l8 10-22 22-22-22z' fill='none' stroke='%23e9f0f6' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M10 30h44M26 20l-4 10 10 22 10-22-4-10' fill='none' stroke='%23e9f0f6' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "JewelryStore",
   "name": "NFL Jewellers",
   "description": "Joaillerie sur mesure et montres de luxe entre Dubaï et Paris. Diamants naturels et de laboratoire.",
-  "image": "img/pendentif-nfl.jpg",
+  "image": "img/hd-pendentif-nfl.webp",
   "areaServed": [{"@type": "City", "name": "Dubai"}, {"@type": "City", "name": "Paris"}],
   "sameAs": ["https://www.instagram.com/nfl_jewellers/", "https://www.snapchat.com/add/nfljewellers"],
   "makesOffer": [
@@ -33,299 +37,361 @@
 </script>
 <style>
 :root{
-  --bg:#060708; --bg2:#0b0d10; --card:#0f1215; --line:rgba(214,226,240,.11); --line2:rgba(214,226,240,.24);
-  --ice:#eef3f8; --text:#d3dbe4; --muted:#8792a0; --teal:#2bc4ae; --teal2:#7fe3d3; --rose:#dca68f;
-  --serif:'Instrument Serif',Georgia,serif; --sans:'Manrope',system-ui,-apple-system,sans-serif; --logo:'Cinzel',Georgia,serif;
-  --wrap:1200px; --r:4px;
+  --bg:#040506; --bg2:#080a0c; --panel:#0c0f12; --line:rgba(214,226,240,.10); --line2:rgba(214,226,240,.22);
+  --ice:#eef3f8; --text:#cdd5de; --muted:#86919e; --teal:#2bc4ae; --teal2:#86e8d9; --rose:#e0ae98;
+  --serif:'Cormorant Garamond',Georgia,serif; --caps:'Cinzel',Georgia,serif; --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  --wrap:1240px; --r:6px; --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font:400 16px/1.65 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
+body{background:var(--bg);color:var(--text);font:400 16px/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
 ::selection{background:var(--teal);color:#021512}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
 html:not([lang="en"]) [data-en],html[lang="en"] [data-fr]{display:none!important}
 
 /* ---------- typographie ---------- */
-.kicker{display:inline-flex;align-items:center;gap:.7rem;font:600 .72rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-.kicker::before{content:"";width:28px;height:1px;background:var(--teal)}
-h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ice);letter-spacing:-.01em;line-height:1.02}
-h2{font-size:clamp(2.3rem,5vw,3.9rem)}
-h2 em,h1 em{font-style:italic}
-.ice{background:linear-gradient(100deg,#9fb0c2 0%,#ffffff 22%,#b9c8d8 42%,#ffffff 58%,#8fa2b6 80%,#e6eef6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:1.06rem;color:var(--text);max-width:34rem}
-.muted{color:var(--muted)}
-.sec{padding:clamp(80px,11vw,140px) 0;position:relative}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,56px)}
-.sec-head h2{margin-top:18px}
-.sec-head p{max-width:26rem;color:var(--muted)}
+.kicker{display:inline-flex;align-items:center;gap:.9rem;font:600 .7rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.kicker b{font:500 .78rem/1 var(--caps);letter-spacing:.12em;color:var(--teal)}
+.kicker::after{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--teal),transparent)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--ice);line-height:.98;letter-spacing:-.005em}
+h2{font-size:clamp(2.7rem,5.8vw,5rem);margin-top:20px}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
+.ice{background:linear-gradient(100deg,#93a6ba 0%,#ffffff 22%,#b8c7d6 42%,#ffffff 60%,#8ea2b7 82%,#e6eef6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.05rem;color:var(--text);max-width:34rem}
+.sec{padding:clamp(100px,13vw,170px) 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head p{max-width:25rem;color:var(--muted)}
 
 /* ---------- boutons ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.6rem;border-radius:999px;font:600 .82rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s,transform .3s;cursor:pointer;border:1px solid transparent;white-space:nowrap}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:1.05rem 1.7rem;border-radius:999px;font:600 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;transition:background .35s,color .35s,border-color .35s,transform .35s var(--ease);cursor:pointer;border:1px solid transparent;white-space:nowrap;background:transparent}
 .btn svg{width:18px;height:18px;flex:none}
-.btn-ice{background:var(--ice);color:#07090b}
-.btn-ice:hover{background:#fff;transform:translateY(-2px)}
-.btn-line{border-color:var(--line2);color:var(--ice);background:transparent}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s var(--ease)}
+.btn:hover::after{left:130%}
+.btn-ice{background:linear-gradient(180deg,#ffffff,#dde6ee);color:#06080a}
+.btn-ice:hover{transform:translateY(-2px)}
+.btn-line{border-color:var(--line2);color:var(--ice)}
 .btn-line:hover{border-color:var(--ice)}
+.btn-line::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.12),transparent)}
 .btn-teal{background:var(--teal);color:#03211d}
 .btn-teal:hover{background:var(--teal2);transform:translateY(-2px)}
 
 /* ---------- en-tête ---------- */
 .hd{position:fixed;inset:0 0 auto 0;z-index:50;transition:border-color .4s}
-.hd::before{content:"";position:absolute;inset:0;background:rgba(6,7,8,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);opacity:0;transition:opacity .4s;z-index:-1}
+.hd::before{content:"";position:absolute;inset:0;background:rgba(4,5,6,.7);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);opacity:0;transition:opacity .4s;z-index:-1}
 .hd.solid::before{opacity:1}
 .hd.solid{border-bottom:1px solid var(--line)}
-.hd-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.hd-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:80px}
 .logo{display:flex;align-items:center;gap:12px;color:var(--ice)}
-.logo svg{width:34px;height:26px}
-.logo b{font:600 1.35rem/1 var(--logo);letter-spacing:.06em;display:block}
-.logo small{display:block;font:500 .52rem/1 var(--logo);letter-spacing:.42em;margin-top:4px;color:var(--muted)}
+.logo svg{width:36px;height:27px}
+.logo b{font:600 1.4rem/1 var(--caps);letter-spacing:.07em;display:block}
+.logo small{display:block;font:500 .52rem/1 var(--caps);letter-spacing:.44em;margin-top:5px;color:var(--muted)}
 .nav{display:flex;align-items:center;gap:30px}
-.nav ul{display:flex;gap:26px;list-style:none}
-.nav ul a{font-size:.85rem;color:var(--text);position:relative;padding:6px 0}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{font-size:.84rem;color:var(--text);position:relative;padding:6px 0;transition:color .3s}
+.nav ul a:hover{color:var(--ice)}
 .nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--teal);transition:right .35s}
 .nav ul a:hover::after{right:0}
 .lang{display:flex;border:1px solid var(--line2);border-radius:999px;padding:3px}
-.lang button{background:none;border:0;border-radius:999px;font:600 .68rem/1 var(--sans);letter-spacing:.12em;padding:.45rem .6rem;color:var(--muted);cursor:pointer}
+.lang button{background:none;border:0;border-radius:999px;font:600 .66rem/1 var(--sans);letter-spacing:.12em;padding:.46rem .62rem;color:var(--muted);cursor:pointer}
 .lang button.on{background:var(--ice);color:#07090b}
-.burger{display:none;width:44px;height:44px;border:1px solid var(--line2);border-radius:50%;background:none;cursor:pointer;place-items:center}
-.burger span{display:block;width:16px;height:1px;background:var(--ice);position:relative;transition:transform .3s}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line2);border-radius:50%;background:none;cursor:pointer;place-items:center}
+.burger span{display:block;width:16px;height:1px;background:var(--ice);position:relative;transition:background .3s}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:16px;height:1px;background:var(--ice);transition:transform .3s,top .3s}
 .burger span::before{top:-5px}.burger span::after{top:5px}
 .hd.open .burger span{background:transparent}
 .hd.open .burger span::before{top:0;transform:rotate(45deg)}
 .hd.open .burger span::after{top:0;transform:rotate(-45deg)}
 
-/* ---------- héros ---------- */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;width:900px;height:900px;right:-220px;top:50%;transform:translateY(-50%);background:radial-gradient(closest-side,rgba(43,196,174,.13),rgba(43,196,174,.04) 55%,transparent);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,90px);align-items:center;position:relative}
-.hero h1{font-size:clamp(3.1rem,7.4vw,6.6rem);margin:26px 0 28px}
+/* ---------- héros 3D ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;background:var(--bg)}
+.hero-fallback{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 43%,rgba(43,196,174,.2),rgba(43,196,174,.05) 35%,transparent 60%)}
+.hero-fallback span{font:600 clamp(7rem,27vw,21rem)/1 var(--caps);letter-spacing:.06em;transform:translateY(-9%);opacity:.9}
+#gem{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;outline:none}
+#gem.drag{cursor:grabbing}
+.hero-shade{position:absolute;inset:auto 0 0 0;height:48%;background:linear-gradient(to top,rgba(4,5,6,.96) 8%,rgba(4,5,6,.55) 50%,rgba(4,5,6,0));pointer-events:none}
+.hero-ui{position:absolute;inset:0;pointer-events:none}
+.hero-ui .wrap{height:100%;display:flex;flex-direction:column;justify-content:space-between;padding-top:118px;padding-bottom:46px}
+.hero-ui a,.hero-ui button{pointer-events:auto}
+.hero-top{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.coords{font:500 .66rem/1.6 var(--sans);letter-spacing:.22em;color:var(--muted);text-align:right}
+.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.hero h1{font-size:clamp(2.7rem,5.4vw,5.1rem);margin-bottom:18px}
 .hero h1 em{display:block}
-.hero .lead{margin-bottom:36px}
+.hero .lead{margin-bottom:28px;max-width:30rem}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-.facts{display:flex;flex-wrap:wrap;gap:0;margin-top:54px;border-top:1px solid var(--line)}
-.facts div{padding:20px 28px 0 0;margin-right:28px;border-right:1px solid var(--line)}
-.facts div:last-child{border-right:0}
-.facts strong{display:block;font:400 1.9rem/1 var(--serif);color:var(--ice)}
-.facts span{font-size:.78rem;color:var(--muted);letter-spacing:.04em}
-.hero-pic{position:relative;justify-self:end;width:min(100%,420px)}
-.hero-pic .frame{position:relative;aspect-ratio:3/4.3;overflow:hidden;border-radius:220px 220px var(--r) var(--r);border:1px solid var(--line2)}
-.hero-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
-.hero-pic::before{content:"";position:absolute;inset:-14px;border:1px solid var(--line);border-radius:234px 234px 10px 10px;pointer-events:none}
-.tag{position:absolute;left:-34px;bottom:44px;background:rgba(9,11,13,.88);border:1px solid var(--line2);padding:14px 18px;border-radius:var(--r);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);max-width:250px}
-.tag small{display:block;font:600 .62rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
-.tag b{display:block;font:400 1.25rem/1.15 var(--serif);color:var(--ice)}
-.tag span{font-size:.78rem;color:var(--muted)}
+.hint{display:flex;align-items:center;gap:14px;font:600 .64rem/1.5 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-align:right;flex:none}
+.hint i{width:46px;height:46px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;flex:none}
+.hint svg{width:22px;height:22px;color:var(--ice)}
 
-/* ---------- bande artistes ---------- */
-.worn{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
-.worn-in{display:flex;align-items:center;gap:20px 40px;flex-wrap:wrap;justify-content:space-between}
-.worn p{font:600 .7rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-.worn ul{display:flex;flex-wrap:wrap;gap:12px 34px;list-style:none}
-.worn li a{font:italic 400 1.45rem/1 var(--serif);color:var(--ice);transition:color .3s}
+/* ---------- manifeste ---------- */
+.manifesto{padding:clamp(110px,15vw,190px) 0 clamp(70px,9vw,110px)}
+.mf{font:400 clamp(2.1rem,4.9vw,4.4rem)/1.1 var(--serif);color:var(--ice);max-width:17em}
+.mf em{font-style:italic}
+.mf .w{opacity:.13;transition:opacity .25s linear}
+.worn{display:flex;align-items:center;gap:18px 46px;flex-wrap:wrap;margin-top:clamp(60px,8vw,96px);padding-top:30px;border-top:1px solid var(--line)}
+.worn p{font:600 .68rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.worn ul{display:flex;flex-wrap:wrap;gap:12px 40px;list-style:none}
+.worn li a{font:italic 400 1.7rem/1 var(--serif);color:var(--ice);transition:color .3s}
 .worn li a:hover{color:var(--teal2)}
 
-/* ---------- créations ---------- */
-.grid-c{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{position:relative;overflow:hidden;border-radius:var(--r);background:var(--card);border:1px solid var(--line);cursor:zoom-in;text-align:left;padding:0;display:block;width:100%}
-.card .ph{aspect-ratio:3/4;overflow:hidden;position:relative}
-.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.card .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.16) 50%,transparent 65%);transform:translateX(-120%);transition:transform 1.1s ease}
-.card:hover img{transform:scale(1.05)}
-.card:hover .ph::after{transform:translateX(120%)}
-.card .meta{padding:18px 20px 20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-.card h3{font-size:1.45rem;line-height:1.1}
-.card .spec{font-size:.78rem;color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
-.card .no{font:600 .66rem/1 var(--sans);letter-spacing:.2em;color:var(--teal);white-space:nowrap}
+/* ---------- inclinaison 3D ---------- */
+.tilt{perspective:1300px}
+.tilt-in{position:relative;transform-style:preserve-3d;transition:transform .7s var(--ease);will-change:transform}
+.tilt.active .tilt-in{transition:transform .12s linear}
+.glare{position:absolute;inset:0;border-radius:var(--r);pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,25%),rgba(255,255,255,.2),transparent 42%);opacity:0;transition:opacity .5s;mix-blend-mode:screen}
+.tilt.active .glare{opacity:1}
 
-/* ---------- savoir-faire ---------- */
-.know{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.know-grid{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
-.know-item{padding:34px 28px 38px;border-right:1px solid var(--line);border-top:1px solid var(--line)}
-.know-item i{font:normal 400 3.2rem/1 var(--serif);color:transparent;-webkit-text-stroke:1px var(--line2);display:block;margin-bottom:26px}
-.know-item h3{font-size:1.7rem;margin-bottom:12px}
-.know-item p{font-size:.92rem;color:var(--muted)}
+/* ---------- signature ---------- */
+.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:center}
+.sig-pic{position:relative;max-width:470px;justify-self:center;width:100%}
+.sig-pic .ph{border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(43,196,174,.06)}
+.sig-pic img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.chip{position:absolute;background:rgba(8,10,12,.82);border:1px solid var(--line2);border-radius:var(--r);padding:14px 18px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.chip small{display:block;font:600 .6rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.chip b{display:block;font:500 1.3rem/1.1 var(--serif);color:var(--ice)}
+.chip-a{left:-38px;bottom:64px;transform:translateZ(80px)}
+.chip-b{right:-26px;top:54px;transform:translateZ(50px);text-align:center;padding:12px 16px}
+.chip-b b{font:600 1.1rem/1 var(--caps);letter-spacing:.1em}
+.sig-txt p.lead{margin-top:24px}
+.cert{margin-top:36px;border:1px solid var(--line2);border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,rgba(43,196,174,.05),transparent 50%)}
+.cert-h{display:flex;justify-content:space-between;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);font:600 .62rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.cert-h span:last-child{color:var(--teal)}
+.cert dl{display:grid;grid-template-columns:auto 1fr}
+.cert dt,.cert dd{padding:13px 20px;border-bottom:1px solid var(--line)}
+.cert dt{font:600 .64rem/1.9 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.cert dd{font:500 1.2rem/1.4 var(--serif);color:var(--ice);text-align:right}
+.cert dl>*:nth-last-child(-n+2){border-bottom:0}
+.sig-txt .cta-row{margin-top:32px}
 
-/* ---------- atelier (configurateur) ---------- */
-.atelier-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:stretch}
-.stage{position:relative;border-radius:var(--r);border:1px solid var(--line2);overflow:hidden;min-height:520px;display:flex;flex-direction:column;align-items:center;background:radial-gradient(ellipse at 50% 40%,#16202a 0%,#0a0d10 55%,#050607 100%)}
-.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 58%,rgba(43,196,174,.10),transparent 45%);pointer-events:none}
-.stage .lbl{position:absolute;left:50%;top:18px;transform:translateX(-50%);font:600 .62rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+/* ---------- collection (carrousel 3D) ---------- */
+.collection{padding-bottom:clamp(70px,9vw,120px);overflow:hidden}
+.cf-ctrl{display:flex;align-items:center;gap:14px}
+.cf-ctrl button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line2);background:none;cursor:pointer;display:grid;place-items:center;color:var(--ice);transition:border-color .3s,background .3s}
+.cf-ctrl button:hover{border-color:var(--ice);background:rgba(255,255,255,.04)}
+.cf-ctrl svg{width:18px;height:18px}
+.cf-count{font:500 1rem/1 var(--caps);letter-spacing:.14em;color:var(--muted);min-width:70px;text-align:center}
+.cf-count b{color:var(--ice);font-weight:500}
+.cf-track{--cw:min(390px,76vw);display:flex;gap:34px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px calc(50% - var(--cw) / 2) 60px;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.cf-track::-webkit-scrollbar{display:none}
+.cf-track.dragging{scroll-snap-type:none;cursor:grabbing}
+.cf-track.dragging .cf-card{transition:none}
+.cf-card{flex:0 0 var(--cw);scroll-snap-align:center;position:relative;border-radius:var(--r);overflow:hidden;background:var(--panel);border:1px solid var(--line2);will-change:transform;box-shadow:0 30px 70px rgba(0,0,0,.5);cursor:zoom-in;user-select:none}
+.cf-card img{width:100%;aspect-ratio:2/3;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.cf-info{position:absolute;inset:auto 0 0 0;padding:70px 24px 24px;background:linear-gradient(to top,rgba(4,5,6,.96) 30%,rgba(4,5,6,0))}
+.cf-info .no{font:500 .74rem/1 var(--caps);letter-spacing:.2em;color:var(--teal)}
+.cf-info h3{font-size:2rem;margin:10px 0 6px}
+.cf-info p{font-size:.82rem;color:var(--muted)}
+.cf-info .who{display:inline-block;margin-top:12px;font-size:.78rem;color:var(--ice);border:1px solid var(--line2);border-radius:999px;padding:.35rem .8rem}
+.cf-cta{cursor:default;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px;background:radial-gradient(circle at 50% 35%,rgba(43,196,174,.16),transparent 60%),var(--panel)}
+.cf-cta .gemico{width:84px;height:66px;color:var(--ice);margin-bottom:30px}
+.cf-cta .no{font:500 .74rem/1 var(--caps);letter-spacing:.2em;color:var(--teal)}
+.cf-cta h3{font-size:2.6rem;margin:14px 0 14px}
+.cf-cta p{font-size:.9rem;color:var(--muted);max-width:18rem;margin-bottom:28px}
+.cf-cta .cf-ratio{aspect-ratio:2/3;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+/* ---------- atelier ---------- */
+.atelier-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,60px);align-items:stretch}
+.stage{position:relative;border-radius:var(--r);border:1px solid var(--line2);overflow:hidden;min-height:540px;display:flex;flex-direction:column;align-items:center;perspective:900px;background:radial-gradient(ellipse at 50% 42%,#14212a 0%,#0a0e11 52%,#040506 100%)}
+.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,rgba(43,196,174,.12),transparent 46%);pointer-events:none}
+.stage .lbl{position:absolute;left:50%;top:18px;transform:translateX(-50%);font:600 .6rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
 .stage .chain{width:100%;height:170px;flex:none}
-.bail{width:22px;height:34px;border-radius:9px;margin-top:-6px;border:2px solid var(--edge);background:radial-gradient(circle,#fff 0 1px,transparent 1.6px) 0 0/5px 5px,linear-gradient(160deg,#f8fbff,#a9b8c8 50%,#f3f7fb);box-shadow:0 0 18px rgba(220,240,255,.25)}
-.pend{position:relative;margin-top:-4px;padding:0 20px;max-width:100%;text-align:center}
-.pend-name{display:inline-block;font-size:clamp(3.4rem,8.5vw,6.4rem);line-height:1.12;padding:.05em .08em .12em;white-space:nowrap;
-  background:
+.pend3d{display:flex;flex-direction:column;align-items:center;transform-style:preserve-3d;transition:transform .8s var(--ease);margin-top:-6px}
+.stage.active .pend3d{transition:transform .14s linear}
+.bail{width:22px;height:34px;border-radius:9px;border:2px solid var(--edge);background:radial-gradient(circle,#fff 0 1px,transparent 1.6px) 0 0/5px 5px,linear-gradient(160deg,#f8fbff,#a9b8c8 50%,#f3f7fb);box-shadow:0 0 18px rgba(220,240,255,.25);transform:translateZ(4px)}
+.pend-name{display:inline-grid;transform-style:preserve-3d;margin-top:-4px;font-size:clamp(3.4rem,8.5vw,6.4rem);line-height:1.12;max-width:100%}
+.pend-name>span{grid-area:1/1;padding:.05em .1em .12em;white-space:nowrap;text-align:center}
+.pend-name .dl{color:var(--deep);-webkit-text-stroke:1.6px var(--deep)}
+.pend-name .fr{background:
     radial-gradient(circle,rgba(255,255,255,.98) 0 1.1px,transparent 1.7px) 0 0/7px 7px,
     radial-gradient(circle,rgba(255,255,255,.7) 0 .9px,transparent 1.5px) 3.5px 3.5px/7px 7px,
     linear-gradient(165deg,var(--m1) 0%,var(--m2) 30%,#ffffff 48%,var(--m2) 64%,var(--m1) 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1.6px var(--edge);
-  filter:drop-shadow(0 0 14px rgba(215,236,255,.28)) drop-shadow(0 10px 18px rgba(0,0,0,.6));transition:filter .4s}
+  filter:drop-shadow(0 0 14px rgba(215,236,255,.3))}
 .pend-name.f-goth{font-family:'UnifrakturMaguntia',serif}
-.pend-name.f-script{font-family:'Yellowtail',cursive;font-size:clamp(3.6rem,9vw,6.8rem);padding-right:.2em}
+.pend-name.f-script{font-family:'Yellowtail',cursive;font-size:clamp(3.6rem,9vw,6.8rem)}
+.pend-name.f-script>span{padding-right:.25em}
 .pend-name.f-bloc{font-family:'Bowlby One',sans-serif;font-size:clamp(2.6rem,6.6vw,5rem);letter-spacing:.02em}
-.stage .sheen{position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.07) 50%,transparent 60%);transform:translateX(-100%);transition:transform 1.2s ease;pointer-events:none}
-.stage:hover .sheen{transform:translateX(100%)}
-.stage .cap{margin-top:auto;padding:18px;font-size:.78rem;color:var(--muted);text-align:center}
-.m-blanc{--m1:#eef4fa;--m2:#a8b7c7;--edge:#dbe4ed}
-.m-jaune{--m1:#fff3cf;--m2:#d4b061;--edge:#e7c46a}
-.m-rose{--m1:#ffe7dd;--m2:#d49a89;--edge:#e3ab98}
-.m-bicolore{--m1:#ffe7dd;--m2:#a8b7c7;--edge:#e3ab98}
+.stage .cap{margin-top:auto;padding:18px;font-size:.76rem;color:var(--muted);text-align:center}
+.stage .hint3d{position:absolute;right:16px;top:14px;font:600 .58rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:.8}
+.m-blanc{--m1:#eef4fa;--m2:#a8b7c7;--edge:#dbe4ed;--deep:#5d6b79}
+.m-jaune{--m1:#fff3cf;--m2:#d4b061;--edge:#e7c46a;--deep:#7d5f1c}
+.m-rose{--m1:#ffe7dd;--m2:#d49a89;--edge:#e3ab98;--deep:#7f4b3d}
+.m-bicolore{--m1:#ffe7dd;--m2:#a8b7c7;--edge:#e3ab98;--deep:#6c5a58}
 .form{display:flex;flex-direction:column;gap:22px}
-.field>span{display:block;font:600 .68rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.field input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line2);color:var(--ice);font:400 1.9rem/1.2 var(--serif);padding:6px 0 10px;outline:none;transition:border-color .3s;border-radius:0}
-.field input:focus{border-color:var(--teal)}
+.field>span{display:block;font:600 .66rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.field input[type=text]{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line2);color:var(--ice);font:500 2.1rem/1.2 var(--serif);padding:6px 0 10px;outline:none;transition:border-color .3s;border-radius:0}
+.field input[type=text]:focus{border-color:var(--teal)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips label{position:relative;cursor:pointer}
 .chips input{position:absolute;opacity:0;pointer-events:none}
-.chips label span{display:inline-flex;align-items:center;gap:8px;padding:.62rem 1rem;border:1px solid var(--line2);border-radius:999px;font-size:.84rem;color:var(--text);transition:all .25s}
-.chips label:hover span{border-color:var(--ice)}
+.chips label>span{display:inline-flex;align-items:center;gap:8px;padding:.62rem 1rem;border:1px solid var(--line2);border-radius:999px;font-size:.84rem;color:var(--text);transition:all .25s}
+.chips label:hover>span{border-color:var(--ice)}
 .chips input:checked+span{background:var(--ice);border-color:var(--ice);color:#07090b}
 .chips input:focus-visible+span{outline:2px solid var(--teal);outline-offset:2px}
+.chips b{font-weight:400}
 .dot{width:12px;height:12px;border-radius:50%;flex:none;border:1px solid rgba(0,0,0,.25)}
 .form .send{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .note{font-size:.8rem;color:var(--muted);min-height:1.3em}
 .note.ok{color:var(--teal2)}
 
-/* ---------- naturel / labo ---------- */
-.versus{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.versus>div{padding:clamp(28px,4vw,48px)}
-.versus>div+div{border-left:1px solid var(--line);background:linear-gradient(160deg,rgba(43,196,174,.07),transparent 60%)}
-.versus h3{font-size:2rem;margin:14px 0 14px}
-.versus ul{list-style:none;margin-top:18px}
-.versus li{padding:12px 0;border-top:1px solid var(--line);font-size:.92rem;display:flex;gap:12px}
-.versus li::before{content:"◆";color:var(--teal);font-size:.6rem;margin-top:.45em}
-.versus .both{grid-column:1/-1;border-left:0!important;border-top:1px solid var(--line);background:none;text-align:center;padding:22px;font:italic 400 1.3rem/1.4 var(--serif);color:var(--ice)}
-
 /* ---------- montres ---------- */
-.watch-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:center}
-.watch-pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
-.watch-pics figure{overflow:hidden;border-radius:var(--r);border:1px solid var(--line);cursor:zoom-in}
-.watch-pics figure:first-child{aspect-ratio:3/4.6}
-.watch-pics figure:last-child{aspect-ratio:3/4;margin-bottom:-40px}
-.watch-pics img{width:100%;height:100%;object-fit:cover}
-.watch-txt p{margin-top:22px;color:var(--text);max-width:32rem}
-.nofake{display:flex;gap:16px;align-items:center;margin-top:34px;padding:20px 22px;border:1px solid var(--line2);border-radius:var(--r);max-width:30rem}
-.nofake b{font:400 2rem/1 var(--serif);color:var(--teal2);flex:none}
-.nofake span{font-size:.88rem;color:var(--muted)}
+.watch{background:linear-gradient(180deg,var(--bg) 0%,#06100f 50%,var(--bg) 100%)}
+.watch-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(48px,8vw,120px);align-items:center}
+.w-col{position:relative;padding-bottom:12%}
+.w-main{width:78%;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);cursor:zoom-in;box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.w-main img,.w-sub img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.w-sub{position:absolute;right:0;bottom:0;width:44%;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);box-shadow:0 30px 70px rgba(0,0,0,.7);cursor:zoom-in}
+.watch-txt p.lead{margin-top:24px}
+.seal-row{display:flex;align-items:center;gap:26px;margin-top:38px}
+.seal{width:132px;height:132px;flex:none;position:relative}
+.seal svg{width:100%;height:100%}
+.seal text{font:600 10.5px var(--sans);letter-spacing:3.1px;fill:var(--muted)}
+.seal b{position:absolute;inset:0;display:grid;place-items:center;font:italic 500 1.4rem/1 var(--serif);color:var(--teal2)}
+.seal-row p{font-size:.9rem;color:var(--muted);max-width:20rem}
+
+/* ---------- naturel / labo ---------- */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.vs{position:relative;border:1px solid var(--line2);border-radius:var(--r);padding:clamp(30px,4vw,50px);overflow:hidden;background:var(--panel)}
+.vs.lab{background:radial-gradient(circle at 85% 0%,rgba(43,196,174,.14),transparent 55%),var(--panel)}
+.vs svg{width:58px;height:58px;color:var(--ice);margin-bottom:26px}
+.vs h3{font-size:2.2rem;margin:12px 0 6px}
+.vs ul{list-style:none;margin-top:22px}
+.vs li{padding:13px 0;border-top:1px solid var(--line);font-size:.92rem;display:flex;gap:12px}
+.vs li::before{content:"◆";color:var(--teal);font-size:.55rem;margin-top:.5em}
+.both{margin-top:26px;text-align:center;font:italic 400 1.5rem/1.4 var(--serif);color:var(--ice)}
 
 /* ---------- artistes ---------- */
-.artists{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.artist{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4.4;cursor:zoom-in;border:1px solid var(--line);padding:0;background:var(--card);display:block;width:100%}
-.artist img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05);transition:filter .6s,transform 1.2s}
-.artist:hover img{filter:none;transform:scale(1.04)}
-.artist::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,5,6,.92),transparent 50%)}
-.artist figcaption{position:absolute;left:18px;right:18px;bottom:16px;z-index:1;text-align:left}
-.artist b{display:block;font:400 1.6rem/1.05 var(--serif);color:var(--ice)}
-.artist span{font-size:.78rem;color:var(--muted);overflow-wrap:anywhere}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,clamp(230px,24vw,330px));gap:14px}
+.art{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:var(--panel)}
+.art img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.05);transition:filter .7s,transform 1.4s var(--ease)}
+.art:hover img{filter:none;transform:scale(1.04)}
+.art::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,5,6,.92),transparent 48%);pointer-events:none}
+.art figcaption{position:absolute;left:20px;right:20px;bottom:18px;z-index:1}
+.art b{display:block;font:500 1.8rem/1.05 var(--serif);color:var(--ice)}
+.art span{font-size:.78rem;color:var(--muted);overflow-wrap:anywhere}
+.b1{grid-column:1/3;grid-row:1/3}.b1 b{font-size:2.6rem}
+.b2{grid-column:3/4;grid-row:1/3}
+.b3{grid-column:4/5;grid-row:1/2}
+.b4{grid-column:4/5;grid-row:2/3}
 
 /* ---------- maison ---------- */
 .house{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.house-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
-.house-pic{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line)}
-.house-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
-.house-txt p{margin-top:20px;max-width:32rem}
-.cities{display:grid;grid-template-columns:1fr 1fr;margin-top:40px;border:1px solid var(--line);border-radius:var(--r)}
-.cities div{padding:22px 24px}
-.cities div+div{border-left:1px solid var(--line)}
-.cities small{display:block;font:600 .64rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-.cities b{display:block;font:400 2.6rem/1 var(--serif);color:var(--ice);margin:12px 0 6px;font-variant-numeric:tabular-nums}
-.cities span{font-size:.8rem;color:var(--teal2)}
+.house-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.house-pic{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line2)}
+.house-pic img{width:100%;height:118%;margin-top:-9%;object-fit:cover;object-position:50% 55%}
+.house-txt p.lead{margin-top:22px}
+.cities{display:grid;grid-template-columns:1fr 1fr;margin-top:42px;border:1px solid var(--line2);border-radius:var(--r)}
+.cities div{padding:24px 26px}
+.cities div+div{border-left:1px solid var(--line2)}
+.cities small{display:block;font:600 .62rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.cities b{display:block;font:500 3rem/1 var(--serif);color:var(--ice);margin:14px 0 8px;font-variant-numeric:tabular-nums}
+.cities span{font-size:.78rem;color:var(--teal2)}
 
 /* ---------- FAQ ---------- */
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,90px)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,7vw,110px)}
 .faq details{border-top:1px solid var(--line)}
 .faq details:last-child{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;position:relative;font:400 1.45rem/1.25 var(--serif);color:var(--ice)}
+.faq summary{list-style:none;cursor:pointer;padding:26px 46px 26px 0;position:relative;font:500 1.6rem/1.25 var(--serif);color:var(--ice)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1px solid var(--muted);border-bottom:1px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;border-right:1px solid var(--muted);border-bottom:1px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
 .faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
 .faq details p{padding:0 0 26px;color:var(--muted);max-width:40rem}
 
 /* ---------- contact ---------- */
-.contact{text-align:center;overflow:hidden}
-.contact::before{content:"";position:absolute;left:50%;top:50%;width:1000px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(43,196,174,.12),transparent);pointer-events:none}
+.contact{text-align:center;overflow:hidden;padding:clamp(120px,16vw,200px) 0}
+.contact::before{content:"";position:absolute;left:50%;top:50%;width:1100px;height:700px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(43,196,174,.14),transparent);pointer-events:none}
 .contact .wrap{position:relative}
-.contact h2{font-size:clamp(2.8rem,7vw,5.8rem);margin:22px auto 22px;max-width:14ch}
-.contact p{max-width:34rem;margin:0 auto 36px;color:var(--muted)}
+.contact .kicker::after{display:none}
+.contact h2{font-size:clamp(3rem,8vw,6.6rem);margin:24px auto 24px;max-width:13ch}
+.contact p{max-width:34rem;margin:0 auto 38px;color:var(--muted)}
 .contact .cta-row{justify-content:center}
-.handles{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 30px;margin-top:36px;font-size:.88rem;color:var(--muted)}
+.handles{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 30px;margin-top:38px;font-size:.88rem;color:var(--muted)}
 .handles a:hover{color:var(--ice)}
 
 /* ---------- pied ---------- */
-.ft{border-top:1px solid var(--line);padding:46px 0 34px;font-size:.82rem;color:var(--muted)}
+.ft{border-top:1px solid var(--line);padding:50px 0 36px;font-size:.82rem;color:var(--muted)}
 .ft-in{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
 .ft .disc{max-width:30rem;margin-top:16px}
 .ft-links{display:flex;flex-direction:column;gap:8px;text-align:right}
 .ft-links a:hover{color:var(--ice)}
-.ft-bot{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ft-bot{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* ---------- bouton flottant ---------- */
-.fab{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:#0b0e11;border:1px solid var(--teal);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 0 6px rgba(43,196,174,.08);transition:transform .3s,background .3s}
-.fab:hover{transform:translateY(-3px);background:#10161a}
+.fab{position:fixed;right:22px;bottom:22px;z-index:60;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .4s,visibility .4s,transform .4s;width:60px;height:60px;border-radius:50%;background:#0a0e11;border:1px solid var(--teal);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 0 6px rgba(43,196,174,.08);transition:transform .3s,background .3s}
+.fab.on{opacity:1;visibility:visible;transform:none}
+.fab.on:hover{transform:translateY(-3px);background:#10171a}
 .fab svg{width:26px;height:26px;color:var(--ice)}
 
 /* ---------- visionneuse ---------- */
-.lb{position:fixed;inset:0;z-index:100;background:rgba(3,4,5,.94);display:none;align-items:center;justify-content:center;padding:24px;flex-direction:column;gap:14px}
+.lb{position:fixed;inset:0;z-index:400;background:rgba(3,4,5,.95);display:none;align-items:center;justify-content:center;padding:24px;flex-direction:column;gap:14px}
 .lb.on{display:flex}
-.lb img{max-height:82vh;max-width:min(92vw,900px);width:auto;border-radius:var(--r);border:1px solid var(--line2)}
+.lb img{max-height:84vh;max-width:min(92vw,900px);width:auto;border-radius:var(--r);border:1px solid var(--line2)}
 .lb p{color:var(--muted);font-size:.86rem;text-align:center;max-width:40rem}
-.lb button{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line2);background:none;cursor:pointer;color:var(--ice);font-size:1.4rem;line-height:1}
+.lb button{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid var(--line2);background:none;cursor:pointer;color:var(--ice);font-size:1.4rem;line-height:1}
 
 /* ---------- apparitions ---------- */
-.rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.clip{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s var(--ease)}
+.clip.in{clip-path:inset(0 0 0 0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){.rv,.clip{opacity:1;transform:none;clip-path:none;transition:none}html{scroll-behavior:auto}.mf .w{opacity:1!important}}
 
 /* ---------- responsive ---------- */
-@media (max-width:1060px){
+@media (max-width:1080px){
   .nav ul{gap:18px}
-  .know-grid{grid-template-columns:1fr 1fr}
-  .artists{grid-template-columns:1fr 1fr}
+  .chip-a{left:-14px}
+  .chip-b{right:-10px}
 }
 @media (max-width:900px){
   .burger{display:grid}
-  .nav{position:fixed;inset:76px 0 auto 0;background:#07090b;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:24px;padding:28px 24px 32px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility .3s}
+  .nav{position:fixed;inset:80px 0 auto 0;background:#06080a;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:24px;padding:28px 24px 32px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility .3s}
   .hd.open .nav{opacity:1;transform:none;visibility:visible}
   .nav ul{flex-direction:column;gap:16px}
-  .nav ul a{font:400 1.7rem/1 var(--serif);color:var(--ice)}
-  .hero{min-height:auto;padding-top:120px}
-  .hero-grid,.atelier-grid,.watch-grid,.house-grid,.faq-grid{grid-template-columns:1fr}
-  .hero-pic{justify-self:center;width:min(100%,380px)}
-  .tag{left:12px}
-  .grid-c{grid-template-columns:1fr 1fr}
-  .watch-pics figure:last-child{margin-bottom:0}
-  .stage{min-height:440px}
+  .nav ul a{font:500 1.9rem/1 var(--serif);color:var(--ice)}
+  .sig-grid,.atelier-grid,.watch-grid,.house-grid,.faq-grid{grid-template-columns:1fr}
+  .sig-pic{max-width:420px}
+  .stage{min-height:460px}
+  .watch-grid .w-col{max-width:520px;margin:0 auto;width:100%}
+  .bento{grid-template-columns:1fr 1fr;grid-template-rows:none}
+  .b1{grid-column:1/3;grid-row:auto;aspect-ratio:4/5}
+  .b2,.b3,.b4{grid-column:auto;grid-row:auto;aspect-ratio:3/4}
+  .b4{grid-column:1/3;aspect-ratio:16/11}
+  .coords{display:none}
 }
 @media (max-width:620px){
   .wrap{padding:0 18px}
-  .hd-in{height:68px}
-  .nav{inset:68px 0 auto 0}
-  .logo b{font-size:1.15rem}
-  .kicker{letter-spacing:.2em;font-size:.66rem}
-  .facts{display:grid;grid-template-columns:repeat(3,1fr)}
-  .facts div{padding:18px 10px 0 0;margin-right:12px}
-  .facts span{font-size:.72rem;display:block;line-height:1.35}
-  .facts strong{font-size:1.45rem;margin-bottom:4px}
-  .grid-c{grid-template-columns:1fr}
-  .card .ph{aspect-ratio:4/5}
-  .know-grid{grid-template-columns:1fr}
+  .hd-in{height:70px}
+  .nav{inset:70px 0 auto 0}
+  .logo b{font-size:1.2rem}
+  .kicker{letter-spacing:.22em;font-size:.64rem}
+  .hero-ui .wrap{padding-top:96px;padding-bottom:30px}
+  .hero-bottom{flex-direction:column;align-items:stretch;gap:22px}
+  .hero h1{font-size:2.55rem}
+  .hero .lead{font-size:.96rem;margin-bottom:22px}
+  .hint{justify-content:center;text-align:left;order:-1;font-size:.58rem}
+  .hint i{width:38px;height:38px}
+  .cta-row .btn{flex:1 1 100%}
+  .chip-a{left:-6px;bottom:30px}
+  .chip-b{right:-6px;top:24px}
+  .cert dd{font-size:1.05rem}
+  .cert dt,.cert dd{padding:11px 14px}
   .versus{grid-template-columns:1fr}
-  .versus>div+div{border-left:0;border-top:1px solid var(--line)}
-  .artists{gap:10px}
-  .artist b{font-size:1.25rem}
-  .artist figcaption{left:12px;right:12px;bottom:12px}
-  .cities b{font-size:2rem}
+  .art b,.b1 b{font-size:1.5rem}
+  .art figcaption{left:14px;right:14px;bottom:12px}
+  .cities b{font-size:2.2rem}
   .cities div{padding:18px 16px}
   .ft-links{text-align:left}
-  .stage{min-height:380px}
+  .stage{min-height:390px}
   .stage .chain{height:130px}
-  .cta-row .btn{flex:1 1 100%}
+  .seal{width:110px;height:110px}
   .fab{right:16px;bottom:16px;width:54px;height:54px}
+  .cf-track{gap:18px}
+  .cf-info h3{font-size:1.7rem}
 }
 </style>
 </head>
@@ -339,7 +405,7 @@ h2 em,h1 em{font-style:italic}
     </a>
     <nav class="nav" id="nav" aria-label="Menu">
       <ul>
-        <li><a href="#creations"><span data-fr>Créations</span><span data-en>Pieces</span></a></li>
+        <li><a href="#collection">Collection</a></li>
         <li><a href="#atelier"><span data-fr>Sur mesure</span><span data-en>Custom</span></a></li>
         <li><a href="#montres"><span data-fr>Montres</span><span data-en>Watches</span></a></li>
         <li><a href="#artistes"><span data-fr>Artistes</span><span data-en>Artists</span></a></li>
@@ -349,128 +415,147 @@ h2 em,h1 em{font-style:italic}
         <button type="button" data-lang="fr">FR</button>
         <button type="button" data-lang="en">EN</button>
       </div>
-      <a class="btn btn-ice btn-hd dm" href="https://ig.me/m/nfl_jewellers" target="_blank" rel="noopener"><span data-fr>Nous écrire</span><span data-en>Message us</span></a>
+      <a class="btn btn-ice dm" href="https://ig.me/m/nfl_jewellers" target="_blank" rel="noopener"><span data-fr>Nous écrire</span><span data-en>Message us</span></a>
     </nav>
     <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
   </div>
 </header>
 
-<main id="top">
+<main>
 
-<!-- HÉROS -->
-<section class="hero">
-  <div class="wrap hero-grid">
+<!-- HÉROS : diamant 3D -->
+<section class="hero" id="top">
+  <div class="hero-fallback" aria-hidden="true"><span class="ice">NFL</span></div>
+  <canvas id="gem" aria-label="Diamant en 3D : faites-le tourner" role="img"></canvas>
+  <div class="hero-shade"></div>
+  <div class="hero-ui">
+    <div class="wrap">
+      <div class="hero-top">
+        <span class="kicker rv" data-fr>Joaillerie sur mesure · Dubaï — Paris</span>
+        <span class="kicker rv" data-en>Custom jewellery · Dubai — Paris</span>
+        <span class="coords rv d1">25.20° N · 55.27° E<br>48.86° N · 2.35° E</span>
+      </div>
+      <div class="hero-bottom">
+        <div>
+          <h1 class="rv d1" data-fr>Votre nom, <em class="ice">serti de diamants.</em></h1>
+          <h1 class="rv d1" data-en>Your name, <em class="ice">set in diamonds.</em></h1>
+          <p class="lead rv d2" data-fr>Pendentifs personnalisés, chaînes, bracelets et montres de luxe. Diamants naturels ou de laboratoire, au meilleur prix.</p>
+          <p class="lead rv d2" data-en>Custom pendants, chains, bracelets and luxury watches. Natural or lab-grown diamonds, at the best price.</p>
+          <div class="cta-row rv d3">
+            <a class="btn btn-ice" href="#atelier"><span data-fr>Créer ma pièce</span><span data-en>Design my piece</span></a>
+            <a class="btn btn-line" href="#collection"><span data-fr>La collection</span><span data-en>The collection</span></a>
+          </div>
+        </div>
+        <div class="hint rv d3">
+          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.8 3.6v4h-4M5.2 20.4v-4h4"/></svg></i>
+          <span data-fr>Faites tourner<br>le diamant</span><span data-en>Spin<br>the diamond</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTE -->
+<section class="manifesto">
+  <div class="wrap">
+    <p class="mf" data-fr>Un nom. Un logo. Une histoire. <em>On les transforme</em> en pièces qu'on remarque depuis l'autre bout de la salle.</p>
+    <p class="mf" data-en>A name. A logo. A story. <em>We turn them</em> into pieces you notice from across the room.</p>
+    <div class="worn rv">
+      <p data-fr>Ils portent NFL</p><p data-en>Worn by</p>
+      <ul>
+        <li><a href="https://www.instagram.com/gazo_officiel/" target="_blank" rel="noopener">Gazo</a></li>
+        <li><a href="https://www.instagram.com/anasofficiel_/" target="_blank" rel="noopener">Many</a></li>
+        <li><a href="https://www.instagram.com/sadek93zoo/" target="_blank" rel="noopener">Sadek</a></li>
+        <li><a href="https://www.instagram.com/kell_rbl/" target="_blank" rel="noopener">Kell RBL</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE -->
+<section class="sec" id="signature" style="padding-top:0">
+  <div class="wrap sig-grid">
+    <div class="sig-pic tilt rv" data-tilt="10">
+      <div class="tilt-in">
+        <div class="ph" data-full="img/hd-pendentif-nfl.webp"><img src="img/hd-pendentif-nfl.webp" alt="Pendentif NFL en or rose et or blanc serti de diamants VVS" width="1024" height="1536" loading="lazy"></div>
+        <div class="glare"></div>
+        <div class="chip chip-a"><small>N° 001</small><b data-fr>Pendentif NFL</b><b data-en>NFL pendant</b></div>
+        <div class="chip chip-b"><b>VVS</b></div>
+      </div>
+    </div>
+    <div class="sig-txt">
+      <span class="kicker rv"><b>01</b><span data-fr>La pièce signature</span><span data-en>The signature piece</span></span>
+      <h2 class="rv d1" data-fr>Le pendentif <em class="ice">NFL.</em></h2>
+      <h2 class="rv d1" data-en>The <em class="ice">NFL</em> pendant.</h2>
+      <p class="lead rv d2" data-fr>Les trois lettres de la maison, superposées et serties de diamants baguette et brillants, sur or rose et or blanc. Une pièce qui résume ce qu'on fait : du volume, de la lumière, et aucune pierre laissée au hasard.</p>
+      <p class="lead rv d2" data-en>The three letters of the house, stacked and set with baguette and brilliant diamonds on rose and white gold. One piece that sums up what we do: volume, light, and not a single stone left to chance.</p>
+      <div class="cert rv d2">
+        <div class="cert-h"><span data-fr>Fiche de la pièce</span><span data-en>Piece record</span><span>N° 001</span></div>
+        <dl>
+          <dt data-fr>Métal</dt><dt data-en>Metal</dt><dd data-fr>Or rose &amp; or blanc</dd><dd data-en>Rose &amp; white gold</dd>
+          <dt data-fr>Pierres</dt><dt data-en>Stones</dt><dd data-fr>Diamants VVS</dd><dd data-en>VVS diamonds</dd>
+          <dt data-fr>Tailles</dt><dt data-en>Cuts</dt><dd data-fr>Baguette &amp; brillant</dd><dd data-en>Baguette &amp; brilliant</dd>
+          <dt data-fr>Bélière</dt><dt data-en>Bail</dt><dd data-fr>Pavé de diamants</dd><dd data-en>Diamond pavé</dd>
+          <dt data-fr>Chaîne</dt><dt data-en>Chain</dt><dd data-fr>Corde (rope)</dd><dd data-en>Rope chain</dd>
+        </dl>
+      </div>
+      <div class="cta-row rv d3"><a class="btn btn-ice" href="#atelier"><span data-fr>Je veux la mienne</span><span data-en>I want mine</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION : carrousel 3D -->
+<section class="sec collection" id="collection" style="padding-top:clamp(40px,6vw,80px)">
+  <div class="wrap sec-head">
     <div>
-      <span class="kicker rv" data-fr>Joaillerie sur mesure · Dubaï — Paris</span>
-      <span class="kicker rv" data-en>Custom jewellery · Dubai — Paris</span>
-      <h1 class="rv d1" data-fr>Votre nom, <em class="ice">serti de diamants.</em></h1>
-      <h1 class="rv d1" data-en>Your name, <em class="ice">set in diamonds.</em></h1>
-      <p class="lead rv d2" data-fr>Pendentifs personnalisés, chaînes, bracelets et montres de luxe. Diamants naturels ou de laboratoire, au meilleur prix — entre Dubaï et Paris.</p>
-      <p class="lead rv d2" data-en>Custom pendants, chains, bracelets and luxury watches. Natural or lab-grown diamonds at the best price — between Dubai and Paris.</p>
-      <div class="cta-row rv d3">
-        <a class="btn btn-ice" href="#atelier"><span data-fr>Créer ma pièce</span><span data-en>Design my piece</span></a>
-        <a class="btn btn-line" href="#creations"><span data-fr>Voir les créations</span><span data-en>See the pieces</span></a>
-      </div>
-      <div class="facts rv d3">
-        <div><strong>28 K</strong><span data-fr>abonnés Instagram</span><span data-en>Instagram followers</span></div>
-        <div><strong>VVS</strong><span data-fr>diamants</span><span data-en>diamonds</span></div>
-        <div><strong>2</strong><span data-fr>villes : Dubaï &amp; Paris</span><span data-en>cities: Dubai &amp; Paris</span></div>
-      </div>
+      <span class="kicker rv"><b>02</b>Collection</span>
+      <h2 class="rv d1" data-fr>Des pièces <em>uniques.</em></h2>
+      <h2 class="rv d1" data-en>One-of-a-kind <em>pieces.</em></h2>
     </div>
-    <figure class="hero-pic rv d2">
-      <div class="frame"><img src="img/pendentif-nfl.jpg" alt="Pendentif NFL en or rose et or blanc serti de diamants VVS" width="640" height="1136" fetchpriority="high"></div>
-      <figcaption class="tag">
-        <small>N° 01</small>
-        <b data-fr>Pendentif NFL</b><b data-en>NFL pendant</b>
-        <span data-fr>Or rose &amp; or blanc · diamants VVS</span><span data-en>Rose &amp; white gold · VVS diamonds</span>
-      </figcaption>
+    <div class="cf-ctrl rv d2">
+      <button type="button" id="cfPrev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="cf-count" id="cfCount"><b>01</b> / 05</span>
+      <button type="button" id="cfNext" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="cf-track" id="cfTrack">
+    <figure class="cf-card" data-full="img/hd-pendentif-many.webp" tabindex="0">
+      <img src="img/hd-pendentif-many.webp" alt="Pendentif MANY serti de baguettes sur chaîne tennis avec croissant et étoile" width="1024" height="1536" loading="lazy">
+      <figcaption class="cf-info"><span class="no">N° 002</span><h3 data-fr>Pendentif MANY</h3><h3 data-en>MANY pendant</h3><p data-fr>Baguettes &amp; pavé · chaîne tennis, croissant &amp; étoile</p><p data-en>Baguettes &amp; pavé · tennis chain, crescent &amp; star</p><span class="who">@anasofficiel_</span></figcaption>
     </figure>
-  </div>
-</section>
-
-<!-- ILS PORTENT NFL -->
-<div class="worn">
-  <div class="wrap worn-in">
-    <p data-fr>Ils portent NFL</p><p data-en>Worn by</p>
-    <ul>
-      <li><a href="https://www.instagram.com/gazo_officiel/" target="_blank" rel="noopener">Gazo</a></li>
-      <li><a href="https://www.instagram.com/anasofficiel_/" target="_blank" rel="noopener">Many</a></li>
-      <li><a href="https://www.instagram.com/sadek93zoo/" target="_blank" rel="noopener">Sadek</a></li>
-      <li><a href="https://www.instagram.com/kell_rbl/" target="_blank" rel="noopener">Kell RBL</a></li>
-    </ul>
-  </div>
-</div>
-
-<!-- CRÉATIONS -->
-<section class="sec" id="creations">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="kicker rv" data-fr>Créations récentes</span><span class="kicker rv" data-en>Recent pieces</span>
-        <h2 class="rv d1" data-fr>Des pièces qui se voient <em>de loin.</em></h2>
-        <h2 class="rv d1" data-en>Pieces you see <em>from across the room.</em></h2>
+    <figure class="cf-card" data-full="img/hd-bracelet-gazo.webp" tabindex="0">
+      <img src="img/hd-bracelet-gazo.webp" alt="Bracelet sur mesure aux maillons infini sertis et pierres roses" width="1024" height="1536" loading="lazy">
+      <figcaption class="cf-info"><span class="no">N° 003</span><h3 data-fr>Bracelet sur mesure</h3><h3 data-en>Custom bracelet</h3><p data-fr>Maillons infini sertis · pierres roses · plaque gravée</p><p data-en>Iced infinity links · pink stones · engraved plate</p><span class="who">@gazo_officiel</span></figcaption>
+    </figure>
+    <figure class="cf-card" data-full="img/hd-pendentif-grappe.webp" tabindex="0">
+      <img src="img/hd-pendentif-grappe.webp" alt="Pendentif grappe de raisin en pierres violettes avec feuille verte, dans son écrin" width="1024" height="1536" loading="lazy">
+      <figcaption class="cf-info"><span class="no">N° 004</span><h3 data-fr>Pendentif « grappe »</h3><h3 data-en>“Grape” pendant</h3><p data-fr>Pierres violettes · feuille pavée de vert · chaîne tennis</p><p data-en>Purple stones · green pavé leaf · tennis chain</p><span class="who">@sadek93zoo</span></figcaption>
+    </figure>
+    <figure class="cf-card" data-full="img/hd-montre-ecrin.webp" tabindex="0">
+      <img src="img/hd-montre-ecrin.webp" alt="Montre entièrement sertie de diamants dans son écrin" width="1024" height="1536" loading="lazy">
+      <figcaption class="cf-info"><span class="no">N° 005</span><h3 data-fr>Montre full iced</h3><h3 data-en>Full iced watch</h3><p data-fr>Boîtier, lunette &amp; bracelet sertis de diamants</p><p data-en>Case, bezel &amp; bracelet set with diamonds</p><span class="who" data-fr>Montres de luxe</span><span class="who" data-en>Luxury watches</span></figcaption>
+    </figure>
+    <div class="cf-card cf-cta">
+      <div class="cf-ratio">
+        <svg class="gemico" viewBox="0 0 40 30" fill="none" stroke="currentColor" stroke-width=".9" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h22l7 8-18 17L2 11z"/><path d="M2 11h36M15 3l-4 8 9 17 9-17-4-8M11 11l9-8 9 8"/></svg>
+        <span class="no">N° 006</span>
+        <h3 data-fr>La vôtre.</h3><h3 data-en>Yours.</h3>
+        <p data-fr>Un prénom, un logo, une idée : on la dessine avec vous.</p>
+        <p data-en>A name, a logo, an idea: we design it with you.</p>
+        <a class="btn btn-teal" href="#atelier"><span data-fr>Créer ma pièce</span><span data-en>Design my piece</span></a>
       </div>
-      <p class="rv d2" data-fr>Chaque bijou est unique : dessiné pour une personne, un nom, une histoire. Voici quelques pièces sorties de l'atelier.</p>
-      <p class="rv d2" data-en>Every piece is one of a kind: designed for one person, one name, one story. Here are a few that recently left the workshop.</p>
-    </div>
-    <div class="grid-c">
-      <figure class="card rv" tabindex="0" data-full="img/pendentif-nfl.jpg">
-        <div class="ph"><img src="img/pendentif-nfl.jpg" alt="Pendentif NFL serti de diamants" loading="lazy" width="640" height="1136" style="object-position:50% 62%"></div>
-        <div class="meta"><div><h3 data-fr>Pendentif NFL</h3><h3 data-en>NFL pendant</h3><p class="spec" data-fr>Or rose &amp; or blanc · diamants VVS</p><p class="spec" data-en>Rose &amp; white gold · VVS diamonds</p></div><span class="no">01</span></div>
-      </figure>
-      <figure class="card rv d1" tabindex="0" data-full="img/pendentif-many.jpg">
-        <div class="ph"><img src="img/pendentif-many.jpg" alt="Pendentif MANY et chaîne tennis avec croissant de lune" loading="lazy" width="640" height="1136" style="object-position:50% 60%"></div>
-        <div class="meta"><div><h3 data-fr>Pendentif MANY</h3><h3 data-en>MANY pendant</h3><p class="spec" data-fr>Chaîne tennis &amp; croissant · pour @anasofficiel_</p><p class="spec" data-en>Tennis chain &amp; crescent · for @anasofficiel_</p></div><span class="no">02</span></div>
-      </figure>
-      <figure class="card rv d2" tabindex="0" data-full="img/bracelet-gazo.jpg">
-        <div class="ph"><img src="img/bracelet-gazo.jpg" alt="Bracelet sur mesure serti, maillons infini et pierres roses" loading="lazy" width="640" height="1136"></div>
-        <div class="meta"><div><h3 data-fr>Bracelet sur mesure</h3><h3 data-en>Custom bracelet</h3><p class="spec" data-fr>Fait pour @gazo_officiel</p><p class="spec" data-en>Made for @gazo_officiel</p></div><span class="no">03</span></div>
-      </figure>
-      <figure class="card rv" tabindex="0" data-full="img/pendentif-raisin.jpg">
-        <div class="ph"><img src="img/pendentif-raisin.jpg" alt="Pendentif grappe violet dans son coffret" loading="lazy" width="720" height="1280" style="object-position:50% 55%"></div>
-        <div class="meta"><div><h3 data-fr>Pendentif « grappe »</h3><h3 data-en>“Grape” pendant</h3><p class="spec" data-fr>Pierres violettes · pour @sadek93zoo</p><p class="spec" data-en>Purple stones · for @sadek93zoo</p></div><span class="no">04</span></div>
-      </figure>
-      <figure class="card rv d1" tabindex="0" data-full="img/pendentif-prenom.jpg">
-        <div class="ph"><img src="img/pendentif-prenom.jpg" alt="Pendentif prénom entièrement serti, tenu dans la main" loading="lazy" width="720" height="960"></div>
-        <div class="meta"><div><h3 data-fr>Pendentif prénom</h3><h3 data-en>Name pendant</h3><p class="spec" data-fr>Entièrement serti · pour @sameermussa</p><p class="spec" data-en>Fully iced · for @sameermussa</p></div><span class="no">05</span></div>
-      </figure>
-      <figure class="card rv d2" tabindex="0" data-full="img/montre-full-iced.jpg">
-        <div class="ph"><img src="img/montre-full-iced.jpg" alt="Montre entièrement sertie de diamants" loading="lazy" width="720" height="1280" style="object-position:50% 62%"></div>
-        <div class="meta"><div><h3 data-fr>Montre full iced</h3><h3 data-en>Full iced watch</h3><p class="spec" data-fr>Cadran &amp; bracelet sertis</p><p class="spec" data-en>Iced dial &amp; bracelet</p></div><span class="no">06</span></div>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- SAVOIR-FAIRE -->
-<section class="sec know" id="savoir-faire">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="kicker rv" data-fr>Ce qu'on fait</span><span class="kicker rv" data-en>What we do</span>
-        <h2 class="rv d1" data-fr>De l'idée <em>au coffret.</em></h2>
-        <h2 class="rv d1" data-en>From idea <em>to the box.</em></h2>
-      </div>
-      <p class="rv d2" data-fr>Or blanc, jaune ou rose. Diamants naturels ou de laboratoire. Vous choisissez, on s'occupe du reste.</p>
-      <p class="rv d2" data-en>White, yellow or rose gold. Natural or lab-grown diamonds. You choose, we handle the rest.</p>
-    </div>
-    <div class="know-grid">
-      <div class="know-item rv"><i>01</i><h3 data-fr>Pendentifs</h3><h3 data-en>Pendants</h3><p data-fr>Votre prénom, votre logo, votre blason. Dessinés pour vous et sertis de diamants, du plus discret au plus massif.</p><p data-en>Your name, your logo, your crest. Designed for you and set with diamonds, from subtle to massive.</p></div>
-      <div class="know-item rv d1"><i>02</i><h3 data-fr>Chaînes</h3><h3 data-en>Chains</h3><p data-fr>Cubaines, tennis ou corde. Comme notre chaîne cubaine bombée en or rose et diamants VVS.</p><p data-en>Cuban, tennis or rope. Like our raised Cuban chain in rose gold and VVS diamonds.</p></div>
-      <div class="know-item rv d2"><i>03</i><h3 data-fr>Bracelets</h3><h3 data-en>Bracelets</h3><p data-fr>Maillons sertis, pierres de couleur, détails gravés : des pièces uniques, comme celle faite pour Gazo.</p><p data-en>Iced links, coloured stones, engraved details: one-off pieces, like the one made for Gazo.</p></div>
-      <div class="know-item rv d3"><i>04</i><h3 data-fr>Montres</h3><h3 data-en>Watches</h3><p data-fr>Des modèles de prestige, d'origine ou entièrement sertis de diamants, au meilleur prix.</p><p data-en>Prestige models, stock or fully iced with diamonds, at the best price.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ATELIER -->
-<section class="sec" id="atelier">
+<section class="sec" id="atelier" style="padding-top:clamp(40px,6vw,80px)">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="kicker rv" data-fr>L'atelier</span><span class="kicker rv" data-en>The workshop</span>
-        <h2 class="rv d1" data-fr>Imaginez <em>votre pièce.</em></h2>
-        <h2 class="rv d1" data-en>Picture <em>your piece.</em></h2>
+        <span class="kicker rv"><b>03</b><span data-fr>L'atelier</span><span data-en>The workshop</span></span>
+        <h2 class="rv d1" data-fr>Imaginez <em>la vôtre.</em></h2>
+        <h2 class="rv d1" data-en>Picture <em>yours.</em></h2>
       </div>
       <p class="rv d2" data-fr>Écrivez un nom, choisissez le style et le métal. On reçoit votre idée et on vous répond avec un dessin et un devis.</p>
       <p class="rv d2" data-en>Type a name, pick the style and the metal. We receive your idea and reply with a design and a quote.</p>
@@ -478,15 +563,17 @@ h2 em,h1 em{font-style:italic}
     <div class="atelier-grid">
       <div class="stage m-blanc rv" id="stage">
         <span class="lbl" data-fr>Aperçu</span><span class="lbl" data-en>Preview</span>
+        <span class="hint3d">3D</span>
         <svg class="chain" viewBox="0 0 400 170" preserveAspectRatio="none" aria-hidden="true">
           <path d="M-10 -6 C 90 40, 160 110, 200 166 C 240 110, 310 40, 410 -6" fill="none" stroke="var(--edge)" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 10" vector-effect="non-scaling-stroke"/>
           <path d="M-10 -6 C 90 40, 160 110, 200 166 C 240 110, 310 40, 410 -6" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0 10" vector-effect="non-scaling-stroke" opacity=".9"/>
         </svg>
-        <div class="bail"></div>
-        <div class="pend"><span class="pend-name f-goth" id="pendName">NFL</span></div>
+        <div class="pend3d" id="pend3d">
+          <div class="bail"></div>
+          <div class="pend-name f-goth" id="pendName"></div>
+        </div>
         <p class="cap" data-fr>Aperçu indicatif : la pièce finale est dessinée sur mesure avec vous.</p>
         <p class="cap" data-en>For illustration only: the final piece is designed with you.</p>
-        <div class="sheen"></div>
       </div>
 
       <form class="form rv d1" id="cfg" onsubmit="return false">
@@ -496,36 +583,36 @@ h2 em,h1 em{font-style:italic}
         </label>
         <div class="field">
           <span data-fr>Pièce</span><span data-en>Piece</span>
-          <div class="chips" data-group="piece">
-            <label><input type="radio" name="piece" value="pendant" checked><span data-fr>Pendentif</span><span data-en>Pendant</span></label>
-            <label><input type="radio" name="piece" value="chain"><span data-fr>Chaîne</span><span data-en>Chain</span></label>
-            <label><input type="radio" name="piece" value="bracelet"><span data-fr>Bracelet</span><span data-en>Bracelet</span></label>
-            <label><input type="radio" name="piece" value="watch"><span data-fr>Montre</span><span data-en>Watch</span></label>
+          <div class="chips">
+            <label><input type="radio" name="piece" value="pendant" checked><span><b data-fr>Pendentif</b><b data-en>Pendant</b></span></label>
+            <label><input type="radio" name="piece" value="chain"><span><b data-fr>Chaîne</b><b data-en>Chain</b></span></label>
+            <label><input type="radio" name="piece" value="bracelet"><span><b>Bracelet</b></span></label>
+            <label><input type="radio" name="piece" value="watch"><span><b data-fr>Montre</b><b data-en>Watch</b></span></label>
           </div>
         </div>
         <div class="field">
           <span>Style</span>
           <div class="chips">
-            <label><input type="radio" name="style" value="goth" checked><span data-fr>Gothique</span><span data-en>Gothic</span></label>
-            <label><input type="radio" name="style" value="script"><span>Script</span></label>
-            <label><input type="radio" name="style" value="bloc"><span data-fr>Bloc</span><span data-en>Block</span></label>
+            <label><input type="radio" name="style" value="goth" checked><span><b data-fr>Gothique</b><b data-en>Gothic</b></span></label>
+            <label><input type="radio" name="style" value="script"><span><b>Script</b></span></label>
+            <label><input type="radio" name="style" value="bloc"><span><b data-fr>Bloc</b><b data-en>Block</b></span></label>
           </div>
         </div>
         <div class="field">
           <span data-fr>Métal</span><span data-en>Metal</span>
           <div class="chips">
-            <label><input type="radio" name="metal" value="blanc" checked><span><i class="dot" style="background:#dbe4ed"></i><b data-fr style="font-weight:400">Or blanc</b><b data-en style="font-weight:400">White gold</b></span></label>
-            <label><input type="radio" name="metal" value="jaune"><span><i class="dot" style="background:#e7c46a"></i><b data-fr style="font-weight:400">Or jaune</b><b data-en style="font-weight:400">Yellow gold</b></span></label>
-            <label><input type="radio" name="metal" value="rose"><span><i class="dot" style="background:#e3ab98"></i><b data-fr style="font-weight:400">Or rose</b><b data-en style="font-weight:400">Rose gold</b></span></label>
-            <label><input type="radio" name="metal" value="bicolore"><span><i class="dot" style="background:linear-gradient(90deg,#dbe4ed 50%,#e3ab98 50%)"></i><b data-fr style="font-weight:400">Bicolore</b><b data-en style="font-weight:400">Two-tone</b></span></label>
+            <label><input type="radio" name="metal" value="blanc" checked><span><i class="dot" style="background:#dbe4ed"></i><b data-fr>Or blanc</b><b data-en>White gold</b></span></label>
+            <label><input type="radio" name="metal" value="jaune"><span><i class="dot" style="background:#e7c46a"></i><b data-fr>Or jaune</b><b data-en>Yellow gold</b></span></label>
+            <label><input type="radio" name="metal" value="rose"><span><i class="dot" style="background:#e3ab98"></i><b data-fr>Or rose</b><b data-en>Rose gold</b></span></label>
+            <label><input type="radio" name="metal" value="bicolore"><span><i class="dot" style="background:linear-gradient(90deg,#dbe4ed 50%,#e3ab98 50%)"></i><b data-fr>Bicolore</b><b data-en>Two-tone</b></span></label>
           </div>
         </div>
         <div class="field">
           <span data-fr>Diamants</span><span data-en>Diamonds</span>
           <div class="chips">
-            <label><input type="radio" name="stone" value="nat" checked><span data-fr>Naturels</span><span data-en>Natural</span></label>
-            <label><input type="radio" name="stone" value="lab"><span data-fr>Laboratoire</span><span data-en>Lab-grown</span></label>
-            <label><input type="radio" name="stone" value="help"><span data-fr>Conseillez-moi</span><span data-en>Advise me</span></label>
+            <label><input type="radio" name="stone" value="nat" checked><span><b data-fr>Naturels</b><b data-en>Natural</b></span></label>
+            <label><input type="radio" name="stone" value="lab"><span><b data-fr>Laboratoire</b><b data-en>Lab-grown</b></span></label>
+            <label><input type="radio" name="stone" value="help"><span><b data-fr>Conseillez-moi</b><b data-en>Advise me</b></span></label>
           </div>
         </div>
         <div class="send">
@@ -544,93 +631,82 @@ h2 em,h1 em{font-style:italic}
   </div>
 </section>
 
-<!-- NATUREL OU LABO -->
-<section class="sec know" id="diamants">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="kicker rv" data-fr>Naturel ou laboratoire</span><span class="kicker rv" data-en>Natural or lab-grown</span>
-        <h2 class="rv d1" data-fr>Deux vrais diamants. <em>À vous de choisir.</em></h2>
-        <h2 class="rv d1" data-en>Two real diamonds. <em>Your call.</em></h2>
-      </div>
-    </div>
-    <div class="versus rv d1">
-      <div>
-        <span class="kicker" data-fr>Diamant naturel</span><span class="kicker" data-en>Natural diamond</span>
-        <h3 data-fr>La rareté de la terre.</h3><h3 data-en>Rare by nature.</h3>
-        <ul data-fr>
-          <li>Formé dans la terre il y a des millions d'années.</li>
-          <li>Chaque pierre est rare et unique.</li>
-          <li>Le choix de la tradition et du prestige.</li>
-        </ul>
-        <ul data-en>
-          <li>Formed in the earth millions of years ago.</li>
-          <li>Every stone is rare and unique.</li>
-          <li>The traditional, prestige choice.</li>
-        </ul>
-      </div>
-      <div>
-        <span class="kicker" data-fr>Diamant de laboratoire</span><span class="kicker" data-en>Lab-grown diamond</span>
-        <h3 data-fr>Le même éclat, plus de pierres.</h3><h3 data-en>Same sparkle, more stones.</h3>
-        <ul data-fr>
-          <li>Même composition, même dureté et même éclat que le naturel.</li>
-          <li>Créé en laboratoire, sans extraction minière.</li>
-          <li>Bien plus de carats pour le même budget.</li>
-        </ul>
-        <ul data-en>
-          <li>Same composition, hardness and sparkle as natural.</li>
-          <li>Grown in a lab, no mining involved.</li>
-          <li>Far more carats for the same budget.</li>
-        </ul>
-      </div>
-      <p class="both" data-fr>Pas sûr ? Dites-nous votre budget : on vous conseille la meilleure option pour votre pièce.</p>
-      <p class="both" data-en>Not sure? Tell us your budget and we'll advise the best option for your piece.</p>
-    </div>
-  </div>
-</section>
-
 <!-- MONTRES -->
-<section class="sec" id="montres">
+<section class="sec watch" id="montres">
   <div class="wrap watch-grid">
-    <div class="watch-pics rv">
-      <figure tabindex="0" data-full="img/kell-rbl-showroom.jpg"><img src="img/kell-rbl-showroom.jpg" alt="Remise d'une montre et d'une chaîne tennis en boutique" loading="lazy" width="1080" height="1440" style="object-position:50% 40%"></figure>
-      <figure tabindex="0" data-full="img/montre-full-iced.jpg"><img src="img/montre-full-iced.jpg" alt="Montre de luxe entièrement sertie" loading="lazy" width="720" height="1280" style="object-position:50% 60%"></figure>
+    <div class="w-col">
+      <div class="w-main clip" data-full="img/hd-montre-studio.webp"><img src="img/hd-montre-studio.webp" alt="Montre de luxe entièrement sertie de diamants baguette" width="1024" height="1536" loading="lazy"></div>
+      <div class="w-sub" data-speed="-0.12" data-full="img/hd-kell-rbl-boutique.webp"><img src="img/hd-kell-rbl-boutique.webp" alt="Remise d'une montre et de chaînes en boutique" width="1024" height="1536" loading="lazy"></div>
     </div>
     <div class="watch-txt">
-      <span class="kicker rv" data-fr>Montres de luxe</span><span class="kicker rv" data-en>Luxury watches</span>
+      <span class="kicker rv"><b>04</b><span data-fr>Montres de luxe</span><span data-en>Luxury watches</span></span>
       <h2 class="rv d1" data-fr>L'heure, <em class="ice">en mieux.</em></h2>
       <h2 class="rv d1" data-en>Time, <em class="ice">but better.</em></h2>
-      <p class="rv d2" data-fr>Des modèles d'exception, d'origine ou entièrement sertis de diamants. Dites-nous la référence que vous cherchez : on la trouve au meilleur prix depuis Dubaï, avec la chaîne assortie si vous le voulez.</p>
-      <p class="rv d2" data-en>Exceptional models, stock or fully iced with diamonds. Tell us the reference you're after: we source it at the best price from Dubai, with a matching chain if you like.</p>
-      <div class="nofake rv d3">
-        <b>#nofake</b>
-        <span data-fr>On ne vend pas de contrefaçons. NFL Jewellers n'est affilié à aucune des marques vendues.</span>
-        <span data-en>We don't sell fakes. NFL Jewellers is not affiliated with the brands we sell.</span>
+      <p class="lead rv d2" data-fr>Des modèles d'exception, d'origine ou entièrement sertis de diamants. Dites-nous la référence que vous cherchez : on la trouve au meilleur prix depuis Dubaï, avec la chaîne assortie si vous le voulez.</p>
+      <p class="lead rv d2" data-en>Exceptional models, stock or fully iced with diamonds. Tell us the reference you're after: we source it at the best price from Dubai, with a matching chain if you like.</p>
+      <div class="seal-row rv d2">
+        <div class="seal" id="seal" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle cx="100" cy="100" r="96" fill="none" stroke="rgba(214,226,240,.22)"/><circle cx="100" cy="100" r="62" fill="none" stroke="rgba(43,196,174,.4)"/><text><textPath href="#circ" textLength="496" lengthAdjust="spacing">NO FAKE · NFL JEWELLERS · DUBAÏ — PARIS ·</textPath></text></svg>
+          <b>#nofake</b>
+        </div>
+        <p data-fr>On ne vend pas de contrefaçons. NFL Jewellers n'est affilié à aucune des marques vendues.</p>
+        <p data-en>We don't sell fakes. NFL Jewellers is not affiliated with the brands we sell.</p>
       </div>
-      <div class="cta-row rv d3" style="margin-top:28px">
+      <div class="cta-row rv d3" style="margin-top:34px">
         <a class="btn btn-ice dm" data-msg="watch" href="https://ig.me/m/nfl_jewellers" target="_blank" rel="noopener"><span data-fr>Demander une montre</span><span data-en>Ask about a watch</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ARTISTES -->
-<section class="sec" id="artistes" style="padding-top:0">
+<!-- NATUREL OU LABO -->
+<section class="sec" id="diamants" style="padding-top:clamp(40px,6vw,80px)">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="kicker rv" data-fr>Ils nous font confiance</span><span class="kicker rv" data-en>They trust us</span>
+        <span class="kicker rv"><b>05</b><span data-fr>Naturel ou laboratoire</span><span data-en>Natural or lab-grown</span></span>
+        <h2 class="rv d1" data-fr>Deux vrais diamants. <em>À vous de choisir.</em></h2>
+        <h2 class="rv d1" data-en>Two real diamonds. <em>Your call.</em></h2>
+      </div>
+    </div>
+    <div class="versus">
+      <div class="vs rv">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M10 18l8-10 14 2 7 11-6 17-15 4L6 30z"/><path d="M18 8l3 13 11-11M6 30l15-9 12 21M21 21l18 0M21 21l-3 21"/></svg>
+        <span class="kicker" data-fr>Diamant naturel</span><span class="kicker" data-en>Natural diamond</span>
+        <h3 data-fr>La rareté de la terre.</h3><h3 data-en>Rare by nature.</h3>
+        <ul data-fr><li>Formé dans la terre il y a des millions d'années.</li><li>Chaque pierre est rare et unique.</li><li>Le choix de la tradition et du prestige.</li></ul>
+        <ul data-en><li>Formed in the earth millions of years ago.</li><li>Every stone is rare and unique.</li><li>The traditional, prestige choice.</li></ul>
+      </div>
+      <div class="vs lab rv d1">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M14 10h20l8 10-18 20L6 20z"/><path d="M6 20h36M20 10l-4 10 8 20 8-20-4-10M16 20l8-10 8 10"/></svg>
+        <span class="kicker" data-fr>Diamant de laboratoire</span><span class="kicker" data-en>Lab-grown diamond</span>
+        <h3 data-fr>Le même éclat, plus de pierres.</h3><h3 data-en>Same sparkle, more stones.</h3>
+        <ul data-fr><li>Même composition, même dureté et même éclat que le naturel.</li><li>Créé en laboratoire, sans extraction minière.</li><li>Bien plus de carats pour le même budget.</li></ul>
+        <ul data-en><li>Same composition, hardness and sparkle as natural.</li><li>Grown in a lab, no mining involved.</li><li>Far more carats for the same budget.</li></ul>
+      </div>
+    </div>
+    <p class="both rv" data-fr>Pas sûr ? Dites-nous votre budget : on vous conseille la meilleure option pour votre pièce.</p>
+    <p class="both rv" data-en>Not sure? Tell us your budget and we'll advise the best option for your piece.</p>
+  </div>
+</section>
+
+<!-- ARTISTES -->
+<section class="sec" id="artistes" style="padding-top:clamp(40px,6vw,80px)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker rv"><b>06</b><span data-fr>Ils portent NFL</span><span data-en>Worn by</span></span>
         <h2 class="rv d1" data-fr>Portés <em>sur scène.</em></h2>
         <h2 class="rv d1" data-en>Worn <em>on stage.</em></h2>
       </div>
       <p class="rv d2" data-fr>Des artistes du rap français nous confient leurs pièces. Le même atelier travaille pour vous.</p>
       <p class="rv d2" data-en>French rap artists trust us with their pieces. The same workshop works for you.</p>
     </div>
-    <div class="artists">
-      <figure class="artist rv" tabindex="0" data-full="img/gazo.jpg"><img src="img/gazo.jpg" alt="Gazo portant son bracelet NFL" loading="lazy" width="640" height="1136" style="object-position:50% 30%"><figcaption><b>Gazo</b><span data-fr>Bracelet sur mesure</span><span data-en>Custom bracelet</span></figcaption></figure>
-      <figure class="artist rv d1" tabindex="0" data-full="img/many.jpg"><img src="img/many.jpg" alt="Many portant son pendentif MANY" loading="lazy" width="640" height="1136" style="object-position:50% 30%"><figcaption><b>Many</b><span data-fr>Pendentif MANY</span><span data-en>MANY pendant</span></figcaption></figure>
-      <figure class="artist rv d2" tabindex="0" data-full="img/sadek.jpg"><img src="img/sadek.jpg" alt="Remise du pendentif grappe à Sadek" loading="lazy" width="1080" height="1440" style="object-position:62% 40%"><figcaption><b>Sadek</b><span data-fr>Pendentif « grappe »</span><span data-en>“Grape” pendant</span></figcaption></figure>
-      <figure class="artist rv d3" tabindex="0" data-full="img/kell-rbl.jpg"><img src="img/kell-rbl.jpg" alt="Kell RBL avec pendentif et montre sertis" loading="lazy" width="720" height="1280" style="object-position:50% 30%"><figcaption><b>Kell RBL</b><span data-fr>Pendentif &amp; montre</span><span data-en>Pendant &amp; watch</span></figcaption></figure>
+    <div class="bento">
+      <figure class="art b1 clip" data-full="img/hd-kell-rbl.webp" tabindex="0"><img src="img/hd-kell-rbl.webp" alt="Kell RBL avec un pendentif sur mesure, une chaîne cubaine et une montre sertie" width="1024" height="1536" loading="lazy" style="object-position:50% 35%"><figcaption><b>Kell RBL</b><span data-fr>Pendentif logo, chaîne cubaine &amp; montre</span><span data-en>Logo pendant, Cuban chain &amp; watch</span></figcaption></figure>
+      <figure class="art b2 clip d1" data-full="img/gazo.jpg" tabindex="0"><img src="img/gazo.jpg" alt="Gazo portant son bracelet NFL" width="640" height="1136" loading="lazy" style="object-position:50% 30%"><figcaption><b>Gazo</b><span data-fr>Bracelet sur mesure</span><span data-en>Custom bracelet</span></figcaption></figure>
+      <figure class="art b3 clip d2" data-full="img/many.jpg" tabindex="0"><img src="img/many.jpg" alt="Many portant son pendentif MANY" width="640" height="1136" loading="lazy" style="object-position:50% 22%"><figcaption><b>Many</b><span data-fr>Pendentif MANY</span><span data-en>MANY pendant</span></figcaption></figure>
+      <figure class="art b4 clip d3" data-full="img/sadek.jpg" tabindex="0"><img src="img/sadek.jpg" alt="Remise du pendentif grappe à Sadek" width="1080" height="1440" loading="lazy" style="object-position:60% 38%"><figcaption><b>Sadek</b><span data-fr>Pendentif « grappe »</span><span data-en>“Grape” pendant</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -638,13 +714,13 @@ h2 em,h1 em{font-style:italic}
 <!-- LA MAISON -->
 <section class="sec house" id="maison">
   <div class="wrap house-grid">
-    <div class="house-pic rv"><img src="img/dubai-coffret.jpg" alt="Le coffret turquoise NFL Jewellers à Dubaï" loading="lazy" width="1080" height="1440"></div>
+    <div class="house-pic clip"><img src="img/dubai-coffret.jpg" alt="Le coffret turquoise NFL Jewellers à Dubaï" width="1080" height="1440" loading="lazy" data-speed="0.06"></div>
     <div class="house-txt">
-      <span class="kicker rv" data-fr>La maison</span><span class="kicker rv" data-en>The house</span>
+      <span class="kicker rv"><b>07</b><span data-fr>La maison</span><span data-en>The house</span></span>
       <h2 class="rv d1" data-fr>Entre Dubaï <em>et Paris.</em></h2>
       <h2 class="rv d1" data-en>Between Dubai <em>and Paris.</em></h2>
-      <p class="rv d2" data-fr>NFL Jewellers vit entre deux villes : Dubaï, capitale de l'or et du diamant, et Paris, où se trouvent beaucoup de nos clients. On y dessine des pièces qui se voient de loin et qui tiennent de près, livrées dans le coffret turquoise NFL.</p>
-      <p class="rv d2" data-en>NFL Jewellers lives between two cities: Dubai, the capital of gold and diamonds, and Paris, home to many of our clients. We design pieces that stand out from afar and hold up up close, delivered in the turquoise NFL box.</p>
+      <p class="lead rv d2" data-fr>NFL Jewellers vit entre deux villes : Dubaï, capitale de l'or et du diamant, et Paris, où se trouvent beaucoup de nos clients. On y dessine des pièces qui se voient de loin et qui tiennent de près, livrées dans le coffret turquoise NFL.</p>
+      <p class="lead rv d2" data-en>NFL Jewellers lives between two cities: Dubai, the capital of gold and diamonds, and Paris, home to many of our clients. We design pieces that stand out from afar and hold up up close, delivered in the turquoise NFL box.</p>
       <div class="cities rv d3">
         <div><small data-fr>Heure à Dubaï</small><small data-en>Dubai time</small><b id="tDxb">--:--</b><span>GMT+4</span></div>
         <div><small data-fr>Heure à Paris</small><small data-en>Paris time</small><b id="tPar">--:--</b><span id="zPar">CET</span></div>
@@ -657,7 +733,7 @@ h2 em,h1 em{font-style:italic}
 <section class="sec faq" id="faq">
   <div class="wrap faq-grid">
     <div>
-      <span class="kicker rv" data-fr>Questions fréquentes</span><span class="kicker rv" data-en>FAQ</span>
+      <span class="kicker rv"><b>08</b><span data-fr>Questions fréquentes</span><span data-en>FAQ</span></span>
       <h2 class="rv d1" data-fr>Avant de <em>commander.</em></h2>
       <h2 class="rv d1" data-en>Before you <em>order.</em></h2>
     </div>
@@ -697,9 +773,9 @@ h2 em,h1 em{font-style:italic}
 </section>
 
 <!-- CONTACT -->
-<section class="sec contact" id="contact">
+<section class="contact sec" id="contact">
   <div class="wrap">
-    <span class="kicker rv" data-fr>Contact</span><span class="kicker rv" data-en>Contact</span>
+    <span class="kicker rv"><b>09</b>Contact</span>
     <h2 class="rv d1" data-fr>Parlons de <em class="ice">votre pièce.</em></h2>
     <h2 class="rv d1" data-en>Let's talk about <em class="ice">your piece.</em></h2>
     <p class="rv d2" data-fr>Un prénom, un logo, une montre en tête ? Écrivez-nous : on vous répond avec des idées et un prix.</p>
@@ -754,6 +830,7 @@ h2 em,h1 em{font-style:italic}
   <p id="lbCap"></p>
 </div>
 
+<!-- Interface -->
 <script>
 (function(){
   // Si un jour ils donnent un numéro WhatsApp (ex. "9715XXXXXXXX"), les boutons l'utiliseront avec le message prérempli.
@@ -761,6 +838,8 @@ h2 em,h1 em{font-style:italic}
   var IG = 'https://ig.me/m/nfl_jewellers';
   var SNAP = 'https://www.snapchat.com/add/nfljewellers';
   var root = document.documentElement;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   /* ----- langue ----- */
   function getLang(){ return root.lang === 'en' ? 'en' : 'fr'; }
@@ -768,18 +847,10 @@ h2 em,h1 em{font-style:italic}
     root.lang = l;
     document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('on', b.dataset.lang === l); });
     try{ localStorage.setItem('nfl-lang', l); }catch(e){}
-    updateWaLinks();
+    updateWaLinks(); onScroll();
   }
-  var saved = null;
-  try{ saved = localStorage.getItem('nfl-lang'); }catch(e){}
-  var nav = (navigator.language || 'fr').toLowerCase();
-  setLang(saved || (nav.indexOf('en') === 0 || nav.indexOf('ar') === 0 ? 'en' : 'fr'));
-  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
-
   /* ----- en-tête et menu ----- */
   var hd = document.getElementById('hd'), burger = document.getElementById('burger');
-  function onScroll(){ hd.classList.toggle('solid', window.scrollY > 30); }
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
   burger.addEventListener('click', function(){
     var open = hd.classList.toggle('open');
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -787,11 +858,116 @@ h2 em,h1 em{font-style:italic}
   document.querySelectorAll('#nav a').forEach(function(a){ a.addEventListener('click', function(){ hd.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }); });
 
   /* ----- apparitions ----- */
-  var rv = document.querySelectorAll('.rv');
+  var rv = document.querySelectorAll('.rv,.clip');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
     rv.forEach(function(el){ io.observe(el); });
   } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* ----- manifeste : les mots s'allument en défilant ----- */
+  var mfWords = [];
+  document.querySelectorAll('.mf').forEach(function(p){
+    var list = [];
+    (function walk(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(n){
+        if(n.nodeType === 3){
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function(part){
+            if(!part) return;
+            if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+            var s = document.createElement('span'); s.className = 'w'; s.textContent = part; frag.appendChild(s); list.push(s);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if(n.nodeType === 1){ walk(n); }
+      });
+    })(p);
+    mfWords.push({el:p, words:list});
+  });
+  function updateManifesto(){
+    mfWords.forEach(function(m){
+      if(!m.el.offsetParent) return;
+      var r = m.el.getBoundingClientRect(), vh = innerHeight;
+      var p = (vh * 0.9 - r.top) / (r.height + vh * 0.35);
+      p = Math.max(0, Math.min(1, p));
+      var lit = p * m.words.length * 1.1;
+      m.words.forEach(function(w, i){ w.style.opacity = reduce ? 1 : Math.max(.13, Math.min(1, lit - i)); });
+    });
+  }
+
+  /* ----- inclinaison 3D au survol ----- */
+  if(fine){
+    document.querySelectorAll('[data-tilt]').forEach(function(t){
+      var inner = t.querySelector('.tilt-in'), max = parseFloat(t.dataset.tilt) || 8;
+      t.addEventListener('pointermove', function(e){
+        var r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        t.classList.add('active');
+        inner.style.transform = 'rotateY(' + ((x - .5) * max * 2).toFixed(2) + 'deg) rotateX(' + ((.5 - y) * max * 2).toFixed(2) + 'deg)';
+        inner.style.setProperty('--gx', (x * 100) + '%'); inner.style.setProperty('--gy', (y * 100) + '%');
+      });
+      t.addEventListener('pointerleave', function(){ t.classList.remove('active'); inner.style.transform = ''; });
+    });
+  }
+
+  /* ----- collection : carrousel 3D ----- */
+  var track = document.getElementById('cfTrack'), cards = Array.prototype.slice.call(track.children), count = document.getElementById('cfCount');
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function updateCards(){
+    var tr = track.getBoundingClientRect(), mid = tr.left + tr.width / 2, best = 0, bestD = 1e9;
+    cards.forEach(function(c, i){
+      var r = c.getBoundingClientRect(), d = (r.left + r.width / 2 - mid) / (r.width + 34);
+      if(Math.abs(d) < bestD){ bestD = Math.abs(d); best = i; }
+      var cd = Math.max(-2.2, Math.min(2.2, d)), a = Math.abs(cd);
+      c.style.transform = 'perspective(1500px) rotateY(' + (-cd * 24).toFixed(2) + 'deg) translateZ(' + (-a * 90).toFixed(1) + 'px) scale(' + (1 - a * .05).toFixed(3) + ')';
+      c.style.opacity = (1 - Math.min(a, 2) * .22).toFixed(3);
+      c.style.zIndex = String(10 - Math.round(a * 3));
+    });
+    count.innerHTML = '<b>' + pad(best + 1) + '</b> / ' + pad(cards.length);
+  }
+  function go(dir){ var w = cards[0].getBoundingClientRect().width + 34; track.scrollBy({left: dir * w, behavior: reduce ? 'auto' : 'smooth'}); }
+  document.getElementById('cfPrev').addEventListener('click', function(){ go(-1); });
+  document.getElementById('cfNext').addEventListener('click', function(){ go(1); });
+  track.addEventListener('scroll', function(){ requestAnimationFrame(updateCards); }, {passive:true});
+  // glisser à la souris
+  var drag = null, moved = false;
+  track.addEventListener('pointerdown', function(e){
+    if(e.pointerType !== 'mouse' || e.button !== 0) return;
+    drag = {x: e.clientX, s: track.scrollLeft}; moved = false;
+  });
+  window.addEventListener('pointermove', function(e){
+    if(!drag) return;
+    var dx = e.clientX - drag.x;
+    if(Math.abs(dx) > 4){ moved = true; track.classList.add('dragging'); }
+    if(moved) track.scrollLeft = drag.s - dx;
+  });
+  window.addEventListener('pointerup', function(){
+    if(!drag) return; drag = null;
+    if(moved){
+      var tr = track.getBoundingClientRect(), mid = tr.left + tr.width / 2, best = null, bd = 1e9;
+      cards.forEach(function(c){ var r = c.getBoundingClientRect(), d = Math.abs(r.left + r.width / 2 - mid); if(d < bd){ bd = d; best = c; } });
+      track.classList.remove('dragging');
+      if(best){ var r = best.getBoundingClientRect(); track.scrollBy({left: r.left + r.width / 2 - mid, behavior:'smooth'}); }
+    }
+  });
+  track.addEventListener('click', function(e){ if(moved){ e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+
+  /* ----- défilement : parallaxe, sceau, en-tête ----- */
+  var speeds = document.querySelectorAll('[data-speed]'), seal = document.getElementById('seal'), fab = document.querySelector('.fab'), ticking = false;
+  function onScroll(){
+    hd.classList.toggle('solid', window.scrollY > 40);
+    fab.classList.toggle('on', window.scrollY > innerHeight * .6);
+    updateManifesto();
+    if(!reduce){
+      speeds.forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if(r.bottom < -200 || r.top > innerHeight + 200) return;
+        var off = (r.top + r.height / 2 - innerHeight / 2) * parseFloat(el.dataset.speed);
+        el.style.transform = 'translate3d(0,' + off.toFixed(1) + 'px,0)';
+      });
+      if(seal) seal.style.transform = 'rotate(' + (window.scrollY * .06).toFixed(1) + 'deg)';
+    }
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; onScroll(); }); } }, {passive:true});
+  window.addEventListener('resize', function(){ updateCards(); onScroll(); });
 
   /* ----- messages ----- */
   var MSG = {
@@ -804,17 +980,21 @@ h2 em,h1 em{font-style:italic}
     document.querySelectorAll('a.dm').forEach(function(a){ a.href = waUrl(MSG[getLang()][a.dataset.msg || 'general']); });
   }
 
-  /* ----- atelier ----- */
-  var txt = document.getElementById('txt'), name = document.getElementById('pendName'), stage = document.getElementById('stage'), form = document.getElementById('cfg'), note = document.getElementById('note');
+  /* ----- atelier : pendentif en relief ----- */
+  var txt = document.getElementById('txt'), name = document.getElementById('pendName'), stage = document.getElementById('stage'), p3 = document.getElementById('pend3d'), form = document.getElementById('cfg'), note = document.getElementById('note');
   function val(n){ var el = form.querySelector('input[name="'+n+'"]:checked'); return el ? el.value : ''; }
   function render(){
     var t = txt.value.trim() || 'NFL';
-    name.textContent = t;
     name.className = 'pend-name f-' + val('style');
-    stage.className = stage.className.replace(/\bm-\w+/g, '').trim() + ' m-' + val('metal');
-    // ajuste la taille pour que le nom tienne dans l'aperçu
+    stage.className = stage.className.replace(/\bm-\w+/g, '').replace(/\s+/g,' ').trim() + ' m-' + val('metal');
+    name.textContent = '';
+    for(var k = 7; k >= 1; k--){
+      var s = document.createElement('span'); s.className = 'dl'; s.setAttribute('aria-hidden','true');
+      s.style.transform = 'translateZ(-' + (k * 1.4).toFixed(1) + 'px)'; s.textContent = t; name.appendChild(s);
+    }
+    var f = document.createElement('span'); f.className = 'fr'; f.textContent = t; name.appendChild(f);
     name.style.fontSize = '';
-    var max = stage.clientWidth - 40, w = name.scrollWidth;
+    var max = stage.clientWidth - 48, w = f.scrollWidth;
     if(w > max){ var fs = parseFloat(getComputedStyle(name).fontSize); name.style.fontSize = Math.floor(fs * max / w) + 'px'; }
   }
   form.addEventListener('input', render); form.addEventListener('change', render);
@@ -823,6 +1003,14 @@ h2 em,h1 em{font-style:italic}
     Promise.all(['UnifrakturMaguntia','Yellowtail','Bowlby One'].map(function(f){ return document.fonts.load('60px "' + f + '"'); })).then(render, render);
   }
   render();
+  function tiltStage(x, y){ p3.style.transform = 'rotateY(' + (x * 34).toFixed(2) + 'deg) rotateX(' + (-y * 22).toFixed(2) + 'deg)'; }
+  stage.addEventListener('pointermove', function(e){
+    var r = stage.getBoundingClientRect();
+    stage.classList.add('active');
+    tiltStage((e.clientX - r.left) / r.width - .5, (e.clientY - r.top) / r.height - .5);
+  });
+  stage.addEventListener('pointerleave', function(){ stage.classList.remove('active'); p3.style.transform = reduce ? '' : 'rotateY(-10deg) rotateX(6deg)'; });
+  if(!reduce) p3.style.transform = 'rotateY(-10deg) rotateX(6deg)';
 
   var LBL = {
     fr:{piece:{pendant:'Pendentif',chain:'Chaîne',bracelet:'Bracelet',watch:'Montre'}, style:{goth:'Gothique',script:'Script',bloc:'Bloc'}, metal:{blanc:'Or blanc',jaune:'Or jaune',rose:'Or rose',bicolore:'Bicolore'}, stone:{nat:'Naturels',lab:'Laboratoire',help:'Je voudrais un conseil'}},
@@ -833,18 +1021,18 @@ h2 em,h1 em{font-style:italic}
     if(l === 'en') return 'Hello NFL Jewellers! I would like a custom piece:\n• Piece: ' + L.piece[val('piece')] + '\n• Text: "' + t + '"\n• Style: ' + L.style[val('style')] + '\n• Metal: ' + L.metal[val('metal')] + '\n• Diamonds: ' + L.stone[val('stone')] + '\nThank you!';
     return 'Bonjour NFL Jewellers ! Je voudrais une pièce sur mesure :\n• Pièce : ' + L.piece[val('piece')] + '\n• Texte : « ' + t + ' »\n• Style : ' + L.style[val('style')] + '\n• Métal : ' + L.metal[val('metal')] + '\n• Diamants : ' + L.stone[val('stone')] + '\nMerci !';
   }
-  function copy(text){
-    if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(text).then(function(){return true;}, function(){return fallback(text);}); }
-    return Promise.resolve(fallback(text));
-  }
   function fallback(text){
     var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0';
     document.body.appendChild(ta); ta.select(); var ok = false; try{ ok = document.execCommand('copy'); }catch(e){} ta.remove(); return ok;
   }
+  function copy(text){
+    if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(text).then(function(){return true;}, function(){return fallback(text);}); }
+    return Promise.resolve(fallback(text));
+  }
   function send(url){
     var m = buildMsg();
     if(WA){ window.open(waUrl(m), '_blank', 'noopener'); return; }
-    var w = window.open(url, '_blank', 'noopener');
+    window.open(url, '_blank', 'noopener');
     copy(m).then(function(ok){
       note.className = 'note ok';
       note.textContent = ok
@@ -873,9 +1061,9 @@ h2 em,h1 em{font-style:italic}
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
   document.querySelectorAll('[data-full]').forEach(function(el){
     function open(){
-      var img = el.querySelector('img');
-      lbImg.src = el.dataset.full; lbImg.alt = img ? img.alt : '';
-      lbCap.textContent = img ? img.alt : '';
+      var img = el.querySelector('img') || el;
+      lbImg.src = el.dataset.full; lbImg.alt = img.alt || '';
+      lbCap.textContent = img.alt || '';
       lb.classList.add('on'); document.body.style.overflow = 'hidden';
     }
     el.addEventListener('click', open);
@@ -885,7 +1073,229 @@ h2 em,h1 em{font-style:italic}
   document.getElementById('lbClose').addEventListener('click', closeLb);
   lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLb(); });
+
+  /* ----- démarrage ----- */
+  var saved = null;
+  try{ saved = localStorage.getItem('nfl-lang'); }catch(e){}
+  var nl = (navigator.language || 'fr').toLowerCase();
+  setLang(saved || (nl.indexOf('en') === 0 || nl.indexOf('ar') === 0 ? 'en' : 'fr'));
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  (function(){ var c = cards[1]; if(c){ track.scrollLeft = c.offsetLeft + c.offsetWidth / 2 - track.clientWidth / 2; } })();
+  updateCards(); onScroll();
 })();
+</script>
+
+<!-- Diamant 3D (Three.js) -->
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const hero = document.getElementById('top');
+const canvas = document.getElementById('gem');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function gemGeometry(){
+  // Taille brillant : culasse, pavillon, rondiste, couronne et table (facettes plates)
+  const N = 16, step = Math.PI * 2 / N;
+  const spec = [
+    {r:0,    y:-0.86, o:0},
+    {r:0.47, y:-0.45, o:0.5},
+    {r:1,    y:0,     o:0},
+    {r:1,    y:0.04,  o:0},
+    {r:0.8,  y:0.2,   o:0.5},
+    {r:0.56, y:0.34,  o:0},
+    {r:0,    y:0.34,  o:0}
+  ];
+  const ring = s => Array.from({length:N}, (_, i) => { const a = (i + s.o) * step; return new THREE.Vector3(Math.cos(a) * s.r, s.y, Math.sin(a) * s.r); });
+  const pos = [], ab = new THREE.Vector3(), ac = new THREE.Vector3(), n = new THREE.Vector3(), c = new THREE.Vector3();
+  const tri = (a, b, d) => {
+    ab.subVectors(b, a); ac.subVectors(d, a); n.crossVectors(ab, ac);
+    c.copy(a).add(b).add(d).multiplyScalar(1 / 3);
+    if(n.dot(c) < 0) pos.push(a.x, a.y, a.z, d.x, d.y, d.z, b.x, b.y, b.z);
+    else pos.push(a.x, a.y, a.z, b.x, b.y, b.z, d.x, d.y, d.z);
+  };
+  for(let k = 0; k < spec.length - 1; k++){
+    const A = spec[k], B = spec[k + 1];
+    if(A.r === 0){ const p = new THREE.Vector3(0, A.y, 0), R = ring(B); for(let i = 0; i < N; i++) tri(p, R[i], R[(i + 1) % N]); continue; }
+    if(B.r === 0){ const p = new THREE.Vector3(0, B.y, 0), R = ring(A); for(let i = 0; i < N; i++) tri(p, R[i], R[(i + 1) % N]); continue; }
+    const a = ring(A), b = ring(B);
+    for(let i = 0; i < N; i++){
+      const j = (i + 1) % N;
+      if(A.o === B.o){ tri(a[i], a[j], b[i]); tri(a[j], b[j], b[i]); }
+      else if(B.o > A.o){ tri(a[i], b[i], a[j]); tri(b[i], b[j], a[j]); }
+      else { tri(b[i], a[i], b[j]); tri(a[i], a[j], b[j]); }
+    }
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.computeVertexNormals();
+  return g;
+}
+
+function starTexture(){
+  const s = 128, cv = document.createElement('canvas'); cv.width = cv.height = s;
+  const x = cv.getContext('2d'), m = s / 2;
+  const g = x.createRadialGradient(m, m, 0, m, m, m); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.15, 'rgba(220,255,250,.55)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  x.fillStyle = g; x.fillRect(0, 0, s, s);
+  x.globalCompositeOperation = 'lighter';
+  [[1, .035], [.6, .025]].forEach(([len, w], idx) => {
+    x.save(); x.translate(m, m); x.rotate(idx ? Math.PI / 4 : 0);
+    for(let r = 0; r < 2; r++){
+      x.rotate(Math.PI / 2 * r);
+      const lg = x.createLinearGradient(-m * len, 0, m * len, 0);
+      lg.addColorStop(0, 'rgba(255,255,255,0)'); lg.addColorStop(.5, 'rgba(255,255,255,.95)'); lg.addColorStop(1, 'rgba(255,255,255,0)');
+      x.fillStyle = lg; x.fillRect(-m * len, -s * w / 2, m * len * 2, s * w);
+    }
+    x.restore();
+  });
+  const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+
+async function start(){
+  let renderer;
+  try{ renderer = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'}); }
+  catch(e){ return; }
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x040506);
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+  const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+  camera.position.set(0, 0, 9);
+  const TAN = Math.tan(THREE.MathUtils.degToRad(16));
+
+  // Fond : halo turquoise + grand « NFL » que le diamant réfracte
+  const bgCanvas = document.createElement('canvas'), bgCtx = bgCanvas.getContext('2d');
+  const bgTex = new THREE.CanvasTexture(bgCanvas); bgTex.colorSpace = THREE.SRGBColorSpace;
+  const bgMat = new THREE.MeshBasicMaterial({map:bgTex, toneMapped:false, color:0x000000});
+  const bg = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), bgMat);
+  const BG_Z = -4; bg.position.z = BG_Z; scene.add(bg);
+
+  // Diamant
+  const geo = gemGeometry();
+  const mat = new THREE.MeshPhysicalMaterial({
+    color:0xffffff, metalness:0, roughness:0, transmission:1, thickness:1.5, ior:2.417,
+    dispersion:5, envMapIntensity:3, specularIntensity:1, specularColor:new THREE.Color(0xffffff)
+  });
+  const gem = new THREE.Mesh(geo, mat);
+  // Miroir intérieur : simule les réflexions internes qui font briller un vrai diamant
+  const inner = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({color:0xffffff, metalness:1, roughness:.04, side:THREE.BackSide, envMapIntensity:2.4}));
+  inner.scale.setScalar(.985);
+  const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 1), new THREE.LineBasicMaterial({color:0xdff7f3, transparent:true, opacity:.12}));
+  const spin = new THREE.Group(); spin.add(inner, gem, edges);
+  const tilt = new THREE.Group(); tilt.add(spin);
+  const holder = new THREE.Group(); holder.add(tilt); scene.add(holder);
+
+  // Éclats qui s'allument quand le diamant tourne
+  const sTex = starTexture(), sparks = [];
+  const pts = [[.8,.2,.5],[.8,.2,4.5],[.8,.2,8.5],[.8,.2,12.5],[.56,.34,2],[.56,.34,10],[1,.04,6],[1,.04,14]];
+  pts.forEach(([r, y, i], k) => {
+    const a = i * Math.PI * 2 / 16;
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:sTex, color:0xffffff, transparent:true, opacity:0, depthWrite:false, blending:THREE.AdditiveBlending}));
+    sp.position.set(Math.cos(a) * r * 1.03, y + .01, Math.sin(a) * r * 1.03);
+    sp.userData.ph = k * 1.7 + .4; sp.userData.sz = .42 + (k % 3) * .12;
+    sp.scale.setScalar(sp.userData.sz);
+    spin.add(sp); sparks.push(sp);
+  });
+
+  const l1 = new THREE.PointLight(0xffffff, 60, 0, 2); l1.position.set(3, 4, 5); scene.add(l1);
+  const l2 = new THREE.PointLight(0x7fe3d3, 30, 0, 2); l2.position.set(-4, -1.5, 3); scene.add(l2);
+
+  let W = 1, H = 1, yFrac = .43, mobile = false, needs = true;
+
+  function drawBg(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const cw = Math.min(Math.round(W * dpr), 2560), ch = Math.round(cw * H / W);
+    bgCanvas.width = cw; bgCanvas.height = ch;
+    const c = bgCtx, cx = cw / 2, cy = ch * yFrac, m = Math.min(cw, ch);
+    c.fillStyle = '#040506'; c.fillRect(0, 0, cw, ch);
+    let g = c.createRadialGradient(cx, cy, 0, cx, cy, m * .8);
+    g.addColorStop(0, 'rgba(43,196,174,0.24)'); g.addColorStop(.4, 'rgba(18,92,84,0.10)'); g.addColorStop(1, 'rgba(4,5,6,0)');
+    c.fillStyle = g; c.fillRect(0, 0, cw, ch);
+    c.lineWidth = Math.max(1, dpr);
+    [[.33, .08], [.46, .055], [.6, .035]].forEach(([r, o]) => { c.strokeStyle = `rgba(220,236,246,${o})`; c.beginPath(); c.arc(cx, cy, m * r, 0, Math.PI * 2); c.stroke(); });
+    c.strokeStyle = 'rgba(220,236,246,0.05)'; c.beginPath(); c.moveTo(0, cy); c.lineTo(cw, cy); c.stroke();
+    const fs = Math.min(cw * (mobile ? .37 : .29), ch * (mobile ? .36 : (H < 820 ? .3 : .34)));
+    c.textAlign = 'center'; c.textBaseline = 'middle';
+    c.font = `600 ${fs}px Cinzel, Georgia, serif`;
+    let ls = 0; try{ c.letterSpacing = (fs * .06) + 'px'; ls = fs * .06; }catch(e){}
+    const tg = c.createLinearGradient(0, cy - fs * .45, 0, cy + fs * .45);
+    tg.addColorStop(0, 'rgba(246,250,253,0.96)'); tg.addColorStop(.52, 'rgba(140,157,174,0.86)'); tg.addColorStop(1, 'rgba(230,237,244,0.92)');
+    c.fillStyle = tg; c.fillText('NFL', cx + ls / 2, cy + fs * .04);
+    const fs2 = fs * .085; c.font = `500 ${fs2}px Cinzel, Georgia, serif`;
+    let ls2 = 0; try{ c.letterSpacing = (fs2 * .9) + 'px'; ls2 = fs2 * .9; }catch(e){}
+    c.fillStyle = 'rgba(200,212,225,0.55)'; c.fillText('JEWELLERS', cx + ls2 / 2, cy + fs * .55);
+    bgTex.needsUpdate = true; needs = true;
+  }
+
+  function resize(){
+    W = hero.clientWidth; H = hero.clientHeight; mobile = W < 700;
+    yFrac = mobile ? .34 : (H < 820 ? .39 : .43);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.6 : 2));
+    renderer.setSize(W, H, false);
+    camera.aspect = W / H; camera.updateProjectionMatrix();
+    const h13 = 2 * (9 - BG_Z) * TAN; bg.scale.set(h13 * W / H, h13, 1);
+    const h0 = 2 * 9 * TAN;
+    holder.position.y = (.5 - yFrac) * h0;
+    holder.userData.base = Math.min(1.3, mobile ? (W / H) * 1.55 : (W / H) * .95);
+    drawBg();
+  }
+
+  // Interaction : souris, glisser, défilement
+  let tX = 0, tY = 0, tx = 0, ty = 0, base = 0, vel = 0, dragging = false, lastX = 0;
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    tY = ((e.clientX - r.left) / r.width - .5) * .7;
+    tX = ((e.clientY - r.top) / r.height - .5) * .45;
+    if(dragging){ const dx = e.clientX - lastX; lastX = e.clientX; base += dx * .008; vel = dx * .008; }
+  });
+  canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; vel = 0; canvas.classList.add('drag'); try{ canvas.setPointerCapture(e.pointerId); }catch(_){} });
+  const up = () => { dragging = false; canvas.classList.remove('drag'); };
+  canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
+  hero.addEventListener('pointerleave', () => { tX = 0; tY = 0; });
+
+  let visible = true;
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; if(visible) needs = true; }).observe(hero);
+
+  try{ await document.fonts.load('600 100px Cinzel'); }catch(e){}
+  resize();
+  window.addEventListener('resize', resize);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(drawBg);
+
+  const t0 = performance.now(), INTRO = reduce ? 1 : 2800;
+  let last = '';
+  function frame(now){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    const k = Math.min(1, (now - t0) / INTRO), e = 1 - Math.pow(1 - k, 4);
+    if(!dragging){ base += vel; vel *= .94; if(Math.abs(vel) < 1e-5) vel = 0; }
+    tx += (tX - tx) * .07; ty += (tY - ty) * .07;
+    const scrollY = window.scrollY || 0;
+    const ry = (1 - e) * -Math.PI * 3.2 + base + scrollY * .0035;
+    spin.rotation.y = ry;
+    tilt.rotation.x = .42 + tx;
+    tilt.rotation.z = -ty * .35;
+    holder.rotation.y = ty * .6;
+    const sc = holder.userData.base * (.72 + .28 * e);
+    holder.scale.setScalar(sc);
+    bgMat.color.setScalar(Math.min(1, k * 1.5));
+    sparks.forEach(sp => {
+      const v = Math.cos(ry * 2.6 + sp.userData.ph + ty * 4 + tx * 3);
+      sp.material.opacity = Math.pow(Math.max(0, v), 36) * .95;
+      sp.scale.setScalar(sp.userData.sz * (.6 + .4 * Math.max(0, v)));
+    });
+    const key = [ry.toFixed(4), tx.toFixed(4), ty.toFixed(4), sc.toFixed(4), k.toFixed(3)].join('|');
+    if(key === last && !needs) return;
+    last = key; needs = false;
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(frame);
+}
+start();
 </script>
 </body>
 </html>
