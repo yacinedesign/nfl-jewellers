@@ -63,7 +63,7 @@ h2{font-size:clamp(2.6rem,5vw,4.4rem);margin-top:16px}
 h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .ice{background:linear-gradient(100deg,#93a6ba 0%,#ffffff 22%,#b8c7d6 42%,#ffffff 60%,#8ea2b7 82%,#e6eef6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:1.04rem;color:var(--text);max-width:34rem}
-.sec{padding:clamp(70px,8vw,116px) 0;position:relative}
+.sec{padding:clamp(44px,4.6vw,66px) 0;position:relative}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px 48px;flex-wrap:wrap;margin-bottom:clamp(30px,3.5vw,46px)}
 .sec-head p{max-width:27rem;color:var(--muted)}
 
@@ -117,8 +117,11 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
     var(--bg)}
 .hero-bg::before{content:"";position:absolute;left:50%;top:-10%;width:140%;height:90%;transform:translateX(-50%);background:conic-gradient(from 180deg at 50% 0%,transparent 0deg,rgba(220,245,240,.06) 8deg,transparent 16deg,transparent 24deg,rgba(220,245,240,.05) 30deg,transparent 38deg,transparent 322deg,rgba(220,245,240,.05) 330deg,transparent 336deg,transparent 344deg,rgba(220,245,240,.06) 352deg,transparent 360deg);-webkit-mask:linear-gradient(to bottom,#000 10%,transparent 85%);mask:linear-gradient(to bottom,#000 10%,transparent 85%)}
 .hero-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(220,236,246,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(220,236,246,.035) 1px,transparent 1px);background-size:88px 88px;-webkit-mask:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent 75%);mask:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent 75%)}
-.hero-c{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2vh 20px 3vh}
-.gem-wrap{position:relative;width:min(32vw,38vh,430px);aspect-ratio:4/3;margin-bottom:-2vh}
+.hero-c{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5vh 20px 2.5vh}
+.gem-wrap{position:relative;width:min(35vw,43vh,480px);aspect-ratio:4/3;margin-bottom:-2.4vh}
+.hero-kick{margin-bottom:.4vh}
+.hero-kick::after{display:none}
+.hero-kick::before{content:"";width:34px;height:1px;background:linear-gradient(270deg,var(--teal),transparent)}
 .gem-wrap::after{content:"";position:absolute;left:18%;right:18%;bottom:4%;height:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(43,196,174,.35),transparent);filter:blur(10px);z-index:-1}
 #gem{width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;outline:none}
 #gem.drag{cursor:grabbing}
@@ -235,6 +238,10 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .dot{width:12px;height:12px;border-radius:50%;flex:none;border:1px solid rgba(0,0,0,.25)}
 .form .send{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
 .msg{font-size:.8rem;color:var(--muted);min-height:1.3em}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:2px}
+.steps li{border:1px solid var(--line2);border-radius:var(--r);padding:14px 14px 16px;background:linear-gradient(160deg,rgba(43,196,174,.07),transparent 60%),var(--panel)}
+.steps b{display:block;font:600 .8rem/1 var(--caps);color:var(--teal);letter-spacing:.1em;margin-bottom:8px}
+.steps span{display:block;font-size:.8rem;line-height:1.45;color:var(--text)}
 .msg.ok{color:var(--teal2)}
 
 /* ---------- montres (plein écran) ---------- */
@@ -271,6 +278,18 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .b3{grid-column:4/5;grid-row:1/2}
 .b4{grid-column:4/5;grid-row:2/3}
 
+/* ---------- Instagram ---------- */
+.insta{padding:0 0 clamp(44px,4.6vw,66px)}
+.insta-head{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.insta-head h3{font-size:clamp(1.8rem,3vw,2.6rem)}
+.insta-head h3 a:hover{color:var(--teal2)}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.insta-grid a{position:relative;display:block;aspect-ratio:1;overflow:hidden;border-radius:var(--r);border:1px solid var(--line)}
+.insta-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.insta-grid a::after{content:"";position:absolute;inset:0;background:rgba(4,5,6,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23eef3f8' stroke-width='1.6'%3E%3Crect x='3' y='3' width='18' height='18' rx='5'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3C/svg%3E") center/30px no-repeat;opacity:0;transition:opacity .4s}
+.insta-grid a:hover::after{opacity:1}
+.insta-grid a:hover img{transform:scale(1.06)}
+
 /* ---------- naturel / labo + maison ---------- */
 .duo{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:12px}
 .vs{position:relative;border:1px solid var(--line2);border-radius:var(--r);padding:clamp(26px,3vw,40px);background:var(--panel)}
@@ -280,7 +299,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .vs ul{list-style:none;margin-top:16px}
 .vs li{padding:11px 0;border-top:1px solid var(--line);font-size:.9rem;display:flex;gap:12px}
 .vs li::before{content:"◆";color:var(--teal);font-size:.55rem;margin-top:.5em}
-.house{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);min-height:500px;display:flex;flex-direction:column;justify-content:flex-end}
+.house{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);min-height:440px;display:flex;flex-direction:column;justify-content:flex-end}
 .house>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .house::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,5,6,.97) 0%,rgba(4,5,6,.93) 52%,rgba(4,5,6,.45) 72%,rgba(4,5,6,.08) 100%);z-index:1}
 .house-in{position:relative;z-index:2;padding:clamp(24px,3vw,36px)}
@@ -292,6 +311,10 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .cities small{display:block;font:600 .58rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .cities b{display:block;font:500 2.3rem/1 var(--serif);color:var(--ice);margin:10px 0 4px;font-variant-numeric:tabular-nums}
 .cities span{font-size:.72rem;color:var(--teal2)}
+.meters{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:11px}
+.meter{display:grid;grid-template-columns:5.2rem 1fr;align-items:center;gap:12px;font:600 .6rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.meter i{display:block;height:4px;border-radius:4px;background:rgba(214,226,240,.1);position:relative;overflow:hidden}
+.meter i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--v);border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--teal2))}
 .both{margin-top:18px;text-align:center;font:italic 400 1.4rem/1.4 var(--serif);color:var(--ice)}
 
 /* ---------- FAQ + contact ---------- */
@@ -305,9 +328,21 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 .faq details p{padding:0 0 22px;color:var(--muted);max-width:40rem}
 .faq-side p{margin-top:18px;color:var(--muted);max-width:22rem}
 .faq-side .cta-row{margin-top:26px}
-.contact{position:relative;overflow:hidden;text-align:center;padding:clamp(90px,10vw,140px) 0;border-top:1px solid var(--line)}
+.faq-side{display:flex;flex-direction:column}
+.faq-pic{position:relative;margin-top:30px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);flex:1;min-height:170px;cursor:zoom-in}
+.faq-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.faq-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,5,6,.85),transparent 50%)}
+.faq-pic figcaption{position:absolute;left:16px;bottom:14px;right:16px;z-index:1;font:500 1.2rem/1.2 var(--serif);color:var(--ice);text-shadow:0 2px 14px #000}
+.contact{position:relative;overflow:hidden;text-align:center;padding:clamp(70px,8vw,110px) 0;border-top:1px solid var(--line)}
+.c-pic{position:absolute;top:50%;width:min(17vw,250px);perspective:1100px;z-index:1}
+.c-pic figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);box-shadow:0 40px 80px rgba(0,0,0,.6);cursor:zoom-in}
+.c-pic img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.c-pic-l{left:max(3vw,calc(50% - 680px));transform:translateY(-50%)}
+.c-pic-l figure{transform:rotateY(16deg) rotateZ(-3deg)}
+.c-pic-r{right:max(3vw,calc(50% - 680px));transform:translateY(-50%)}
+.c-pic-r figure{transform:rotateY(-16deg) rotateZ(3deg)}
 .contact::before{content:"";position:absolute;left:50%;top:50%;width:1100px;height:700px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(43,196,174,.15),transparent);pointer-events:none}
-.contact .wrap{position:relative}
+.contact .wrap{position:relative;z-index:2}
 .contact .kicker::after{display:none}
 .contact h2{font-size:clamp(3rem,7.5vw,6.4rem);margin:20px auto;max-width:13ch}
 .contact p{max-width:34rem;margin:0 auto 34px;color:var(--muted)}
@@ -351,8 +386,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 
 /* ---------- responsive ---------- */
 @media (max-width:1180px){
-  .float{display:none}
+  .float{width:15vw}
+  .note{display:none}
   .nav ul{gap:18px}
+}
+@media (max-width:760px){
+  .float{display:none}
 }
 @media (max-width:1080px){
   .duo{grid-template-columns:1fr 1fr}
@@ -388,7 +427,18 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
   .b2,.b3{grid-column:auto;grid-row:auto;aspect-ratio:3/4}
   .b4{grid-column:1/3;grid-row:auto;aspect-ratio:16/11}
 }
+@media (max-width:1080px){
+  .c-pic{width:15vw}
+}
+@media (max-width:900px){
+  .faq-pic{flex:none;aspect-ratio:16/10;min-height:0}
+  .insta-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:760px){
+  .c-pic{display:none}
+}
 @media (max-width:620px){
+  .steps{grid-template-columns:1fr}
   .wrap{padding:0 18px}
   .hd-in{height:70px}
   .hero{padding-top:70px}
@@ -460,6 +510,8 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
   </div>
 
   <div class="hero-c">
+    <span class="kicker hero-kick intro" data-fr>Joaillerie sur mesure · Dubaï — Paris</span>
+    <span class="kicker hero-kick intro" data-en>Custom jewellery · Dubai — Paris</span>
     <div class="gem-wrap intro">
       <svg class="gem-fallback" viewBox="0 0 40 30" fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h22l7 8-18 17L2 11z"/><path d="M2 11h36M15 3l-4 8 9 17 9-17-4-8M11 11l9-8 9 8"/></svg>
       <canvas id="gem" role="img" aria-label="Diamant en 3D"></canvas>
@@ -620,6 +672,11 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
           </button>
         </div>
         <p class="msg" id="note" aria-live="polite"></p>
+        <ol class="steps">
+          <li><b>01</b><span data-fr>Vous nous envoyez votre idée</span><span data-en>You send us your idea</span></li>
+          <li><b>02</b><span data-fr>On vous répond avec un dessin et un devis</span><span data-en>We reply with a design and a quote</span></li>
+          <li><b>03</b><span data-fr>Votre pièce arrive dans le coffret NFL</span><span data-en>Your piece arrives in the NFL box</span></li>
+        </ol>
       </form>
     </div>
   </div>
@@ -673,6 +730,27 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
   </div>
 </section>
 
+<!-- INSTAGRAM -->
+<section class="insta" aria-label="Instagram">
+  <div class="wrap">
+    <div class="insta-head rv">
+      <div>
+        <span class="kicker"><span data-fr>Suivez l'atelier</span><span data-en>Follow the workshop</span></span>
+        <h3 style="margin-top:10px"><a href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener">@nfl_jewellers</a></h3>
+      </div>
+      <a class="btn btn-line" href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg><span data-fr>Suivre · 28 K</span><span data-en>Follow · 28K</span></a>
+    </div>
+    <div class="insta-grid">
+      <a class="clip" href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener"><img src="img/studio-mallette.jpg" alt="La mallette NFL Jewellers en studio" width="1080" height="1440" loading="lazy" style="object-position:50% 45%"></a>
+      <a class="clip d1" href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener"><img src="img/pendentif-many.jpg" alt="Pendentif MANY sur fond noir" width="640" height="1136" loading="lazy" style="object-position:50% 70%"></a>
+      <a class="clip d2" href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener"><img src="img/gazo-coffret.jpg" alt="Le coffret turquoise NFL" width="1080" height="1440" loading="lazy" style="object-position:30% 55%"></a>
+      <a class="clip d1" href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener"><img src="img/pendentif-prenom.jpg" alt="Pendentif prénom serti tenu dans la main" width="720" height="960" loading="lazy"></a>
+      <a class="clip d2" href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener"><img src="img/kell-rbl-showroom.jpg" alt="Remise en boutique" width="1080" height="1440" loading="lazy" style="object-position:50% 70%"></a>
+      <a class="clip d3" href="https://www.instagram.com/nfl_jewellers/" target="_blank" rel="noopener"><img src="img/montre-full-iced.jpg" alt="Montre sertie en gros plan" width="720" height="1280" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
 <!-- DIAMANTS + MAISON -->
 <section class="sec" id="diamants" style="padding-top:0">
   <div class="wrap">
@@ -690,6 +768,11 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
         <h3 data-fr>La rareté de la terre.</h3><h3 data-en>Rare by nature.</h3>
         <ul data-fr><li>Formé dans la terre il y a des millions d'années.</li><li>Chaque pierre est rare et unique.</li><li>Le choix de la tradition et du prestige.</li></ul>
         <ul data-en><li>Formed in the earth millions of years ago.</li><li>Every stone is rare and unique.</li><li>The traditional, prestige choice.</li></ul>
+        <div class="meters">
+          <div class="meter"><span data-fr>Éclat</span><span data-en>Sparkle</span><i style="--v:100%"></i></div>
+          <div class="meter"><span data-fr>Rareté</span><span data-en>Rarity</span><i style="--v:100%"></i></div>
+          <div class="meter"><span data-fr>Prix</span><span data-en>Price</span><i style="--v:95%"></i></div>
+        </div>
       </div>
       <div class="vs lab rv d1">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M14 10h20l8 10-18 20L6 20z"/><path d="M6 20h36M20 10l-4 10 8 20 8-20-4-10M16 20l8-10 8 10"/></svg>
@@ -697,6 +780,11 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
         <h3 data-fr>Le même éclat, plus de pierres.</h3><h3 data-en>Same sparkle, more stones.</h3>
         <ul data-fr><li>Même composition, même dureté et même éclat que le naturel.</li><li>Créé en laboratoire, sans extraction minière.</li><li>Bien plus de carats pour le même budget.</li></ul>
         <ul data-en><li>Same composition, hardness and sparkle as natural.</li><li>Grown in a lab, no mining involved.</li><li>Far more carats for the same budget.</li></ul>
+        <div class="meters">
+          <div class="meter"><span data-fr>Éclat</span><span data-en>Sparkle</span><i style="--v:100%"></i></div>
+          <div class="meter"><span data-fr>Rareté</span><span data-en>Rarity</span><i style="--v:40%"></i></div>
+          <div class="meter"><span data-fr>Prix</span><span data-en>Price</span><i style="--v:40%"></i></div>
+        </div>
       </div>
       <div class="house rv d2" id="maison">
         <img src="img/dubai-coffret.jpg" alt="Le coffret turquoise NFL Jewellers à Dubaï" width="1080" height="1440" loading="lazy">
@@ -728,6 +816,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
       <p class="rv d2" data-fr>Une autre question ? On répond sur Instagram et Snapchat.</p>
       <p class="rv d2" data-en>Another question? We reply on Instagram and Snapchat.</p>
       <div class="cta-row rv d3"><a class="btn btn-line dm" href="https://ig.me/m/nfl_jewellers" target="_blank" rel="noopener"><span data-fr>Poser une question</span><span data-en>Ask a question</span></a></div>
+      <figure class="faq-pic clip" data-full="img/gazo-coffret.jpg"><img src="img/gazo-coffret.jpg" alt="Remise d'une pièce dans le coffret turquoise NFL" width="1080" height="1440" loading="lazy"><figcaption data-fr>Chaque pièce part dans le coffret NFL.</figcaption><figcaption data-en>Every piece leaves in the NFL box.</figcaption></figure>
     </div>
     <div class="rv d1">
       <details>
@@ -766,6 +855,8 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400}
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
+  <div class="c-pic c-pic-l" aria-hidden="true"><figure data-full="img/hd-pendentif-many.webp"><img src="img/hd-pendentif-many.webp" alt="Pendentif MANY" width="1024" height="1536" loading="lazy" style="object-position:50% 58%"></figure></div>
+  <div class="c-pic c-pic-r" aria-hidden="true"><figure data-full="img/hd-pendentif-grappe.webp"><img src="img/hd-pendentif-grappe.webp" alt="Pendentif grappe" width="1024" height="1536" loading="lazy" style="object-position:50% 55%"></figure></div>
   <div class="wrap">
     <span class="kicker rv"><b>07</b>Contact</span>
     <h2 class="rv d1" data-fr>Parlons de <em class="ice">votre pièce.</em></h2>
